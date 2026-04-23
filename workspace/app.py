@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, Response, stream_with_context
 
 app = Flask(__name__)
 OLLAMA_URL = "http://ollama:11434/api/generate"
-ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b"}
+ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b", "gemma3:1b", "gemma3:270m"}
 
 
 @app.route("/")
