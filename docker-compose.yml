@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    restart: "no"
+    networks:
+      - ko-mei-net
+    volumes:
+      - ollama_data:/root/.ollama
+
+  ko-mei:
+    build: .
+    container_name: ko-mei
+    depends_on:
+      - ollama
+    networks:
+      - ko-mei-net
+    volumes:
+      - ./workspace:/workspace:rw
+      - ./logs:/logs:rw
+    ports:
+      - "8080:8080"
+    command: ["python3", "/workspace/app.py"]
+
+networks:
+  ko-mei-net:
+    driver: bridge
+    #internal: true   # 🔥 外部遮断
+
+volumes:
+  ollama_data:
