@@ -21,6 +21,7 @@
   .bot { align-self: flex-start; background: white; color: #222; border-bottom-left-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
   .bot.loading { color: #aaa; font-style: italic; }
   .bubble img { max-width: 200px; max-height: 200px; display: block; margin-bottom: 6px; border-radius: 8px; }
+  .file-chip { display: inline-block; background: #f0f7f4; border: 1px solid #b7e4c7; border-radius: 10px; padding: 2px 8px; font-size: 0.78rem; color: #2d6a4f; margin-bottom: 5px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   details.think-block { margin-bottom: 6px; }
   details.think-block summary { font-size: 0.78rem; color: #888; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 4px; }
   details.think-block summary::before { content: '▶'; font-size: 0.65rem; transition: transform 0.15s; }
@@ -30,12 +31,15 @@
   #prompt { flex: 1; border: 1px solid #ccc; border-radius: 20px; padding: 8px 14px; font-size: 0.95rem; resize: none; outline: none; max-height: 120px; overflow-y: auto; }
   #prompt:focus { border-color: #2d6a4f; }
   button { border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  #img-btn { background: #e8f5e9; color: #2d6a4f; }
+  #attach-btn { background: #e8f5e9; color: #2d6a4f; }
   #send-btn { background: #2d6a4f; color: white; }
   #send-btn:disabled { background: #aaa; cursor: not-allowed; }
-  #img-preview-wrap { padding: 4px 16px 0; background: white; }
+  #attachment-preview-wrap { padding: 4px 16px 0; background: white; display: flex; align-items: center; gap: 8px; min-height: 0; }
   #img-preview { max-height: 80px; border-radius: 8px; display: none; }
-  #img-clear { display: none; font-size: 0.75rem; color: #e74c3c; cursor: pointer; margin-left: 6px; }
+  #img-clear { display: none; font-size: 0.75rem; color: #e74c3c; cursor: pointer; }
+  #text-preview { display: none; align-items: center; gap: 6px; background: #f0f7f4; border: 1px solid #b7e4c7; border-radius: 12px; padding: 3px 10px; font-size: 0.82rem; color: #2d6a4f; max-width: 280px; }
+  #text-filename { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #text-clear { font-size: 0.75rem; color: #e74c3c; cursor: pointer; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -48,69 +52,114 @@
   </label>
 </header>
 <div id="chat-area"></div>
-<div id="img-preview-wrap">
+<div id="attachment-preview-wrap">
   <img id="img-preview" alt="preview">
-  <span id="img-clear">✕ 削除</span>
+  <span id="img-clear">✕</span>
+  <div id="text-preview">
+    <span>📄</span>
+    <span id="text-filename"></span>
+    <span id="text-clear">✕</span>
+  </div>
 </div>
 <div id="input-area">
-  <button id="img-btn" title="画像を添付">🖼</button>
+  <button id="attach-btn" title="ファイルを添付">📎</button>
   <textarea id="prompt" rows="1" placeholder="メッセージを入力..."></textarea>
   <button id="send-btn" title="送信">➤</button>
 </div>
-<input type="file" id="file-input" accept="image/*" style="display:none">
+<input type="file" id="file-input" accept="image/*,.txt,.md,.markdown,.csv,.json,.py,.js,.ts,.jsx,.tsx,.html,.css,.sh,.yaml,.yml,.toml,.xml,.log" style="display:none">
 
 <script>
   const chatArea = document.getElementById('chat-area');
   const promptEl = document.getElementById('prompt');
   const sendBtn = document.getElementById('send-btn');
-  const imgBtn = document.getElementById('img-btn');
+  const attachBtn = document.getElementById('attach-btn');
   const fileInput = document.getElementById('file-input');
   const imgPreview = document.getElementById('img-preview');
   const imgClear = document.getElementById('img-clear');
+  const textPreview = document.getElementById('text-preview');
+  const textFilename = document.getElementById('text-filename');
+  const textClear = document.getElementById('text-clear');
   const thinkCb = document.getElementById('think-cb');
   const toggleTrack = document.getElementById('toggle-track');
   let pendingImageB64 = null;
+  let pendingFileText = null;
+  let pendingFileName = null;
+
+  const TEXT_EXTS = new Set(['txt','md','markdown','csv','json','py','js','ts','jsx','tsx','html','css','sh','yaml','yml','toml','xml','log']);
+  const MAX_TEXT_BYTES = 100 * 1024;
+
+  function isTextFile(name) {
+    return TEXT_EXTS.has(name.split('.').pop().toLowerCase());
+  }
+
+  function clearAttachment() {
+    pendingImageB64 = null;
+    pendingFileText = null;
+    pendingFileName = null;
+    imgPreview.style.display = 'none';
+    imgClear.style.display = 'none';
+    imgPreview.src = '';
+    textPreview.style.display = 'none';
+  }
 
   thinkCb.addEventListener('change', () => {
     toggleTrack.classList.toggle('on', thinkCb.checked);
   });
 
-  imgBtn.addEventListener('click', () => fileInput.click());
+  attachBtn.addEventListener('click', () => fileInput.click());
 
   fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
     if (!file) return;
+    clearAttachment();
     const reader = new FileReader();
-    reader.onload = e => {
-      const dataUrl = e.target.result;
-      pendingImageB64 = dataUrl.split(',')[1];
-      imgPreview.src = dataUrl;
-      imgPreview.style.display = 'block';
-      imgClear.style.display = 'inline';
-    };
-    reader.readAsDataURL(file);
+    if (isTextFile(file.name)) {
+      if (file.size > MAX_TEXT_BYTES) {
+        alert(`ファイルが大きすぎます（上限 100KB）。\n選択ファイル: ${(file.size/1024).toFixed(1)} KB`);
+        fileInput.value = '';
+        return;
+      }
+      reader.onload = e => {
+        pendingFileText = e.target.result;
+        pendingFileName = file.name;
+        textFilename.textContent = file.name;
+        textPreview.style.display = 'flex';
+      };
+      reader.readAsText(file);
+    } else {
+      reader.onload = e => {
+        const dataUrl = e.target.result;
+        pendingImageB64 = dataUrl.split(',')[1];
+        imgPreview.src = dataUrl;
+        imgPreview.style.display = 'block';
+        imgClear.style.display = 'inline';
+      };
+      reader.readAsDataURL(file);
+    }
     fileInput.value = '';
   });
 
-  imgClear.addEventListener('click', () => {
-    pendingImageB64 = null;
-    imgPreview.style.display = 'none';
-    imgClear.style.display = 'none';
-    imgPreview.src = '';
-  });
+  imgClear.addEventListener('click', clearAttachment);
+  textClear.addEventListener('click', clearAttachment);
 
   promptEl.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
   });
   sendBtn.addEventListener('click', send);
 
-  function addBubble(role, text, imgSrc) {
+  function addBubble(role, text, imgSrc, fileName) {
     const div = document.createElement('div');
     div.className = `bubble ${role}`;
     if (imgSrc) {
       const img = document.createElement('img');
       img.src = imgSrc;
       div.appendChild(img);
+    }
+    if (fileName) {
+      const chip = document.createElement('div');
+      chip.className = 'file-chip';
+      chip.textContent = '📄 ' + fileName;
+      div.appendChild(chip);
     }
     div.appendChild(document.createTextNode(text));
     chatArea.appendChild(div);
@@ -146,25 +195,24 @@
 
   async function send() {
     const prompt = promptEl.value.trim();
-    if (!prompt && !pendingImageB64) return;
+    if (!prompt && !pendingImageB64 && !pendingFileText) return;
     sendBtn.disabled = true;
 
     const imgSrc = pendingImageB64 ? imgPreview.src : null;
-    addBubble('user', prompt, imgSrc);
+    const fileName = pendingFileName;
+    addBubble('user', prompt, imgSrc, fileName);
     promptEl.value = '';
     const imageB64 = pendingImageB64;
+    const fileText = pendingFileText;
     const useThink = thinkCb.checked;
-    pendingImageB64 = null;
-    imgPreview.style.display = 'none';
-    imgClear.style.display = 'none';
-    imgPreview.src = '';
+    clearAttachment();
 
     const { bubble, thinkContent, responseSpan, details } = addBotBubble();
 
     const resp = await fetch('/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, image: imageB64, think: useThink })
+      body: JSON.stringify({ prompt, image: imageB64, file_text: fileText, file_name: fileName, think: useThink })
     });
 
     const reader = resp.body.getReader();

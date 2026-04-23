@@ -16,10 +16,15 @@ def index():
 def chat():
     data = request.get_json()
     prompt = data.get("prompt", "").strip()
-    image_b64 = data.get("image")  # base64 string or None
+    image_b64 = data.get("image")
+    file_text = data.get("file_text", "").strip()
+    file_name = data.get("file_name", "ファイル").strip()
 
-    if not prompt and not image_b64:
+    if not prompt and not image_b64 and not file_text:
         return Response("data: [DONE]\n\n", mimetype="text/event-stream")
+
+    if file_text:
+        prompt = f"[添付ファイル: {file_name}]\n---\n{file_text}\n---\n\n{prompt}"
 
     think = bool(data.get("think", False))
     payload = {"model": MODEL, "prompt": prompt, "stream": True, "think": think}
