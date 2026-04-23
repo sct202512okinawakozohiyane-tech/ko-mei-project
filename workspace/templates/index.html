@@ -8,7 +8,8 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: sans-serif; background: #f0f2f5; height: 100vh; display: flex; flex-direction: column; }
   header { background: #2d6a4f; color: white; padding: 10px 20px; font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; gap: 12px; }
-  header span.model { font-size: 0.8rem; font-weight: normal; opacity: 0.8; }
+  #model-select { font-size: 0.8rem; font-weight: normal; background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; padding: 2px 6px; cursor: pointer; outline: none; }
+  #model-select option { background: #2d6a4f; color: white; }
   #think-toggle { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: normal; cursor: pointer; user-select: none; }
   #think-toggle input[type=checkbox] { display: none; }
   .toggle-track { width: 36px; height: 20px; background: rgba(255,255,255,0.3); border-radius: 10px; position: relative; transition: background 0.2s; }
@@ -44,7 +45,11 @@
 </head>
 <body>
 <header>
-  Ko-Mei Chat <span class="model">gemma4:e4b</span>
+  Ko-Mei Chat
+  <select id="model-select" title="使用するモデルを選択">
+    <option value="gemma4:e4b">gemma4:e4b（高性能）</option>
+    <option value="gemma3:4b">gemma3:4b（高速）</option>
+  </select>
   <label id="think-toggle" title="Think モード: AIが回答前に内部推論を行います">
     <input type="checkbox" id="think-cb">
     <div class="toggle-track" id="toggle-track"><div class="toggle-knob"></div></div>
@@ -81,6 +86,7 @@
   const textClear = document.getElementById('text-clear');
   const thinkCb = document.getElementById('think-cb');
   const toggleTrack = document.getElementById('toggle-track');
+  const modelSelect = document.getElementById('model-select');
   let pendingImageB64 = null;
   let pendingFileText = null;
   let pendingFileName = null;
@@ -205,6 +211,7 @@
     const imageB64 = pendingImageB64;
     const fileText = pendingFileText;
     const useThink = thinkCb.checked;
+    const selectedModel = modelSelect.value;
     clearAttachment();
 
     const { bubble, thinkContent, responseSpan, details } = addBotBubble();
@@ -212,7 +219,7 @@
     const resp = await fetch('/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, image: imageB64, file_text: fileText, file_name: fileName, think: useThink })
+      body: JSON.stringify({ prompt, image: imageB64, file_text: fileText, file_name: fileName, think: useThink, model: selectedModel })
     });
 
     const reader = resp.body.getReader();

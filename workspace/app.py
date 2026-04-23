@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, Response, stream_with_context
 
 app = Flask(__name__)
 OLLAMA_URL = "http://ollama:11434/api/generate"
-MODEL = "gemma4:e4b"
+ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b"}
 
 
 @app.route("/")
@@ -14,11 +14,12 @@ def index():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.get_json()
-    prompt = data.get("prompt", "").strip()
+    data = request.get_json() or {}
+    prompt = (data.get("prompt") or "").strip()
     image_b64 = data.get("image")
-    file_text = data.get("file_text", "").strip()
-    file_name = data.get("file_name", "ファイル").strip()
+    file_text = (data.get("file_text") or "").strip()
+    file_name = (data.get("file_name") or "ファイル").strip()
+    model = data.get("model") if data.get("model") in ALLOWED_MODELS else "gemma4:e4b"
 
     if not prompt and not image_b64 and not file_text:
         return Response("data: [DONE]\n\n", mimetype="text/event-stream")
@@ -27,7 +28,7 @@ def chat():
         prompt = f"[添付ファイル: {file_name}]\n---\n{file_text}\n---\n\n{prompt}"
 
     think = bool(data.get("think", False))
-    payload = {"model": MODEL, "prompt": prompt, "stream": True, "think": think}
+    payload = {"model": model, "prompt": prompt, "stream": True, "think": think}
     if image_b64:
         payload["images"] = [image_b64]
 
