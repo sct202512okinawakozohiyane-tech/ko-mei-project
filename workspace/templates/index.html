@@ -33,6 +33,9 @@
   #prompt:focus { border-color: #2d6a4f; }
   button { border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   #attach-btn { background: #e8f5e9; color: #2d6a4f; }
+  #mic-btn { background: #e8f5e9; color: #2d6a4f; }
+  #mic-btn.recording { background: #e74c3c; color: white; animation: mic-pulse 1s infinite; }
+  @keyframes mic-pulse { 0%,100% { opacity:1; } 50% { opacity:0.55; } }
   #send-btn { background: #2d6a4f; color: white; }
   #send-btn:disabled { background: #aaa; cursor: not-allowed; }
   #attachment-preview-wrap { padding: 4px 16px 0; background: white; display: flex; align-items: center; gap: 8px; min-height: 0; }
@@ -81,6 +84,7 @@
 </div>
 <div id="input-area">
   <button id="attach-btn" title="ファイルを添付">📎</button>
+  <button id="mic-btn" title="音声入力">🎤</button>
   <textarea id="prompt" rows="8" placeholder="メッセージを入力..."></textarea>
   <button id="send-btn" title="送信">➤</button>
 </div>
@@ -97,6 +101,7 @@
   const textPreview = document.getElementById('text-preview');
   const textFilename = document.getElementById('text-filename');
   const textClear = document.getElementById('text-clear');
+  const micBtn = document.getElementById('mic-btn');
   const thinkCb = document.getElementById('think-cb');
   const toggleTrack = document.getElementById('toggle-track');
   const modelSelect = document.getElementById('model-select');
@@ -127,6 +132,40 @@
     conversationHistory = [];
     chatArea.innerHTML = '';
   });
+
+  // 音声入力 (Web Speech API)
+  {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SR) {
+      const recognition = new SR();
+      recognition.lang = 'ja-JP';
+      recognition.interimResults = false;
+      recognition.continuous = false;
+      let recording = false;
+
+      recognition.onresult = e => {
+        const text = e.results[0][0].transcript;
+        promptEl.value += (promptEl.value ? ' ' : '') + text;
+      };
+      recognition.onend = () => {
+        recording = false;
+        micBtn.classList.remove('recording');
+      };
+      recognition.onerror = e => {
+        recording = false;
+        micBtn.classList.remove('recording');
+        if (e.error !== 'aborted') alert('音声認識エラー: ' + e.error);
+      };
+      micBtn.addEventListener('click', () => {
+        if (recording) { recognition.stop(); }
+        else { recording = true; micBtn.classList.add('recording'); recognition.start(); }
+      });
+    } else {
+      micBtn.disabled = true;
+      micBtn.title = 'このブラウザは音声入力をサポートしていません (Chrome/Edge を使用してください)';
+      micBtn.style.opacity = '0.4';
+    }
+  }
 
   thinkCb.addEventListener('change', () => {
     toggleTrack.classList.toggle('on', thinkCb.checked);
