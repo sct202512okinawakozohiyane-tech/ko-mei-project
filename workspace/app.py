@@ -3,7 +3,7 @@ import urllib.request
 from flask import Flask, render_template, request, Response, stream_with_context
 
 app = Flask(__name__)
-OLLAMA_URL = "http://ollama:11434/api/generate"
+OLLAMA_URL = "http://ollama:11434/api/chat"
 ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b", "gemma3:1b", "gemma3:270m"}
 
 
@@ -15,22 +15,31 @@ def index():
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json() or {}
-    prompt = (data.get("prompt") or "").strip()
+    messages = data.get("messages") or []
     image_b64 = data.get("image")
     file_text = (data.get("file_text") or "").strip()
     file_name = (data.get("file_name") or "ファイル").strip()
     model = data.get("model") if data.get("model") in ALLOWED_MODELS else "gemma4:e4b"
+    think = bool(data.get("think", False))
 
-    if not prompt and not image_b64 and not file_text:
+    if not messages and not image_b64 and not file_text:
         return Response("data: [DONE]\n\n", mimetype="text/event-stream")
 
-    if file_text:
-        prompt = f"[添付ファイル: {file_name}]\n---\n{file_text}\n---\n\n{prompt}"
+    # Enrich the last user message with file attachment and/or image
+    ollama_messages = []
+    for i, msg in enumerate(messages):
+        if i == len(messages) - 1 and msg.get("role") == "user":
+            content = msg.get("content", "")
+            if file_text:
+                content = f"[添付ファイル: {file_name}]\n---\n{file_text}\n---\n\n{content}"
+            entry = {"role": "user", "content": content}
+            if image_b64:
+                entry["images"] = [image_b64]
+            ollama_messages.append(entry)
+        else:
+            ollama_messages.append(msg)
 
-    think = bool(data.get("think", False))
-    payload = {"model": model, "prompt": prompt, "stream": True, "think": think}
-    if image_b64:
-        payload["images"] = [image_b64]
+    payload = {"model": model, "messages": ollama_messages, "stream": True, "think": think}
 
     def generate():
         req = urllib.request.Request(
@@ -46,7 +55,7 @@ def chat():
                         continue
                     chunk = json.loads(line)
                     thinking = chunk.get("thinking", "")
-                    token = chunk.get("response", "")
+                    token = chunk.get("message", {}).get("content", "")
                     if thinking:
                         yield f"data: {json.dumps({'thinking': thinking})}\n\n"
                     if token:

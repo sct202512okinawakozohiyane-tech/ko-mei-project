@@ -41,11 +41,22 @@
   #text-preview { display: none; align-items: center; gap: 6px; background: #f0f7f4; border: 1px solid #b7e4c7; border-radius: 12px; padding: 3px 10px; font-size: 0.82rem; color: #2d6a4f; max-width: 280px; }
   #text-filename { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   #text-clear { font-size: 0.75rem; color: #e74c3c; cursor: pointer; flex-shrink: 0; }
+  .bot .md-body h1,.bot .md-body h2,.bot .md-body h3 { margin: 0.4em 0; font-weight: bold; }
+  .bot .md-body p { margin: 0.3em 0; }
+  .bot .md-body ul,.bot .md-body ol { margin: 0.3em 0 0.3em 1.2em; }
+  .bot .md-body code { background:#f4f4f4; border-radius:3px; padding:1px 4px; font-size:0.9em; font-family:monospace; }
+  .bot .md-body pre { background:#f4f4f4; border-radius:6px; padding:8px; overflow-x:auto; margin:0.4em 0; }
+  .bot .md-body pre code { background:none; padding:0; }
+  .bot .md-body blockquote { border-left:3px solid #ccc; margin:0.4em 0; padding-left:8px; color:#666; }
+  .bot .md-body table { border-collapse:collapse; margin:0.4em 0; }
+  .bot .md-body th,.bot .md-body td { border:1px solid #ddd; padding:4px 8px; }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 <header>
   Ko-Mei Chat
+  <button id="reset-btn" title="会話をリセット" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.35);border-radius:6px;width:auto;height:auto;padding:2px 8px;font-size:0.8rem;font-weight:normal;">🔄 リセット</button>
   <select id="model-select" title="使用するモデルを選択">
     <option value="gemma4:e4b">gemma4:e4b（高性能）</option>
     <option value="gemma3:4b">gemma3:4b（高速）</option>
@@ -92,6 +103,7 @@
   let pendingImageB64 = null;
   let pendingFileText = null;
   let pendingFileName = null;
+  let conversationHistory = [];
 
   const TEXT_EXTS = new Set(['txt','md','markdown','csv','json','py','js','ts','jsx','tsx','html','css','sh','yaml','yml','toml','xml','log']);
   const MAX_TEXT_BYTES = 100 * 1024;
@@ -109,6 +121,12 @@
     imgPreview.src = '';
     textPreview.style.display = 'none';
   }
+
+  const resetBtn = document.getElementById('reset-btn');
+  resetBtn.addEventListener('click', () => {
+    conversationHistory = [];
+    chatArea.innerHTML = '';
+  });
 
   thinkCb.addEventListener('change', () => {
     toggleTrack.classList.toggle('on', thinkCb.checked);
@@ -192,7 +210,8 @@
     div.appendChild(details);
 
     // 応答テキスト
-    const responseSpan = document.createElement('span');
+    const responseSpan = document.createElement('div');
+    responseSpan.className = 'md-body';
     responseSpan.textContent = '考え中...';
     div.appendChild(responseSpan);
 
@@ -216,18 +235,21 @@
     const selectedModel = modelSelect.value;
     clearAttachment();
 
+    conversationHistory.push({ role: 'user', content: prompt });
+
     const { bubble, thinkContent, responseSpan, details } = addBotBubble();
 
     const resp = await fetch('/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, image: imageB64, file_text: fileText, file_name: fileName, think: useThink, model: selectedModel })
+      body: JSON.stringify({ messages: conversationHistory, image: imageB64, file_text: fileText, file_name: fileName, think: useThink, model: selectedModel })
     });
 
     const reader = resp.body.getReader();
     const decoder = new TextDecoder();
     let firstToken = true;
     let buffer = '';
+    let fullResponse = '';
 
     while (true) {
       const { done, value } = await reader.read();
@@ -249,17 +271,18 @@
           }
           if (obj.token) {
             if (firstToken) {
-              responseSpan.textContent = '';
               bubble.classList.remove('loading');
               firstToken = false;
             }
-            responseSpan.textContent += obj.token;
+            fullResponse += obj.token;
+            responseSpan.innerHTML = marked.parse(fullResponse);
             chatArea.scrollTop = chatArea.scrollHeight;
           }
         } catch {}
       }
     }
     if (firstToken) responseSpan.textContent = '(応答なし)';
+    if (fullResponse) conversationHistory.push({ role: 'assistant', content: fullResponse });
     sendBtn.disabled = false;
     promptEl.focus();
   }
