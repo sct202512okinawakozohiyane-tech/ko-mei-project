@@ -130,6 +130,10 @@
 
   thinkCb.addEventListener('change', () => {
     toggleTrack.classList.toggle('on', thinkCb.checked);
+    const THINK_CAPABLE = new Set(['gemma4:e4b']);
+    document.getElementById('think-toggle').title = (thinkCb.checked && !THINK_CAPABLE.has(modelSelect.value))
+      ? 'Think モード: このモデルは思考内容をサポートしていない可能性があります'
+      : 'Think モード: AIが回答前に内部推論を行います';
   });
 
   attachBtn.addEventListener('click', () => fileInput.click());
@@ -282,6 +286,10 @@
       }
     }
     if (firstToken) responseSpan.textContent = '(応答なし)';
+    if (useThink && !thinkContent.textContent) {
+      details.style.display = '';
+      thinkContent.textContent = '(このモデルは思考内容を返しませんでした)';
+    }
     if (fullResponse) conversationHistory.push({ role: 'assistant', content: fullResponse });
     sendBtn.disabled = false;
     promptEl.focus();

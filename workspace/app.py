@@ -54,7 +54,7 @@ def chat():
                     if not line:
                         continue
                     chunk = json.loads(line)
-                    thinking = chunk.get("thinking", "")
+                    thinking = chunk.get("message", {}).get("thinking", "")
                     token = chunk.get("message", {}).get("content", "")
                     if thinking:
                         yield f"data: {json.dumps({'thinking': thinking})}\n\n"
