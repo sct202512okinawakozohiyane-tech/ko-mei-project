@@ -38,6 +38,10 @@
   @keyframes mic-pulse { 0%,100% { opacity:1; } 50% { opacity:0.55; } }
   #send-btn { background: #2d6a4f; color: white; }
   #send-btn:disabled { background: #aaa; cursor: not-allowed; }
+  #lang-toggle { display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; justify-content: center; }
+  .lang-btn { border: 1px solid #2d6a4f; border-radius: 4px; width: 34px; height: 17px; cursor: pointer; font-size: 0.65rem; font-weight: bold; background: #e8f5e9; color: #2d6a4f; padding: 0; line-height: 1; }
+  .lang-btn.active { background: #2d6a4f; color: white; }
+  .lang-btn:hover:not(.active) { background: #c8e6c9; }
   #attachment-preview-wrap { padding: 4px 16px 0; background: white; display: flex; align-items: center; gap: 8px; min-height: 0; }
   #img-preview { max-height: 80px; border-radius: 8px; display: none; }
   #img-clear { display: none; font-size: 0.75rem; color: #e74c3c; cursor: pointer; }
@@ -84,8 +88,12 @@
 </div>
 <div id="input-area">
   <button id="attach-btn" title="ファイルを添付">📎</button>
-  <button id="mic-btn" title="音声入力">🎤</button>
   <textarea id="prompt" rows="8" placeholder="メッセージを入力..."></textarea>
+  <div id="lang-toggle">
+    <button id="lang-jp" class="lang-btn active" title="日本語で音声入力">JP</button>
+    <button id="lang-en" class="lang-btn" title="英語で音声入力">EN</button>
+  </div>
+  <button id="mic-btn" title="音声入力">🎤</button>
   <button id="send-btn" title="送信">➤</button>
 </div>
 <input type="file" id="file-input" accept="image/*,.txt,.md,.markdown,.csv,.json,.py,.js,.ts,.jsx,.tsx,.html,.css,.sh,.yaml,.yml,.toml,.xml,.log" style="display:none">
@@ -136,9 +144,23 @@
   // 音声入力 (Web Speech API)
   {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const langJpBtn = document.getElementById('lang-jp');
+    const langEnBtn = document.getElementById('lang-en');
+    let voiceLang = 'ja-JP';
+
+    langJpBtn.addEventListener('click', () => {
+      voiceLang = 'ja-JP';
+      langJpBtn.classList.add('active');
+      langEnBtn.classList.remove('active');
+    });
+    langEnBtn.addEventListener('click', () => {
+      voiceLang = 'en-US';
+      langEnBtn.classList.add('active');
+      langJpBtn.classList.remove('active');
+    });
+
     if (SR) {
       const recognition = new SR();
-      recognition.lang = 'ja-JP';
       recognition.interimResults = false;
       recognition.continuous = false;
       let recording = false;
@@ -158,12 +180,15 @@
       };
       micBtn.addEventListener('click', () => {
         if (recording) { recognition.stop(); }
-        else { recording = true; micBtn.classList.add('recording'); recognition.start(); }
+        else { recognition.lang = voiceLang; recording = true; micBtn.classList.add('recording'); recognition.start(); }
       });
     } else {
       micBtn.disabled = true;
       micBtn.title = 'このブラウザは音声入力をサポートしていません (Chrome/Edge を使用してください)';
       micBtn.style.opacity = '0.4';
+      langJpBtn.disabled = true;
+      langEnBtn.disabled = true;
+      document.getElementById('lang-toggle').style.opacity = '0.4';
     }
   }
 

@@ -1,0 +1,152 @@
+===== DATE =====
+2026年  4月 28日 火曜日 09:18:34 JST
+===== FREE =====
+               total        used        free      shared  buff/cache   available
+Mem:            29Gi       2.4Gi        23Gi        93Mi       3.8Gi        26Gi
+Swap:          4.0Gi          0B       4.0Gi
+===== DISK =====
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           3.0G  1.9M  3.0G   1% /run
+efivarfs        154K   85K   65K  57% /sys/firmware/efi/efivars
+/dev/nvme0n1p2  117G   65G   46G  59% /
+tmpfs            15G   83M   15G   1% /dev/shm
+tmpfs           5.0M   12K  5.0M   1% /run/lock
+/dev/nvme0n1p1  511M  6.2M  505M   2% /boot/efi
+tmpfs           3.0G  264K  3.0G   1% /run/user/1000
+===== DOCKER PS =====
+CONTAINER ID   IMAGE                   COMMAND                   CREATED        STATUS         PORTS                                         NAMES
+0602df190178   ko-mei-project-ko-mei   "python3 /workspace/…"   26 hours ago   Up 2 minutes   0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp   ko-mei
+fd564d50c4f2   ollama/ollama           "/bin/ollama serve"       26 hours ago   Up 2 minutes   11434/tcp                                     ollama
+===== KO-MEI LOG =====
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+[33mPress CTRL+C to quit[0m
+172.18.0.1 - - [26/Apr/2026 22:22:51] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [26/Apr/2026 22:22:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.18.0.1 - - [26/Apr/2026 22:23:16] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [26/Apr/2026 22:31:24] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [26/Apr/2026 23:14:52] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [26/Apr/2026 23:24:49] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [26/Apr/2026 23:36:09] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 00:20:22] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 00:46:19] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 01:54:30] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 02:02:49] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 02:03:11] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 02:06:07] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 02:17:31] "POST /chat HTTP/1.1" 200 -
+172.18.0.1 - - [27/Apr/2026 02:52:00] "POST /chat HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+[33mPress CTRL+C to quit[0m
+172.18.0.1 - - [28/Apr/2026 00:16:52] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [28/Apr/2026 00:16:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+===== DMESG =====
+[ 4月28日(火) 09:10:53 2026] wlp4s0: associate with f8:b7:97:d2:5b:a6 (try 1/3)
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: failed to load ucode RLC_RESTORE_LIST_CNTL(0x29) 
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: psp gfx command LOAD_IP_FW(0x6) failed and response status is (0xFFFF300F)
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: failed to load ucode RLC_RESTORE_LIST_GPM_MEM(0x2A) 
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: psp gfx command LOAD_IP_FW(0x6) failed and response status is (0xFFFF000F)
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: failed to load ucode RLC_RESTORE_LIST_SRM_MEM(0x2B) 
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: psp gfx command LOAD_IP_FW(0x6) failed and response status is (0xFFFF000F)
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: RAS: optional ras ta ucode is not available
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: SECUREDISPLAY: optional securedisplay ta ucode is not available
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB: values for F clock
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 400000 in kHz, 3174 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 933000 in kHz, 3724 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 1067000 in kHz, 3924 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 1200000 in kHz, 4074 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB: values for DCF clock
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 300000 in kHz, 3174 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 600000 in kHz, 3724 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 626000 in kHz, 3924 in mV
+[ 4月28日(火) 09:10:53 2026] [drm] DM_PPLIB:	 654000 in kHz, 4074 in mV
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: [drm] Display Core v3.2.340 initialized on DCN 1.0.1
+[ 4月28日(火) 09:10:53 2026] wlp4s0: associate with f8:b7:97:d2:5b:a6 (try 2/3)
+[ 4月28日(火) 09:10:53 2026] snd_hda_intel 0000:05:00.1: bound 0000:05:00.0 (ops amdgpu_dm_audio_component_bind_ops [amdgpu])
+[ 4月28日(火) 09:10:53 2026] wlp4s0: RX AssocResp from f8:b7:97:d2:5b:a6 (capab=0x431 status=0 aid=2)
+[ 4月28日(火) 09:10:53 2026] wlp4s0: AP f8:b7:97:d2:5b:a6 changed bandwidth in assoc response, new used config is 2462.000 MHz, width 2 (2452.000/0 MHz)
+[ 4月28日(火) 09:10:53 2026] wlp4s0: associated
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: [drm] Using ACPI provided EDID for eDP-1
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: kiq ring mec 2 pipe 1 q 0
+[ 4月28日(火) 09:10:53 2026] kfd kfd: amdgpu: Allocated 3969056 bytes on gart
+[ 4月28日(火) 09:10:53 2026] kfd kfd: amdgpu: Total number of KFD nodes to be created: 1
+[ 4月28日(火) 09:10:53 2026] amdgpu: Virtual CRAT table created for GPU
+[ 4月28日(火) 09:10:53 2026] amdgpu: Topology: Add dGPU node [0x15d8:0x1002]
+[ 4月28日(火) 09:10:53 2026] kfd kfd: amdgpu: added device 1002:15d8
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: SE 1, SH per SE 1, CU per SH 3, active_cu_number 3
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring gfx uses VM inv eng 0 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 1 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 4 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 5 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 6 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 7 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 8 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 9 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 10 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring kiq_0.2.1.0 uses VM inv eng 11 on hub 0
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring sdma0 uses VM inv eng 0 on hub 8
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring vcn_dec uses VM inv eng 1 on hub 8
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring vcn_enc0 uses VM inv eng 4 on hub 8
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring vcn_enc1 uses VM inv eng 5 on hub 8
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: ring jpeg_dec uses VM inv eng 6 on hub 8
+[ 4月28日(火) 09:10:53 2026] amdgpu: pp_dpm_get_sclk_od was not implemented.
+[ 4月28日(火) 09:10:53 2026] amdgpu: pp_dpm_get_mclk_od was not implemented.
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: Runtime PM not available
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: amdgpu: [drm] Using custom brightness curve
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: [drm] Registered 3 planes with drm panic
+[ 4月28日(火) 09:10:53 2026] [drm] Initialized amdgpu 3.64.0 for 0000:05:00.0 on minor 1
+[ 4月28日(火) 09:10:53 2026] fbcon: amdgpudrmfb (fb0) is primary device
+[ 4月28日(火) 09:10:53 2026] fbcon: Deferring console take-over
+[ 4月28日(火) 09:10:53 2026] amdgpu 0000:05:00.0: [drm] fb0: amdgpudrmfb frame buffer device
+[ 4月28日(火) 09:10:53 2026] wlp4s0: AP f8:b7:97:d2:5b:a6 changed bandwidth in beacon, new used config is 2462.000 MHz, width 1 (2462.000/0 MHz)
+[ 4月28日(火) 09:10:53 2026] Lockdown: systemd-logind: hibernation is restricted; see man kernel_lockdown.7
+[ 4月28日(火) 09:10:53 2026] Lockdown: systemd-logind: hibernation is restricted; see man kernel_lockdown.7
+[ 4月28日(火) 09:10:55 2026] Lockdown: Xorg: raw io port access is restricted; see man kernel_lockdown.7
+[ 4月28日(火) 09:10:56 2026] audit: type=1400 audit(1777335056.798:126): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=1417 comm="apparmor_parser"
+[ 4月28日(火) 09:10:56 2026] Lockdown: systemd-logind: hibernation is restricted; see man kernel_lockdown.7
+[ 4月28日(火) 09:10:56 2026] Lockdown: systemd-logind: hibernation is restricted; see man kernel_lockdown.7
+[ 4月28日(火) 09:10:56 2026] Initializing XFRM netlink socket
+[ 4月28日(火) 09:10:56 2026] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC= SRC=2400:4152:9043:0700:4941:1d1b:cd98:9b40 DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=271671 PROTO=UDP SPT=46268 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC= SRC=2400:4152:9043:0700:b50f:bf15:a720:937a DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=979116 PROTO=UDP SPT=55601 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC= SRC=192.168.10.115 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=26212 DF PROTO=UDP SPT=49031 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC= SRC=fe80:0000:0000:0000:6e09:7b6b:9657:7d6a DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=641972 PROTO=UDP SPT=39674 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=br-3fd616c81164 OUT= MAC= SRC=172.18.0.1 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=48121 DF PROTO=UDP SPT=56827 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:04 2026] [UFW BLOCK] IN=docker0 OUT= MAC= SRC=172.17.0.1 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=60285 DF PROTO=UDP SPT=33310 DPT=3702 LEN=615 
+[ 4月28日(火) 09:11:07 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=42610 DF PROTO=2 
+[ 4月28日(火) 09:11:17 2026] systemd-journald[297]: Time jumped backwards, rotating.
+[ 4月28日(火) 09:11:33 2026] iwlwifi 0000:04:00.0: Unhandled alg: 0xc040071b
+[ 4月28日(火) 09:11:33 2026] iwlwifi 0000:04:00.0: Unhandled alg: 0xc040071b
+[ 4月28日(火) 09:11:33 2026] iwlwifi 0000:04:00.0: Unhandled alg: 0xc040071b
+[ 4月28日(火) 09:12:09 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=43846 DF PROTO=2 
+[ 4月28日(火) 09:13:11 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=49728 DF PROTO=2 
+[ 4月28日(火) 09:14:13 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=53132 DF PROTO=2 
+[ 4月28日(火) 09:15:15 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=56586 DF PROTO=2 
+[ 4月28日(火) 09:16:17 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=61831 DF PROTO=2 
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 1(vethebbbbe6) entered blocking state
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 1(vethebbbbe6) entered disabled state
+[ 4月28日(火) 09:16:22 2026] vethebbbbe6: entered allmulticast mode
+[ 4月28日(火) 09:16:22 2026] vethebbbbe6: entered promiscuous mode
+[ 4月28日(火) 09:16:22 2026] eth0: renamed from veth4bf222a
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 1(vethebbbbe6) entered blocking state
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 1(vethebbbbe6) entered forwarding state
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 2(veth522e809) entered blocking state
+[ 4月28日(火) 09:16:22 2026] br-3fd616c81164: port 2(veth522e809) entered disabled state
+[ 4月28日(火) 09:16:22 2026] veth522e809: entered allmulticast mode
+[ 4月28日(火) 09:16:22 2026] veth522e809: entered promiscuous mode
+[ 4月28日(火) 09:16:23 2026] eth0: renamed from vethcb3e638
+[ 4月28日(火) 09:16:23 2026] br-3fd616c81164: port 2(veth522e809) entered blocking state
+[ 4月28日(火) 09:16:23 2026] br-3fd616c81164: port 2(veth522e809) entered forwarding state
+[ 4月28日(火) 09:16:41 2026] warning: `ThreadPoolForeg' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+[ 4月28日(火) 09:17:19 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=62609 DF PROTO=2 
+[ 4月28日(火) 09:18:21 2026] [UFW BLOCK] IN=wlp4s0 OUT= MAC=9c:29:76:bc:a3:18:f8:b7:97:d2:5b:a4:08:00 SRC=192.168.10.1 DST=224.0.0.1 LEN=36 TOS=0x00 PREC=0x00 TTL=1 ID=2030 DF PROTO=2 
