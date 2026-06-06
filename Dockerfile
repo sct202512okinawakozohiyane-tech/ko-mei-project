@@ -9,7 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # 必要なPythonライブラリ
-RUN pip install --no-cache-dir requests flask
+RUN pip install --no-cache-dir requests flask gtts
 
 # コンテナを落とさない（今まで通り）
 CMD ["sleep", "infinity"]

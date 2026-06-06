@@ -1,10 +1,15 @@
 import json
 import urllib.request
 from flask import Flask, render_template, request, Response, stream_with_context
+from gtts import gTTS
+import io
+from pathlib import Path
 
 app = Flask(__name__)
 OLLAMA_URL = "http://ollama:11434/api/chat"
 ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b", "gemma3:1b", "gemma3:270m"}
+AUDIO_DIR = Path("/workspace/audio")
+AUDIO_DIR.mkdir(exist_ok=True)
 
 
 @app.route("/")
@@ -67,6 +72,29 @@ def chat():
         yield "data: [DONE]\n\n"
 
     return Response(stream_with_context(generate()), mimetype="text/event-stream")
+
+
+@app.route("/tts", methods=["POST"])
+def tts():
+    data = request.get_json() or {}
+    text = (data.get("text") or "").strip()
+    lang = data.get("lang", "ja")
+
+    if not text or len(text) > 1000:
+        return {"error": "Text required (max 1000 chars)"}, 400
+
+    try:
+        lang_map = {"ja": "ja", "en": "en", "en-US": "en"}
+        tts_lang = lang_map.get(lang, "ja")
+
+        tts_obj = gTTS(text=text, lang=tts_lang, slow=False)
+        audio_buffer = io.BytesIO()
+        tts_obj.write_to_fp(audio_buffer)
+        audio_buffer.seek(0)
+
+        return Response(audio_buffer.read(), mimetype="audio/mpeg")
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 
 if __name__ == "__main__":

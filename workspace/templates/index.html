@@ -57,6 +57,13 @@
   .bot .md-body blockquote { border-left:3px solid #ccc; margin:0.4em 0; padding-left:8px; color:#666; }
   .bot .md-body table { border-collapse:collapse; margin:0.4em 0; }
   .bot .md-body th,.bot .md-body td { border:1px solid #ddd; padding:4px 8px; }
+  .tts-controls { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #eee; }
+  .tts-play-btn { background: #b7e4c7; color: #2d6a4f; border: none; border-radius: 20px; width: 32px; height: 32px; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+  .tts-play-btn:hover { background: #9dd9b3; }
+  .tts-play-btn.playing { background: #e74c3c; color: white; animation: pulse-tts 1s infinite; }
+  @keyframes pulse-tts { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+  .tts-lang-select { font-size: 0.75rem; border: 1px solid #ddd; border-radius: 4px; padding: 2px 6px; }
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -120,6 +127,50 @@
 
   const TEXT_EXTS = new Set(['txt','md','markdown','csv','json','py','js','ts','jsx','tsx','html','css','sh','yaml','yml','toml','xml','log']);
   const MAX_TEXT_BYTES = 100 * 1024;
+
+  class TTSManager {
+    constructor() {
+      this.isPlaying = false;
+      this.currentAudio = null;
+    }
+
+    async play(text, lang = 'ja') {
+      if (this.isPlaying) this.stop();
+
+      try {
+        const resp = await fetch('/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, lang })
+        });
+
+        if (!resp.ok) throw new Error('TTS failed');
+
+        const audioBlob = await resp.blob();
+        this.currentAudio = new Audio(URL.createObjectURL(audioBlob));
+        this.isPlaying = true;
+
+        this.currentAudio.onended = () => {
+          this.isPlaying = false;
+        };
+
+        this.currentAudio.play();
+      } catch (err) {
+        console.error('TTS error:', err);
+        alert('音声再生エラー: ' + err.message);
+      }
+    }
+
+    stop() {
+      if (this.currentAudio) {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+      }
+      this.isPlaying = false;
+    }
+  }
+
+  const ttsManager = new TTSManager();
 
   function isTextFile(name) {
     return TEXT_EXTS.has(name.split('.').pop().toLowerCase());
@@ -283,9 +334,22 @@
     responseSpan.textContent = '考え中...';
     div.appendChild(responseSpan);
 
+    // TTS コントロール
+    const ttsControls = document.createElement('div');
+    ttsControls.className = 'tts-controls';
+    ttsControls.style.display = 'none';
+    ttsControls.innerHTML = `
+      <button class="tts-play-btn" title="音声で再生">🔊</button>
+      <select class="tts-lang-select">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+      </select>
+    `;
+    div.appendChild(ttsControls);
+
     chatArea.appendChild(div);
     chatArea.scrollTop = chatArea.scrollHeight;
-    return { bubble: div, thinkContent, responseSpan, details };
+    return { bubble: div, thinkContent, responseSpan, details, ttsControls };
   }
 
   async function send() {
@@ -354,7 +418,21 @@
       details.style.display = '';
       thinkContent.textContent = '(このモデルは思考内容を返しませんでした)';
     }
-    if (fullResponse) conversationHistory.push({ role: 'assistant', content: fullResponse });
+    if (fullResponse) {
+      conversationHistory.push({ role: 'assistant', content: fullResponse });
+
+      // TTS コントロール表示
+      ttsControls.style.display = 'flex';
+      const ttsBtn = bubble.querySelector('.tts-play-btn');
+      const langSelect = bubble.querySelector('.tts-lang-select');
+
+      ttsBtn.addEventListener('click', () => {
+        const lang = langSelect.value;
+        ttsBtn.classList.toggle('playing', ttsManager.isPlaying);
+        ttsManager.play(fullResponse, lang);
+        ttsBtn.classList.toggle('playing', ttsManager.isPlaying);
+      });
+    }
     sendBtn.disabled = false;
     promptEl.focus();
   }

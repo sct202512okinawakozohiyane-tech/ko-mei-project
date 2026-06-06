@@ -20,6 +20,8 @@ services:
     volumes:
       - ./workspace:/workspace:rw
       - ./logs:/logs:rw
+      - ./workspace/audio:/workspace/audio:rw
+      - /home/koz/fe-study-lab:/fe-study-lab:rw
     ports:
       - "8081:8080"
     command: ["python3", "/workspace/app.py"]
