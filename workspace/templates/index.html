@@ -82,6 +82,11 @@
     <div class="toggle-track" id="toggle-track"><div class="toggle-knob"></div></div>
     Think
   </label>
+  <label id="tts-auto-toggle" title="音声自動再生: 返答完了後に自動で読み上げます">
+    <input type="checkbox" id="tts-auto-cb">
+    <div class="toggle-track" id="tts-auto-track"><div class="toggle-knob"></div></div>
+    🔊Auto
+  </label>
 </header>
 <div id="chat-area"></div>
 <div id="attachment-preview-wrap">
@@ -192,12 +197,13 @@
     chatArea.innerHTML = '';
   });
 
+  let voiceLang = 'ja-JP';
+
   // 音声入力 (Web Speech API)
   {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     const langJpBtn = document.getElementById('lang-jp');
     const langEnBtn = document.getElementById('lang-en');
-    let voiceLang = 'ja-JP';
 
     langJpBtn.addEventListener('click', () => {
       voiceLang = 'ja-JP';
@@ -242,6 +248,12 @@
       document.getElementById('lang-toggle').style.opacity = '0.4';
     }
   }
+
+  const ttsAutoCb = document.getElementById('tts-auto-cb');
+  const ttsAutoTrack = document.getElementById('tts-auto-track');
+  ttsAutoCb.addEventListener('change', () => {
+    ttsAutoTrack.classList.toggle('on', ttsAutoCb.checked);
+  });
 
   thinkCb.addEventListener('change', () => {
     toggleTrack.classList.toggle('on', thinkCb.checked);
@@ -355,6 +367,7 @@
   async function send() {
     const prompt = promptEl.value.trim();
     if (!prompt && !pendingImageB64 && !pendingFileText) return;
+    speechSynthesis.cancel();
     sendBtn.disabled = true;
 
     const imgSrc = pendingImageB64 ? imgPreview.src : null;
@@ -369,7 +382,7 @@
 
     conversationHistory.push({ role: 'user', content: prompt });
 
-    const { bubble, thinkContent, responseSpan, details } = addBotBubble();
+    const { bubble, thinkContent, responseSpan, details, ttsControls } = addBotBubble();
 
     const resp = await fetch('/chat', {
       method: 'POST',
@@ -420,6 +433,12 @@
     }
     if (fullResponse) {
       conversationHistory.push({ role: 'assistant', content: fullResponse });
+
+      if (ttsAutoCb.checked) {
+        const utter = new SpeechSynthesisUtterance(responseSpan.textContent);
+        utter.lang = voiceLang;
+        speechSynthesis.speak(utter);
+      }
 
       // TTS コントロール表示
       ttsControls.style.display = 'flex';
