@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PROJECT_ROOT=./fe-study-lab
+PROJECT_ROOT=/workspace/fe-study-lab
 PROMPT_FILE="$PROJECT_ROOT/komei_tasks/prompts/generate_algorithm_question.txt"
 THEMES_FILE="$PROJECT_ROOT/komei_tasks/prompts/algorithm_themes.txt"
 DIFFICULTIES_FILE="$PROJECT_ROOT/komei_tasks/prompts/algorithm_difficulties.txt"
