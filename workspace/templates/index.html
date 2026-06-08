@@ -6,7 +6,19 @@
 <title>Ko-Mei Chat</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: sans-serif; background: #f0f2f5; height: 100vh; display: flex; flex-direction: column; }
+  body { font-family: sans-serif; background: #f0f2f5; height: 100vh; display: flex; flex-direction: row; }
+  #sidebar { width: 220px; flex-shrink: 0; background: #1b4332; color: white; display: flex; flex-direction: column; height: 100vh; }
+  #new-chat-btn { width: auto; height: auto; border-radius: 8px; margin: 12px; padding: 9px 12px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: white; cursor: pointer; font-size: 0.85rem; display: block; text-align: left; white-space: nowrap; }
+  #new-chat-btn:hover { background: rgba(255,255,255,0.25); }
+  #history-list { flex: 1; overflow-y: auto; padding: 0 8px 12px; display: flex; flex-direction: column; gap: 3px; }
+  .history-item { padding: 8px 10px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; color: rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+  .history-item:hover { background: rgba(255,255,255,0.12); }
+  .history-item.active { background: rgba(255,255,255,0.22); color: white; }
+  .history-item .history-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .history-item .history-delete { opacity: 0; flex-shrink: 0; font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+  .history-item:hover .history-delete { opacity: 1; }
+  .history-item .history-delete:hover { color: #ff8787; }
+  #main { flex: 1; display: flex; flex-direction: column; height: 100vh; min-width: 0; }
   header { background: #2d6a4f; color: white; padding: 10px 20px; font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; gap: 12px; }
   #model-select { font-size: 0.8rem; font-weight: normal; background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; padding: 2px 6px; cursor: pointer; outline: none; }
   #model-select option { background: #2d6a4f; color: white; }
@@ -68,9 +80,13 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
+<aside id="sidebar">
+  <button id="new-chat-btn">＋ 新しいチャット</button>
+  <div id="history-list"></div>
+</aside>
+<div id="main">
 <header>
   Ko-Mei Chat
-  <button id="reset-btn" title="会話をリセット" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.35);border-radius:6px;width:auto;height:auto;padding:2px 8px;font-size:0.8rem;font-weight:normal;">🔄 リセット</button>
   <select id="model-select" title="使用するモデルを選択">
     <option value="gemma4:e4b">gemma4:e4b（高性能）</option>
     <option value="gemma3:4b">gemma3:4b（高速）</option>
@@ -107,6 +123,7 @@
   </div>
   <button id="mic-btn" title="音声入力">🎤</button>
   <button id="send-btn" title="送信">➤</button>
+</div>
 </div>
 <input type="file" id="file-input" accept="image/*,.txt,.md,.markdown,.csv,.json,.py,.js,.ts,.jsx,.tsx,.html,.css,.sh,.yaml,.yml,.toml,.xml,.log" style="display:none">
 
@@ -191,11 +208,110 @@
     textPreview.style.display = 'none';
   }
 
-  const resetBtn = document.getElementById('reset-btn');
-  resetBtn.addEventListener('click', () => {
+  let currentConversationId = null;
+
+  const newChatBtn = document.getElementById('new-chat-btn');
+  const historyList = document.getElementById('history-list');
+
+  function startNewChat() {
+    currentConversationId = null;
     conversationHistory = [];
     chatArea.innerHTML = '';
-  });
+    renderHistoryList();
+  }
+  newChatBtn.addEventListener('click', startNewChat);
+
+  let cachedConversations = [];
+
+  function renderHistoryList() {
+    historyList.innerHTML = '';
+    for (const conv of cachedConversations) {
+      const item = document.createElement('div');
+      item.className = 'history-item' + (conv.id === currentConversationId ? ' active' : '');
+
+      const title = document.createElement('span');
+      title.className = 'history-title';
+      title.textContent = conv.title;
+
+      const del = document.createElement('span');
+      del.className = 'history-delete';
+      del.textContent = '✕';
+      del.title = '削除';
+      del.addEventListener('click', async e => {
+        e.stopPropagation();
+        if (!confirm('この会話を削除しますか？')) return;
+        await fetch(`/api/conversations/${conv.id}`, { method: 'DELETE' });
+        if (currentConversationId === conv.id) startNewChat();
+        refreshHistoryList();
+      });
+
+      item.appendChild(title);
+      item.appendChild(del);
+      item.addEventListener('click', () => loadConversation(conv.id));
+      historyList.appendChild(item);
+    }
+  }
+
+  async function refreshHistoryList() {
+    try {
+      const resp = await fetch('/api/conversations');
+      const data = await resp.json();
+      cachedConversations = data.conversations || [];
+      renderHistoryList();
+    } catch (err) {
+      console.error('履歴一覧の取得エラー:', err);
+    }
+  }
+
+  async function loadConversation(id) {
+    try {
+      const resp = await fetch(`/api/conversations/${id}`);
+      if (!resp.ok) return;
+      const data = await resp.json();
+      currentConversationId = data.id;
+      conversationHistory = data.messages || [];
+      chatArea.innerHTML = '';
+      for (const msg of conversationHistory) {
+        if (msg.role === 'user') {
+          addBubble('user', msg.content);
+        } else if (msg.role === 'assistant') {
+          const { bubble, responseSpan, ttsControls } = addBotBubble();
+          bubble.classList.remove('loading');
+          responseSpan.innerHTML = marked.parse(msg.content);
+          ttsControls.style.display = 'flex';
+          const ttsBtn = bubble.querySelector('.tts-play-btn');
+          const langSelect = bubble.querySelector('.tts-lang-select');
+          ttsBtn.addEventListener('click', () => {
+            const lang = langSelect.value;
+            ttsBtn.classList.toggle('playing', ttsManager.isPlaying);
+            ttsManager.play(msg.content, lang);
+            ttsBtn.classList.toggle('playing', ttsManager.isPlaying);
+          });
+        }
+      }
+      chatArea.scrollTop = chatArea.scrollHeight;
+      renderHistoryList();
+    } catch (err) {
+      console.error('会話の読み込みエラー:', err);
+    }
+  }
+
+  // 会話の保存はストリーミング応答が完了した後に非同期で実行する
+  // (gemma4:e4b へのリクエスト経路には影響しない)
+  function saveConversation(model) {
+    const firstUserMsg = conversationHistory.find(m => m.role === 'user');
+    const title = (firstUserMsg ? firstUserMsg.content.slice(0, 40) : '新しいチャット') || '新しいチャット';
+    const body = JSON.stringify({ title, messages: conversationHistory, model });
+
+    const req = currentConversationId == null
+      ? fetch('/api/conversations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body })
+          .then(r => r.json()).then(data => { currentConversationId = data.id; })
+      : fetch(`/api/conversations/${currentConversationId}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body });
+
+    req.then(refreshHistoryList).catch(err => console.error('履歴保存エラー:', err));
+  }
+
+  refreshHistoryList();
 
   let voiceLang = 'ja-JP';
 
@@ -433,6 +549,7 @@
     }
     if (fullResponse) {
       conversationHistory.push({ role: 'assistant', content: fullResponse });
+      saveConversation(selectedModel);
 
       if (ttsAutoCb.checked) {
         const utter = new SpeechSynthesisUtterance(responseSpan.textContent);

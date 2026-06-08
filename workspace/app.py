@@ -1,5 +1,8 @@
 import json
+import sqlite3
 import urllib.request
+from contextlib import contextmanager
+from datetime import datetime, timezone
 from flask import Flask, render_template, request, Response, stream_with_context
 from gtts import gTTS
 import io
@@ -10,6 +13,45 @@ OLLAMA_URL = "http://ollama:11434/api/chat"
 ALLOWED_MODELS = {"gemma4:e4b", "gemma3:4b", "gemma3:1b", "gemma3:270m"}
 AUDIO_DIR = Path("/workspace/audio")
 AUDIO_DIR.mkdir(exist_ok=True)
+
+DB_PATH = Path("/workspace/chat_history.db")
+MAX_CONVERSATIONS = 20
+
+
+@contextmanager
+def db_conn():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    try:
+        yield conn
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def init_db():
+    with db_conn() as conn:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS conversations (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                model TEXT,
+                messages TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            )
+        """)
+
+
+init_db()
+
+
+def prune_conversations(conn):
+    conn.execute("""
+        DELETE FROM conversations WHERE id NOT IN (
+            SELECT id FROM conversations ORDER BY updated_at DESC LIMIT ?
+        )
+    """, (MAX_CONVERSATIONS,))
 
 
 @app.route("/")
@@ -72,6 +114,71 @@ def chat():
         yield "data: [DONE]\n\n"
 
     return Response(stream_with_context(generate()), mimetype="text/event-stream")
+
+
+@app.route("/api/conversations", methods=["GET"])
+def list_conversations():
+    with db_conn() as conn:
+        rows = conn.execute(
+            "SELECT id, title, updated_at FROM conversations ORDER BY updated_at DESC LIMIT ?",
+            (MAX_CONVERSATIONS,),
+        ).fetchall()
+    return {"conversations": [dict(row) for row in rows]}
+
+
+@app.route("/api/conversations/<int:conv_id>", methods=["GET"])
+def get_conversation(conv_id):
+    with db_conn() as conn:
+        row = conn.execute(
+            "SELECT id, title, model, messages FROM conversations WHERE id = ?",
+            (conv_id,),
+        ).fetchone()
+    if not row:
+        return {"error": "not found"}, 404
+    return {
+        "id": row["id"],
+        "title": row["title"],
+        "model": row["model"],
+        "messages": json.loads(row["messages"]),
+    }
+
+
+@app.route("/api/conversations", methods=["POST"])
+def create_conversation():
+    data = request.get_json() or {}
+    title = (data.get("title") or "新しいチャット").strip()[:60]
+    messages = data.get("messages") or []
+    model = data.get("model", "")
+    now = datetime.now(timezone.utc).isoformat()
+    with db_conn() as conn:
+        cur = conn.execute(
+            "INSERT INTO conversations (title, model, messages, created_at, updated_at) VALUES (?, ?, ?, ?, ?)",
+            (title, model, json.dumps(messages, ensure_ascii=False), now, now),
+        )
+        conv_id = cur.lastrowid
+        prune_conversations(conn)
+    return {"id": conv_id}
+
+
+@app.route("/api/conversations/<int:conv_id>", methods=["PUT"])
+def update_conversation(conv_id):
+    data = request.get_json() or {}
+    messages = data.get("messages") or []
+    model = data.get("model", "")
+    now = datetime.now(timezone.utc).isoformat()
+    with db_conn() as conn:
+        conn.execute(
+            "UPDATE conversations SET messages = ?, model = ?, updated_at = ? WHERE id = ?",
+            (json.dumps(messages, ensure_ascii=False), model, now, conv_id),
+        )
+    return {"ok": True}
+
+
+@app.route("/api/conversations/<int:conv_id>", methods=["DELETE"])
+def delete_conversation(conv_id):
+    with db_conn() as conn:
+        conn.execute("DELETE FROM conversations WHERE id = ?", (conv_id,))
+    return {"ok": True}
 
 
 @app.route("/tts", methods=["POST"])
