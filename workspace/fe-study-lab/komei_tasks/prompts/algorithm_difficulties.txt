@@ -1,0 +1,4 @@
+basic
+standard
+hard
+※この3つ以外の値を絶対に生成してはいけない
