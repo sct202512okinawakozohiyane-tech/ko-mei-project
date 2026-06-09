@@ -1,5 +1,9 @@
 workspace/chat_history.db
-workspace/fe-study-lab
+workspace/fe-study-lab/feedback/
+workspace/fe-study-lab/questions/
+workspace/fe-study-lab/__pycache__/
+workspace/fe-study-lab/.venv/
+workspace/fe-study-lab/venv/
 workspace/toeic-study-lab/data/
 workspace/toeic-study-lab/*.db
 workspace/toeic-study-lab/*.sqlite
