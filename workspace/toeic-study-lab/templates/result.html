@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Result</title>
+</head>
+<body>
+
+<h1>採点結果</h1>
+
+<p>{{ question[2] }}</p>
+
+{% if is_correct %}
+    <h2>〇 正解！</h2>
+{% else %}
+    <h2>× 不正解</h2>
+{% endif %}
+
+<p>あなたの回答：{{ user_answer }}</p>
+
+<p>正解：{{ correct_answer }}</p>
+
+<h3>解説</h3>
+
+<p>{{ explanation }}</p>
+
+<a href="/question">次の問題へ</a>
+
+</body>
+</html>

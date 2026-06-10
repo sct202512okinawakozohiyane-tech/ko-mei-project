@@ -26,4 +26,7 @@ TOEIC Part 5形式の英文法問題を自動生成し、SQLiteに保存しま�
 ## note
 - 作問のコマンドは Python の仮想環境化で実施する
 - プロジェクトルート ~/ko-mei-project/workspace/toeic-study-lab
-- source venv/bin/activate
+ source venv/bin/activate
+
+- SQlite の実行コマンド
+sqlite3 data/toeic.db

@@ -10,12 +10,35 @@
 
 <p>{{ question[2] }}</p>
 
-<ul>
-    <li>A. {{ question[3] }}</li>
-    <li>B. {{ question[4] }}</li>
-    <li>C. {{ question[5] }}</li>
-    <li>D. {{ question[6] }}</li>
-</ul>
+<form action="/answer" method="post">
+
+    <input type="hidden"
+           name="question_id"
+           value="{{ question[0] }}">
+
+    <button type="submit" name="user_answer" value="A">
+        A. {{ question[3] }}
+    </button>
+
+    <br><br>
+
+    <button type="submit" name="user_answer" value="B">
+        B. {{ question[4] }}
+    </button>
+
+    <br><br>
+
+    <button type="submit" name="user_answer" value="C">
+        C. {{ question[5] }}
+    </button>
+
+    <br><br>
+
+    <button type="submit" name="user_answer" value="D">
+        D. {{ question[6] }}
+    </button>
+
+</form>
 
 </body>
 </html>
