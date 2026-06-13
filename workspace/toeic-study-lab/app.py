@@ -21,7 +21,7 @@ def question():
     cur.execute("""
         SELECT *
         FROM questions
-        ORDER BY id DESC
+        ORDER BY RANDOM()
         LIMIT 1
     """)
 

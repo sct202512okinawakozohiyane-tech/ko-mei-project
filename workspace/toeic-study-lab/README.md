@@ -23,7 +23,21 @@ TOEIC Part 5形式の英文法問題を自動生成し、SQLiteに保存しま�
 - HTML/CSS
 - ローカルLLM
 
+## 問題データのインポート
+
+`questions/approved/questions.json` に置いた問題データを `questions` テーブルへ一括INSERTする。
+
+```bash
+source venv/bin/activate
+python scripts/import_questions.py
+```
+
+- 入力ファイル: `questions/approved/questions.json`（JSON配列、1要素が1問）
+- 各要素のキー: `part`（整数）, `question_text`, `choice_a`〜`choice_d`, `correct_answer`（"A"〜"D"の文字列）, `explanation`, `difficulty`（文字列）
+- 実行するたびにJSON内の全件が新規行としてINSERTされる（重複チェックなし）
+
 ## note
+
 - 作問のコマンドは Python の仮想環境化で実施する
 - プロジェクトルート ~/ko-mei-project/workspace/toeic-study-lab
  source venv/bin/activate

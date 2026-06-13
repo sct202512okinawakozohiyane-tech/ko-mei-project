@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS questions (
     choice_d TEXT,
     correct_answer TEXT,
     explanation TEXT,
-    difficulty TEXT
+    difficulty TEXT,
+    grammar_point TEXT
 )
 """)
 

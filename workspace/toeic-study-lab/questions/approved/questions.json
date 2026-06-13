@@ -1,0 +1,62 @@
+[
+  {
+    "part": 5,
+    "question_text": "If she ____ harder, she would have passed the exam.",
+    "choice_a": "studies",
+    "choice_b": "studied",
+    "choice_c": "had studied",
+    "choice_d": "would study",
+    "correct_answer": "C",
+    "explanation": "過去の事実に反する仮定を表す仮定法過去完了。If + 主語 + had + 過去分詞 ... , 主語 + would have + 過去分詞 の形になるため had studied が正解。",
+    "difficulty": "hard",
+    "grammar_point": "仮定法"
+  },
+  {
+    "part": 5,
+    "question_text": "The man ____ called you yesterday is my manager.",
+    "choice_a": "who",
+    "choice_b": "whom",
+    "choice_c": "whose",
+    "choice_d": "which",
+    "correct_answer": "A",
+    "explanation": "後ろの called you yesterday の主語が欠けているため、主格の関係代名詞 who を選ぶ。",
+    "difficulty": "standard",
+    "grammar_point": "関係代名詞"
+  },
+  {
+    "part": 5,
+    "question_text": "All employees ____ to attend the orientation session next Monday.",
+    "choice_a": "require",
+    "choice_b": "requires",
+    "choice_c": "are required",
+    "choice_d": "requiring",
+    "correct_answer": "C",
+    "explanation": "主語 All employees は「出席を要求される」側なので受動態 are required が正解。",
+    "difficulty": "standard",
+    "grammar_point": "受動態"
+  },
+  {
+    "part": 5,
+    "question_text": "This year's sales figures are much ____ than last year's.",
+    "choice_a": "high",
+    "choice_b": "higher",
+    "choice_c": "highest",
+    "choice_d": "more high",
+    "correct_answer": "B",
+    "explanation": "than があるため比較級 higher を選ぶ。more high という形は使わない。",
+    "difficulty": "easy",
+    "grammar_point": "比較"
+  },
+  {
+    "part": 5,
+    "question_text": "The meeting has been postponed ____ next Friday due to a scheduling conflict.",
+    "choice_a": "until",
+    "choice_b": "by",
+    "choice_c": "in",
+    "choice_d": "at",
+    "correct_answer": "A",
+    "explanation": "延期後の期日を示すには until が適切。by は期限、in/at は時点を表すため不適切。",
+    "difficulty": "standard",
+    "grammar_point": "前置詞"
+  }
+]
