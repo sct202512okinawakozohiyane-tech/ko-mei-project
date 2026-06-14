@@ -23,6 +23,7 @@
             <th>回答数</th>
             <th>正解数</th>
             <th>正答率</th>
+            <th></th>
         </tr>
         {% for stat in grammar_stats %}
         <tr>
@@ -30,6 +31,7 @@
             <td>{{ stat.total }}</td>
             <td>{{ stat.correct }}</td>
             <td>{{ "%.1f"|format(stat.accuracy) }}%</td>
+            <td><a href="{{ stat.practice_url }}">練習する</a></td>
         </tr>
         {% endfor %}
     </table>

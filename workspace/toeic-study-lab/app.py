@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pathlib import Path
+from urllib.parse import quote
 import sqlite3
 
 app = Flask(__name__)
@@ -15,22 +16,42 @@ def index():
 
 @app.route("/question")
 def question():
+    grammar_point = request.args.get("grammar_point", "").strip()
+
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    cur.execute("""
-        SELECT *
-        FROM questions
-        ORDER BY RANDOM()
-        LIMIT 1
-    """)
+    if grammar_point == "":
+        cur.execute("""
+            SELECT *
+            FROM questions
+            ORDER BY RANDOM()
+            LIMIT 1
+        """)
+    elif grammar_point == "未分類":
+        cur.execute("""
+            SELECT *
+            FROM questions
+            WHERE grammar_point IS NULL OR grammar_point = ''
+            ORDER BY RANDOM()
+            LIMIT 1
+        """)
+    else:
+        cur.execute("""
+            SELECT *
+            FROM questions
+            WHERE grammar_point = ?
+            ORDER BY RANDOM()
+            LIMIT 1
+        """, (grammar_point,))
 
     row = cur.fetchone()
     conn.close()
 
     return render_template(
         "question.html",
-        question=row
+        question=row,
+        grammar_point=grammar_point
     )
 
 
@@ -108,7 +129,8 @@ def history():
             "grammar_point": grammar_point,
             "total": total,
             "correct": correct,
-            "accuracy": accuracy
+            "accuracy": accuracy,
+            "practice_url": "/question?grammar_point=" + quote(grammar_point)
         })
 
     conn.close()

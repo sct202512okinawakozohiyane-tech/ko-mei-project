@@ -8,6 +8,15 @@
 
 <h1>TOEIC Study Lab</h1>
 
+<p>
+{% if grammar_point %}
+出題モード：{{ grammar_point }}
+{% else %}
+出題モード：全問題
+{% endif %}
+</p>
+
+{% if question %}
 <p>{{ question[2] }}</p>
 
 <form action="/answer" method="post">
@@ -39,6 +48,9 @@
     </button>
 
 </form>
+{% else %}
+<p>該当する問題がありません</p>
+{% endif %}
 
 <p><a href="/history">履歴を見る</a></p>
 
