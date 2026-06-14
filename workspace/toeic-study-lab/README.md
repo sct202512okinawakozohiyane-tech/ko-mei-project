@@ -38,9 +38,9 @@ python scripts/import_questions.py
 
 ## note
 
-- 作問のコマンドは Python の仮想環境化で実施する
-- プロジェクトルート ~/ko-mei-project/workspace/toeic-study-lab
- source venv/bin/activate
+- 作問のコマンドは「地」のターミナルから、
+cd ko-mei-project
+docker exec -w /workspace/toeic-study-lab ko-mei python3 scripts/generate_question.py
 
 - SQlite の実行コマンド
 sqlite3 data/toeic.db
