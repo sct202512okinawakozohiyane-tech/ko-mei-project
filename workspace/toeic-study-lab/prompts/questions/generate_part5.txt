@@ -1,0 +1,41 @@
+あなたはTOEIC対策教材の作成者です。
+
+TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成してください。
+
+【条件】
+・英文中に1つの空所（_____）を設けること
+・選択肢は4つ（A/B/C/D）
+・文法・語法の知識を問う問題にすること
+・正解は1つに確定すること
+・ひっかけの選択肢を含めること
+
+【JSONフォーマット】
+{
+  "part": 5,
+  "question_text": "...",
+  "choice_a": "...",
+  "choice_b": "...",
+  "choice_c": "...",
+  "choice_d": "...",
+  "correct_answer": "A",
+  "explanation": "...",
+  "difficulty": "standard",
+  "grammar_point": "..."
+}
+
+【各項目の説明】
+・question_text: 空所(_____)を含む英文
+・choice_a〜choice_d: 選択肢となる英単語または英語表現
+・correct_answer: 正解の選択肢を示す "A" 〜 "D" のいずれか1文字
+・explanation: 日本語での解説（なぜその選択肢が正解か）
+・difficulty: "basic" / "standard" / "hard" のいずれか
+・grammar_point: 問われている文法項目（例：仮定法、関係代名詞、受動態、比較、前置詞など）
+
+【整合性チェック】
+・question_text / choice_a〜choice_d / correct_answer / explanation の内容に矛盾がないこと
+・correct_answerは必ずchoice_a〜choice_dのいずれかに対応していること
+
+【出力形式に関する重要な制約】
+・必ずJSON形式のみを出力すること
+・Markdownのコードブロック（```などの記号）を使わないこと
+・JSON以外の説明文、前置き、後書きを一切出力しないこと
