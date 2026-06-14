@@ -77,5 +77,50 @@ def answer():
     )
 
 
+@app.route("/history")
+def history():
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+
+    cur.execute("SELECT COUNT(*), COALESCE(SUM(is_correct), 0) FROM results")
+    total_count, correct_count = cur.fetchone()
+
+    overall_accuracy = (correct_count / total_count * 100) if total_count > 0 else 0
+
+    cur.execute("""
+        SELECT
+            CASE
+                WHEN q.grammar_point IS NULL OR q.grammar_point = '' THEN '未分類'
+                ELSE q.grammar_point
+            END AS grammar_point,
+            COUNT(*) AS total,
+            COALESCE(SUM(r.is_correct), 0) AS correct
+        FROM results r
+        JOIN questions q ON r.question_id = q.id
+        GROUP BY grammar_point
+        ORDER BY grammar_point
+    """)
+
+    grammar_stats = []
+    for grammar_point, total, correct in cur.fetchall():
+        accuracy = (correct / total * 100) if total > 0 else 0
+        grammar_stats.append({
+            "grammar_point": grammar_point,
+            "total": total,
+            "correct": correct,
+            "accuracy": accuracy
+        })
+
+    conn.close()
+
+    return render_template(
+        "history.html",
+        total_count=total_count,
+        correct_count=correct_count,
+        overall_accuracy=overall_accuracy,
+        grammar_stats=grammar_stats
+    )
+
+
 if __name__ == "__main__":
     app.run(debug=True)

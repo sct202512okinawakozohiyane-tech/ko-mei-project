@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>History</title>
+</head>
+<body>
+
+<h1>学習履歴</h1>
+
+{% if total_count == 0 %}
+    <p>履歴なし</p>
+{% else %}
+    <h2>全体</h2>
+    <p>総回答数：{{ total_count }}</p>
+    <p>正解数：{{ correct_count }}</p>
+    <p>全体正答率：{{ "%.1f"|format(overall_accuracy) }}%</p>
+
+    <h2>文法項目別</h2>
+    <table border="1">
+        <tr>
+            <th>文法項目</th>
+            <th>回答数</th>
+            <th>正解数</th>
+            <th>正答率</th>
+        </tr>
+        {% for stat in grammar_stats %}
+        <tr>
+            <td>{{ stat.grammar_point }}</td>
+            <td>{{ stat.total }}</td>
+            <td>{{ stat.correct }}</td>
+            <td>{{ "%.1f"|format(stat.accuracy) }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<p><a href="/question">問題に戻る</a></p>
+
+</body>
+</html>
