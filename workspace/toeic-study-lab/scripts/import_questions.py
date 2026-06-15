@@ -13,6 +13,9 @@ conn = sqlite3.connect(DB_PATH)
 cur = conn.cursor()
 
 for q in questions:
+    choice_translations = q.get("choice_translations", {})
+    choice_explanations = q.get("choice_explanations", {})
+
     cur.execute("""
         INSERT INTO questions (
             part,
@@ -24,9 +27,18 @@ for q in questions:
             correct_answer,
             explanation,
             difficulty,
-            grammar_point
+            grammar_point,
+            question_translation,
+            choice_a_translation,
+            choice_b_translation,
+            choice_c_translation,
+            choice_d_translation,
+            explanation_a,
+            explanation_b,
+            explanation_c,
+            explanation_d
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         q["part"],
         q["question_text"],
@@ -38,6 +50,15 @@ for q in questions:
         q["explanation"],
         q["difficulty"],
         q["grammar_point"],
+        q.get("question_translation"),
+        choice_translations.get("A"),
+        choice_translations.get("B"),
+        choice_translations.get("C"),
+        choice_translations.get("D"),
+        choice_explanations.get("A"),
+        choice_explanations.get("B"),
+        choice_explanations.get("C"),
+        choice_explanations.get("D"),
     ))
 
 conn.commit()

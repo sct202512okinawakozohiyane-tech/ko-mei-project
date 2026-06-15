@@ -1,5 +1,6 @@
 import json
 import os
+import random
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -19,6 +20,46 @@ MODEL_NAME = os.environ.get("KOMEI_MODEL", "gemma4:e4b")
 # (connectタイムアウト, readタイムアウト)
 # stream=True で受信するため、トークンが届くたびにreadタイムアウトがリセットされる
 REQUEST_TIMEOUT = (10, 600)
+
+CHOICE_LETTERS = ["A", "B", "C", "D"]
+
+
+def shuffle_choices(question_data):
+    """choice_a〜d / choice_translations / choice_explanations をランダムな順序に
+    並び替え、correct_answerをシャッフル後の位置に合わせて再設定する。
+
+    LLM側の出力位置に依存せず、正解位置（A〜D）の分布を一様にするための後処理。
+    不正なcorrect_answerの場合はNoneを返す。
+    """
+
+    if question_data.get("correct_answer") not in CHOICE_LETTERS:
+        return None
+
+    items = []
+    for letter in CHOICE_LETTERS:
+        items.append({
+            "text": question_data.get(f"choice_{letter.lower()}", ""),
+            "translation": question_data.get("choice_translations", {}).get(letter, ""),
+            "explanation": question_data.get("choice_explanations", {}).get(letter, ""),
+            "is_correct": letter == question_data["correct_answer"],
+        })
+
+    random.shuffle(items)
+
+    choice_translations = {}
+    choice_explanations = {}
+
+    for new_letter, item in zip(CHOICE_LETTERS, items):
+        question_data[f"choice_{new_letter.lower()}"] = item["text"]
+        choice_translations[new_letter] = item["translation"]
+        choice_explanations[new_letter] = item["explanation"]
+        if item["is_correct"]:
+            question_data["correct_answer"] = new_letter
+
+    question_data["choice_translations"] = choice_translations
+    question_data["choice_explanations"] = choice_explanations
+
+    return question_data
 
 
 def load_prompt():
@@ -99,6 +140,11 @@ def generate_one(prompt):
         print(f"[詳細] {e}")
         print("[LLM出力（そのまま）]")
         print(response_text)
+        return None
+
+    question_data = shuffle_choices(question_data)
+    if question_data is None:
+        print("[エラー] correct_answerがA〜Dのいずれでもないため、選択肢のシャッフルに失敗しました")
         return None
 
     return question_data

@@ -1,5 +1,8 @@
 あなたはTOEIC対策教材の作成者です。
 
+本プロジェクトが目指すのは「問題生成AI」ではなく「TOEIC学習教材」です。
+正答そのものよりも、文法ポイント・和訳・誤答理由・初学者向け解説の質を重視してください。
+
 TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成してください。
 
 【条件】
@@ -8,6 +11,7 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
 ・文法・語法の知識を問う問題にすること
 ・正解は1つに確定すること
 ・ひっかけの選択肢を含めること
+・正解の選択肢の位置（A〜D）はどこでもよい（後工程でランダムに並び替えるため、位置を気にする必要はない）
 
 【JSONフォーマット】
 {
@@ -20,20 +24,44 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
   "correct_answer": "A",
   "explanation": "...",
   "difficulty": "standard",
-  "grammar_point": "..."
+  "grammar_point": "...",
+  "question_translation": "...",
+  "choice_translations": {
+    "A": "...",
+    "B": "...",
+    "C": "...",
+    "D": "..."
+  },
+  "choice_explanations": {
+    "A": "...",
+    "B": "...",
+    "C": "...",
+    "D": "..."
+  }
 }
 
 【各項目の説明】
 ・question_text: 空所(_____)を含む英文
 ・choice_a〜choice_d: 選択肢となる英単語または英語表現
 ・correct_answer: 正解の選択肢を示す "A" 〜 "D" のいずれか1文字
-・explanation: 日本語での解説（なぜその選択肢が正解か）
+・explanation: 日本語での解説（問われている文法ポイントと、正解が成立する理由を説明する）
 ・difficulty: "basic" / "standard" / "hard" のいずれか
 ・grammar_point: 問われている文法項目（例：仮定法、関係代名詞、受動態、比較、前置詞など）
+・question_translation: question_text全体の自然な日本語訳（_____部分も訳に含めること）
+・choice_translations: choice_a〜choice_dそれぞれの日本語訳。キーは"A"〜"D"
+・choice_explanations: 各選択肢ごとに「なぜ正解／不正解なのか」を初学者向けに簡潔に説明する。キーは"A"〜"D"
+  - 正解の選択肢 → なぜ文法的に正しいかを説明する
+  - 誤答の選択肢 → なぜ文法的に誤り・不自然なのかを説明する
+
+【explanation・choice_explanationsに関する重要な制約】
+・explanationおよびchoice_explanationsの本文中では、選択肢を「A」「B」「C」「D」のアルファベットで指してはならない
+・選択肢を指す場合は、その選択肢の英語表現そのもの（例："discussing"）を使って説明すること
+（理由：後工程で選択肢の並び順を変更するため、アルファベットへの言及があると説明と矛盾が生じる）
 
 【整合性チェック】
-・question_text / choice_a〜choice_d / correct_answer / explanation の内容に矛盾がないこと
+・question_text / choice_a〜choice_d / correct_answer / explanation / choice_explanations の内容に矛盾がないこと
 ・correct_answerは必ずchoice_a〜choice_dのいずれかに対応していること
+・choice_translations / choice_explanationsのキー（A〜D）はchoice_a〜choice_dと1対1で対応していること
 
 【出力形式に関する重要な制約】
 ・必ずJSON形式のみを出力すること
