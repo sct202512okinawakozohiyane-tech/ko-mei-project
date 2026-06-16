@@ -12,12 +12,13 @@ with open(JSON_PATH, encoding="utf-8") as f:
 conn = sqlite3.connect(DB_PATH)
 cur = conn.cursor()
 
+imported = 0
 for q in questions:
     choice_translations = q.get("choice_translations", {})
     choice_explanations = q.get("choice_explanations", {})
 
     cur.execute("""
-        INSERT INTO questions (
+        INSERT OR IGNORE INTO questions (
             part,
             question_text,
             choice_a,
@@ -62,8 +63,10 @@ for q in questions:
         choice_explanations.get("C"),
         choice_explanations.get("D"),
     ))
+    imported += cur.rowcount
 
 conn.commit()
 conn.close()
 
-print(f"{len(questions)} questions imported from {JSON_PATH}")
+skipped = len(questions) - imported
+print(f"{imported} questions imported, {skipped} skipped (already exist) from {JSON_PATH}")
