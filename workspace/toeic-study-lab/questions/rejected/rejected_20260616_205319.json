@@ -1,0 +1,39 @@
+{
+  "review_status": "rejected",
+  "original_review_status": "needs_fix",
+  "rereviewed_file": "rereviewed_20260616_134723.json",
+  "question": {
+    "part": 5,
+    "question_text": "The company introduced a new set of guidelines for its employees, ____ accurate reports to ensure compliance with the latest regulations.",
+    "choice_a": "submit",
+    "choice_b": "submitting",
+    "choice_c": "submission",
+    "choice_d": "submitted",
+    "correct_answer": "B",
+    "explanation": "この空所は、コンマ（,）によって区切られ、直前の名詞句（for its employees）を修飾する分詞構文（participial phrase）の形式をとっています。この場合、現在分詞（-ing形）を用いて「（従業員が）レポートを提出している」という、行動の様子や同時的な行動を説明しています。主語である「employees」（従業員）が能動的かつ継続的に行っている動作を説明するため、現在分詞の「submitting」を使用するのが文法的に最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "present_participle",
+    "question_translation": "その会社は、最新の規制への準拠を確実にするために、従業員たちに正確なレポートを提出するための新しい一連のガイドラインを導入した。",
+    "choice_translations": {
+      "A": "提出する（動詞原形）",
+      "B": "提出しながら（現在分詞）",
+      "C": "提出（名詞）",
+      "D": "提出された（過去分詞）"
+    },
+    "choice_explanations": {
+      "A": "「submit」は動詞の原形ですが、この空所は独立した文や、主語の動作を修飾する副詞的な働きをする句が必要なため、単なる動詞の原形を置くことはできません。",
+      "B": "「submitting」は現在分詞（-ing形）です。分詞は「～している」という動作の様子を説明する働きがあり、ここでは主語（employees）が自発的かつ能動的にレポートを提出するという行動を説明しています。これが最も自然で適切な構造です。",
+      "C": "「submission」は「提出」という意味の名詞です。この位置には単に名詞を置いただけでは、文の構造が不明確になり、主語の動作を修飾する役割を果たせません。",
+      "D": "「submitted」は過去分詞（-ed形）です。受動的な意味（〜された）が強いため、「ガイドラインによってレポートを提出される」という受動的な解釈になり、従業員自身が主体となって行動するという文脈に合いません。"
+    }
+  },
+  "issues": [
+    "explanation: 分詞構文の修飾の対象が不適切であるという論理的な説明が欠けている",
+    "explanation: 分詞句の主語を誤って『employees』と説明しているため、文法的な誤りがある"
+  ],
+  "suggestions": [
+    "explanationにおいて、空所の分詞句は、直前の名詞『guidelines』の内容や目的を説明していると明確に記述し、構文上の根拠を修正する。分詞句は『（ガイドラインの）目的として』という役割を果たしていると説明を加える。",
+    "choice_explanationsの文法的な解説を補強し、分詞句が「手段」や「目的」を示す際の一般的なパターンとして説明することで、初学者が概念を理解しやすくなるようにする。"
+  ]
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "part": 5,
+    "question_text": "Employees who are frequently _____ for suggestions are expected to take initiative.",
+    "choice_a": "requested",
+    "choice_b": "request",
+    "choice_c": "to request",
+    "choice_d": "requesting",
+    "correct_answer": "A",
+    "explanation": "この文の空所には、主語（Employees）を修飾する関係代名詞節（who are frequently _____）の一部が入ります。『～される』という受動の意味を表す必要があるため、「過去分詞」の形が必要です。空所には「（誰かによって）頻繁に依頼される」という意味が適切です。受動の意味を持つ分詞として「requested」が正しい選択肢となります。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "提案を頻繁に_____される従業員は、自発的に行動することが期待されています。",
+    "choice_translations": {
+      "A": "要求された",
+      "B": "要求する",
+      "C": "要求すること",
+      "D": "要求している"
+    },
+    "choice_explanations": {
+      "A": "requested：過去分詞の形であり、「（誰かによって）要求された」という受動の意味になります。現在形や現在分詞と異なり、ここでは受動の状況を正しく表しています。",
+      "B": "request：原形（不定詞の形）です。文の構造上、空所に入るのは分詞の形であるべきであり、単純な原形は文法的に誤りです。",
+      "C": "to request：不定詞の形です。be動詞（are）の後に続くため、空所には分詞の形（現在分詞または過去分詞）が求められ、不定詞は適切ではありません。",
+      "D": "requesting：「要求している」という能動の意味になります。この文脈では、従業員が自分自身で要求しているわけではなく、他の人から要求されている（受動）状況を指すため不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The employees, ______ by the new policy, feel more motivated to work efficiently.",
+    "choice_a": "affectingly",
+    "choice_b": "affect",
+    "choice_c": "affecting",
+    "choice_d": "affected",
+    "correct_answer": "D",
+    "explanation": "この文の空所には、主語である『The employees』（従業員たち）を修飾する分詞が必要です。文脈から「新しいポリシーによって影響を『受けた』」という受動の意味が適切です。過去分詞形『affected』は、この受動の関係を表現するのに最も適しています。分詞句によって「新しいポリシーによって影響を受けた従業員たち」という意味が形成されます。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "新しいポリシーによって影響を受けた従業員たちは、より効率的に働く意欲を感じています。",
+    "choice_translations": {
+      "A": "affectingly",
+      "B": "affect",
+      "C": "affecting",
+      "D": "affected"
+    },
+    "choice_explanations": {
+      "A": "affectingly：これは副詞であり、空所が名詞句（The employees）を修飾する位置には品詞が合いません。",
+      "B": "affect：これは原形動詞であり、分詞として使用できません。分詞として使用する際は形が変わる必要があります。",
+      "C": "affecting：現在分詞ですが、「～している」という能動の意味になり、「従業員たちが～し続けている」という解釈になってしまい、文脈に合いません。また、ここでは受動（～された）の意味が必要です。",
+      "D": "affected：過去分詞形であり、「～された」「～された」という受動の意味を表します。主語である「従業員たち」がポリシーによって影響を受けた（受けた）という受動の関係を示すため、文法的に最も適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The successful completion of the project largely depends _____ the timely cooperation of all departments.",
+    "choice_a": "in",
+    "choice_b": "for",
+    "choice_c": "on",
+    "choice_d": "to",
+    "correct_answer": "C",
+    "explanation": "この文脈では、「～に依存する」「～次第である」という意味の動詞「depend」の後に前置詞「on」が続く、決まった語法（句動詞）が必要です。したがって、「depends on」が正しい組み合わせとなります。",
+    "difficulty": "standard",
+    "grammar_category": "preposition",
+    "grammar_point": "preposition",
+    "question_translation": "そのプロジェクトの成功は、すべての部署のタイムリーな協力に大きく左右される（依存する）。",
+    "choice_translations": {
+      "A": "in",
+      "B": "for",
+      "C": "on",
+      "D": "to"
+    },
+    "choice_explanations": {
+      "A": "「depend in」という語法は一般的ではありません。「in」は主に場所や時間を表す前置詞として使用されます。",
+      "B": "「depend for」という組み合わせは通常使われません。この動詞が「〜にとって必要だ」というニュアンスを含む場合でも、「on」を使用するのが自然です。",
+      "C": "「depend on」という組み合わせは、「～に依存する」「～次第である」という意味を持つ決まった熟語です。文脈に最も自然な語法です。",
+      "D": "「depend to」という語法は文法的に誤りです。この動詞は「～に」という意味で「on」をとる必要があります。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The report, ______ by the committee last week, needs to be updated with the latest market data.",
+    "choice_a": "to review",
+    "choice_b": "reviewing",
+    "choice_c": "review",
+    "choice_d": "reviewed",
+    "correct_answer": "D",
+    "explanation": "この問題は、カンマに挟まれた分詞句による名詞（report）の修飾に関するものです。句の文脈から、「委員会によって（受動的に）作られた/レビューされた」という受け身の意味が必要とわかります。修飾される側が動作をされる（受ける）場合、過去分詞形を用います。したがって、「reviewed」が適切です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "そのレポートは、先週委員会によって（レビューされたものですが）、最新の市場データで更新される必要があります。",
+    "choice_translations": {
+      "A": "レビューすること",
+      "B": "レビューしながら",
+      "C": "レビューする",
+      "D": "レビューされた"
+    },
+    "choice_explanations": {
+      "A": "「to review」は不定詞です。空所が分詞によって名詞を修飾する構造であるため、不定詞は文法的に不適切です。",
+      "B": "「reviewing」は現在分詞形であり、修飾される「レポート」自体が能動的に「何かをレビューしている」という意味合いになり、文脈に合いません。この場合、レポートはレビューされる側です。",
+      "C": "「review」は動詞の原形です。この空所に入る語句は、文法的に分詞（形容詞的用法）として機能する必要があるため、原形は文法的に誤りです。",
+      "D": "「reviewed」は過去分詞形です。カンマに挟まれる修飾語句として使われる場合、分詞は「〜された」という受動の意味合いを持つため、最も適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The new policy, ____ by the executive committee, is expected to streamline departmental operations.",
+    "choice_a": "prepare",
+    "choice_b": "prepared",
+    "choice_c": "preparation",
+    "choice_d": "preparing",
+    "correct_answer": "B",
+    "explanation": "この空所は、直前の名詞「The new policy」を修飾する分詞構文（形容詞的用法）となっています。分詞は、受動の意味合いを持つ場合（～によって作られた、～された）は過去分詞の形（V-ed）を使います。ここでは、「執行委員会によって準備された」という意味が適切であり、適切な過去分詞は「prepared」です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "執行委員会によって準備された、新しい方針が、部署の業務を効率化することが期待されています。",
+    "choice_translations": {
+      "A": "準備する",
+      "B": "準備された",
+      "C": "準備（名詞）",
+      "D": "準備している"
+    },
+    "choice_explanations": {
+      "A": "「prepare」は動詞の原形です。空所の場所は名詞「policy」を修飾する形容詞的な役割を果たす必要があり、動詞の原形をそのまま入れるのは文法的に不自然です。",
+      "B": "「prepared」は過去分詞の形で、ここでは「準備された」という受動の意味として機能しています。分詞構文の中で、受動の意味を表すときは過去分詞を用いるのが正しい用法です。",
+      "C": "「preparation」は「準備」という意味の名詞です。文中で空所は形容詞の働きを期待されているため、名詞を入れると文法的な役割を果たせません。",
+      "D": "「preparing」は現在分詞の形で、「準備している」という能動的な動作を示します。ここでは「方針が自分で準備している」わけではなく、「方針が準備された」という受動的な意味合いなので誤りです。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The researcher, _______ the data diligently, published her findings yesterday.",
+    "choice_a": "analyze",
+    "choice_b": "analyzed",
+    "choice_c": "analysis",
+    "choice_d": "analyzing",
+    "correct_answer": "D",
+    "explanation": "この文の空所は、直前の名詞 'researcher'（研究者）を修飾する分詞句が入る位置です。空所に入る語は、'研究者'が何を行っているか（能動的な動作）を示し、かつ過去の継続的な動作（データ集計のプロセス）を表す必要があります。したがって、「データを熱心に分析している」という意味を持つ現在分詞 'analyzing' を使用するのが適切です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "present_participle",
+    "question_translation": "データを熱心に分析していた研究者は、昨日、その研究成果を発表した。",
+    "choice_translations": {
+      "A": "分析する",
+      "B": "分析された/分析した",
+      "C": "分析（名詞）",
+      "D": "分析しながら"
+    },
+    "choice_explanations": {
+      "A": "「analyze」は動詞の原形であり、分詞として名詞を修飾する働きはできません。文法的に品詞が誤っています。",
+      "B": "「analyzed」は過去分詞として「データが分析された」という受動の意味をもちます。この場合、主語である「研究者」自身が動作を行っている（分析している）能動の意味を表す必要があるため、不適切です。",
+      "C": "「analysis」は名詞（分析）であり、文法的な構造（名詞を修飾する位置）に合致しません。この空所には動詞を修飾する分詞形が必要です。",
+      "D": "「analyzing」は現在分詞であり、「分析している」という能動的な動作や、継続的な動作を表します。これは、先行する名詞 'researcher' の状態を説明する分詞修飾語句として文法的に正しく、意味的にも「自らデータを分析する」という流れが自然です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Employees who spend too many hours ______ at their desks often suffer from back pain and fatigue.",
+    "choice_a": "sat",
+    "choice_b": "sit",
+    "choice_c": "has spent",
+    "choice_d": "sitting",
+    "correct_answer": "D",
+    "explanation": "空所の前は「Employees who spend too many hours」という関係代名詞節（主語）があります。この「hours」を修飾し、どれほどの時間を使ってその場所に「いる」という動作を表しているため、現在分詞（-ing形）を用いて分詞構文（または分詞修飾）として使用するのが適切です。また、「spend hours」という文脈では、時間の流れとともに継続している動作を示す現在分詞が最も自然です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "present_participle",
+    "question_translation": "机に過ごす時間が長すぎる従業員たちは、しばしば腰痛や疲労に悩まされます。",
+    "choice_translations": {
+      "A": "座った",
+      "B": "座る",
+      "C": "費やしてきた",
+      "D": "座り続けている"
+    },
+    "choice_explanations": {
+      "A": "座った（sat）：過去形ですが、空所は「hours」を修飾する役割を担っているため、時制が合った過去形を単独で置くことは文法的に不適切です。",
+      "B": "座る（sit）：動詞の原形ですが、空所は「hours」という名詞を修飾する修飾語句が必要なため、単独の動詞の原形を置くのは不自然です。",
+      "C": "費やしてきた（has spent）：時制を含む動詞の形ですが、ここでは時間の経過に伴う状態や動作を修飾する分詞形が必要です。また、主語の「Employees」が主語となっているため、この時制は文脈に合致しません。",
+      "D": "座り続けている（sitting）：空所が「hours」を修飾する役割（分詞構文的な用法）を果たしており、進行中の動作を表す現在分詞（-ing形）が文法的に正しく、文脈的にも「長時間にわたる動作」を表すため最も適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The project, ______ by the development team, was presented to the board of directors yesterday.",
+    "choice_a": "developed",
+    "choice_b": "develop",
+    "choice_c": "developing",
+    "choice_d": "development",
+    "correct_answer": "A",
+    "explanation": "この空所は、先行する名詞『The project』を修飾する分詞句を作る必要があります。文脈から「開発チームによって**開発された**」という受動的な関係性が必須であるため、過去分詞形（developed）が最も適切な選択肢です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "そのプロジェクトは、開発チームによって______され、昨日取締役会に提出された。",
+    "choice_translations": {
+      "A": "開発された",
+      "B": "開発する",
+      "C": "開発している",
+      "D": "開発"
+    },
+    "choice_explanations": {
+      "A": "「developed」は過去分詞です。これは「（誰かによって）開発された」という受動的な意味合いを持たせるため、この文脈（開発チームが主体でプロジェクトが対象）に最も適しています。",
+      "B": "「develop」は動詞の原形です。分詞修飾を求める空所には、原形は入りません。",
+      "C": "「developing」は現在分詞です。これは「〜している」という能動的な意味合いを持たせるため、「自ら開発しているプロジェクト」という能動的な主体が必要となり、文脈に合いません。",
+      "D": "「development」は名詞です。この位置に名詞を置くことは文法的に不自然です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The newly hired staff members, _____ to the corporate guidelines, were given an orientation session.",
+    "choice_a": "guide",
+    "choice_b": "guiding",
+    "choice_c": "guidance",
+    "choice_d": "guided",
+    "correct_answer": "D",
+    "explanation": "この文の空所は、主語である「staff members」を後ろから修飾する分詞句（修飾語）の位置です。分詞（過去分詞形）は形容詞のように機能し、主語が『何によって〜される』という受動の意味合いを持つ場合、過去分詞形（-ed形）を使います。文脈から、「スタッフメンバーたちが（誰かによって）ガイドラインについて指導される」という受動の意味になるため、過去分詞の「guided」が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "participle",
+    "grammar_point": "past_participle",
+    "question_translation": "新しく採用されたスタッフメンバーたちは、企業ガイドラインによって（指導された）後、オリエンテーションのセッションを受けました。",
+    "choice_translations": {
+      "A": "導く（動詞の原形）",
+      "B": "（これから）導いている最中のこと",
+      "C": "指導・案内（名詞）",
+      "D": "指導された"
+    },
+    "choice_explanations": {
+      "A": "「guide」は動詞の原形であり、ここでは名詞を修飾する語句として機能することができません。",
+      "B": "「guiding」は現在分詞形です。これは主語自身が能動的に「何かを導いている」という動作（例：staff members are guiding something）を示す場合に適していますが、この文脈ではメンバーたちが「指導を受ける」側の立場であるため、不自然です。",
+      "C": "「guidance」は名詞です。この空所は、主語を修飾する「形容詞の役割」をする語句が必要です。名詞が入ると文法的に構造が成り立ちません。",
+      "D": "「guided」は過去分詞形です。これは「～された」という受動の意味を帯び、スタッフメンバーたちがガイドラインによって指導された、という受動的な状態を完璧に表しており、文法的に最も適切です。"
+    }
+  }
+]
