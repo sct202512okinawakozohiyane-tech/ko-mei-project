@@ -40,12 +40,23 @@ python scripts/import_questions.py
 - SQlite の実行コマンド
 sqlite3 data/toeic.db
 
-- 作問のコマンドは「地」のターミナルから、
+- 初回の作問のコマンドは「地」のターミナルから、
 cd ko-mei-project
-docker exec -w /workspace/toeic-study-lab ko-mei python3 scripts/generate_question.py
+docker exec -w /workspace/toeic-study-lab ko-mei python3 scripts/generate_question.py 10
 
 - 初回レビューの実施方法
 cd /home/koz/ko-mei-project/workspace/toeic-study-lab
 docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/review_question.py 10
 
+- レビュー後のファイルの仕分け（フォルダの移動）コマンド
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/sort_reviewed.py
+
+- レビューを反映して "need_fix"フォルダ内のファイルを修正するコマンド
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/rewrite_question.py
+
+- 再レビューコマンド
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/rereview_question.py
+
+- 再レビュー後のファイルの仕分け（フォルダの移動）コマンド
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/finalize_questions.py
 

@@ -8,7 +8,7 @@ import requests
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROMPT_PATH = BASE_DIR / "prompts" / "rewrite" / "rewrite_part5.txt"
-REVIEWED_DIR = BASE_DIR / "questions" / "reviewed"
+NEEDS_FIX_DIR = BASE_DIR / "questions" / "needs_fix"
 REWRITTEN_DIR = BASE_DIR / "questions" / "rewritten"
 LOGS_DIR = BASE_DIR / "logs"
 
@@ -101,43 +101,43 @@ def call_ollama(prompt_text):
 
 
 def get_needs_fix_files():
-    files = sorted(REVIEWED_DIR.glob("reviewed_*.json"))
+    files = sorted(NEEDS_FIX_DIR.glob("needs_fix_*.json"))
     result = []
     for f in files:
         try:
             with open(f, encoding="utf-8") as fp:
                 data = json.load(fp)
-            if data.get("review_status") == "needs_fix":
-                result.append((f, data))
+            result.append((f, data))
         except (json.JSONDecodeError, OSError) as e:
             print(f"[警告] {f.name} の読み込みに失敗しました: {e}")
     return result
 
 
-def load_original_question(reviewed_data, reviewed_file):
-    original_file_rel = reviewed_data.get("original_file")
-    if not original_file_rel:
-        print(f"[エラー] original_file フィールドがありません: {reviewed_file.name}")
-        return None
+def split_needs_fix_data(data):
+    """needs_fix ファイルから question データと review データを分離して返す。
 
-    original_path = BASE_DIR / original_file_rel
-    if not original_path.exists():
-        print(f"[エラー] 元ファイルが見つかりません: {original_path}")
-        return None
+    sort_reviewed.py で保存した新形式（question キーあり）と、
+    旧形式（question フィールドのみのフラット構造）の両方に対応する。
+    """
+    if "question" in data:
+        question_data = data["question"]
+        review_data = {k: v for k, v in data.items() if k != "question"}
+    else:
+        question_data = data
+        review_data = {}
+    return question_data, review_data
 
-    with open(original_path, encoding="utf-8") as f:
-        return json.load(f)
 
+def rewrite_one(needs_fix_file, file_data, prompt_template):
+    print(f"[INFO] 修正対象: {needs_fix_file.name}")
 
-def rewrite_one(reviewed_file, reviewed_data, prompt_template):
-    print(f"[INFO] 修正対象: {reviewed_file.name}")
+    question_data, review_data = split_needs_fix_data(file_data)
 
-    original_question = load_original_question(reviewed_data, reviewed_file)
-    if original_question is None:
-        return None
+    original_json_str = json.dumps(question_data, ensure_ascii=False, indent=2)
+    review_json_str = json.dumps(review_data, ensure_ascii=False, indent=2) if review_data else "{}"
 
-    original_json_str = json.dumps(original_question, ensure_ascii=False, indent=2)
-    review_json_str = json.dumps(reviewed_data, ensure_ascii=False, indent=2)
+    if not review_data:
+        print(f"[警告] レビューコメントなし（旧形式）— 問題データのみで修正を試みます")
 
     prompt_text = prompt_template.replace("{{ORIGINAL_QUESTION}}", original_json_str)
     prompt_text = prompt_text.replace("{{REVIEW_RESULT}}", review_json_str)
@@ -154,12 +154,10 @@ def rewrite_one(reviewed_file, reviewed_data, prompt_template):
         rewritten_data = json.loads(json_text)
     except json.JSONDecodeError as e:
         print(f"[エラー] 修正結果のJSONパースに失敗しました: {e}")
-        save_error_log(reviewed_file.name, raw_response, str(e))
+        save_error_log(needs_fix_file.name, raw_response, str(e))
         return None
 
-    # 元ファイルへの参照を付加
-    rewritten_data["source_reviewed"] = str(reviewed_file.relative_to(BASE_DIR))
-    rewritten_data["original_file"] = reviewed_data.get("original_file", "")
+    rewritten_data["source_needs_fix"] = str(needs_fix_file.relative_to(BASE_DIR))
 
     return rewritten_data
 
@@ -187,20 +185,20 @@ def main():
     needs_fix_files = get_needs_fix_files()
 
     if not needs_fix_files:
-        print("[INFO] reviewed/ に needs_fix のファイルがありません")
+        print("[INFO] needs_fix/ に対象ファイルがありません")
         sys.exit(0)
 
     print(f"[INFO] needs_fix: {len(needs_fix_files)} 件を修正します")
 
     success_count = 0
 
-    for i, (reviewed_file, reviewed_data) in enumerate(needs_fix_files, 1):
+    for i, (needs_fix_file, file_data) in enumerate(needs_fix_files, 1):
         print(f"\n[INFO] {i}/{len(needs_fix_files)} 件目")
 
-        rewritten_data = rewrite_one(reviewed_file, reviewed_data, prompt_template)
+        rewritten_data = rewrite_one(needs_fix_file, file_data, prompt_template)
 
         if rewritten_data is None:
-            print(f"[エラー] {reviewed_file.name} の修正に失敗しました")
+            print(f"[エラー] {needs_fix_file.name} の修正に失敗しました")
             continue
 
         filepath = save_rewritten(rewritten_data)

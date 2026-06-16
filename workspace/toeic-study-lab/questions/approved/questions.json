@@ -1,62 +1,102 @@
 [
   {
     "part": 5,
-    "question_text": "If she ____ harder, she would have passed the exam.",
-    "choice_a": "studies",
-    "choice_b": "studied",
-    "choice_c": "had studied",
-    "choice_d": "would study",
-    "correct_answer": "C",
-    "explanation": "過去の事実に反する仮定を表す仮定法過去完了。If + 主語 + had + 過去分詞 ... , 主語 + would have + 過去分詞 の形になるため had studied が正解。",
-    "difficulty": "hard",
-    "grammar_point": "仮定法"
-  },
-  {
-    "part": 5,
-    "question_text": "The man ____ called you yesterday is my manager.",
-    "choice_a": "who",
-    "choice_b": "whom",
-    "choice_c": "whose",
-    "choice_d": "which",
+    "question_text": "The committee suggested holding a meeting to discuss the team's needs ______ thoroughly.",
+    "choice_a": "analysis",
+    "choice_b": "analyze",
+    "choice_c": "analyzed",
+    "choice_d": "analyzing",
     "correct_answer": "A",
-    "explanation": "後ろの called you yesterday の主語が欠けているため、主格の関係代名詞 who を選ぶ。",
+    "explanation": "この空所には、動詞 'discuss' の目的語となる名詞（または名詞句の一部）が必要です。文脈上、「チームのニーズ」という名詞が、「分析」という行為（名詞）によって具体的に修飾される「ニーズ分析」という形で用いられるのが最も自然で、TOEICの文脈として最適です。'analysis' は「分析」という行為そのものを指す名詞であり、文法的な構造（needs + analysis）と意味の整合性が高いです。",
     "difficulty": "standard",
-    "grammar_point": "関係代名詞"
+    "grammar_point": "名詞の修飾、品詞の選択",
+    "question_translation": "委員会は、チームのニーズを徹底的に「分析する」ために会議を開くことを提案しました。",
+    "choice_translations": {
+      "A": "分析（名詞）",
+      "B": "分析する（動詞の原形）",
+      "C": "分析された（過去分詞）",
+      "D": "分析しながら（現在分詞）"
+    },
+    "choice_explanations": {
+      "A": "analysis: 正解。空所は名詞句の一部として機能し、'needs'（名詞）を修飾する名詞が必要です。'analysis' は「分析」という行為や結果を示す抽象名詞であり、「ニーズ分析」という定型的な名詞句を形成し、文意を最も明確にしています。",
+      "B": "analyze: 不正解。動詞の原形が入ると、'needs analyze'という不自然な構造となり、文法的に誤りです。ここでは名詞が求められています。",
+      "C": "analyzed: 不正解。過去分詞は主に受動態を示す要素として使われますが、ここでは「ニーズの分析」という行為そのものを指す名詞が求められており、文意が通りません。",
+      "D": "analyzing: 不正解。現在分詞は動名詞としても使えますが、この「ニーズ」という抽象的な対象に対して「分析」という概念的な行為を導入する場合、名詞の'analysis'を用いる方が、より一般的で形式的な記述として適しています。"
+    }
   },
   {
     "part": 5,
-    "question_text": "All employees ____ to attend the orientation session next Monday.",
-    "choice_a": "require",
-    "choice_b": "requires",
-    "choice_c": "are required",
-    "choice_d": "requiring",
-    "correct_answer": "C",
-    "explanation": "主語 All employees は「出席を要求される」側なので受動態 are required が正解。",
-    "difficulty": "standard",
-    "grammar_point": "受動態"
-  },
-  {
-    "part": 5,
-    "question_text": "This year's sales figures are much ____ than last year's.",
-    "choice_a": "high",
-    "choice_b": "higher",
-    "choice_c": "highest",
-    "choice_d": "more high",
+    "question_text": "The new curriculum encourages students to _____ their critical thinking skills through hands-on experience.",
+    "choice_a": "improving",
+    "choice_b": "improve",
+    "choice_c": "improved",
+    "choice_d": "to improve",
     "correct_answer": "B",
-    "explanation": "than があるため比較級 higher を選ぶ。more high という形は使わない。",
-    "difficulty": "easy",
-    "grammar_point": "比較"
+    "explanation": "この文は「encourage A to do（Aが〜するのを促す/奨励する）」という構文を使っています。空所には、目的語（students）が能動的に行う行為を示す動詞の原形が適切です。したがって、選択肢の「improve」（動詞の原形）が最も文法的に正しい選択肢となります。",
+    "difficulty": "standard",
+    "grammar_point": "使役動詞・誘因動詞の構文 (encourage + O + to V)",
+    "question_translation": "新しいカリキュラムは、生徒たちが実践的な経験を通じて批判的思考力を向上させるのを促します。",
+    "choice_translations": {
+      "A": "向上させている（現在分詞/動名詞）",
+      "B": "向上させる（動詞の原形）",
+      "C": "向上させられた（過去分詞）",
+      "D": "向上させること（to不定詞）"
+    },
+    "choice_explanations": {
+      "A": "「improving」は現在分詞（または動名詞）です。この文の文法構造（encourage + O + to do）では、動詞の原形が必要です。したがって、「improving」は文法的に不適切です。",
+      "B": "「improve」は動詞の原形であり、空所には動詞の原形が入るのが文法的な要件を満たします。これが最も適切な形です。",
+      "C": "「improved」は過去分詞の形であり、主に受動の意味（〜された）に使われます。ここでは、生徒自身が能動的に「向上させる」行為をするため、過去分詞は不適切です。",
+      "D": "「to improve」という全体を空所に入れる場合、文法構造「to V」が重複してしまい、不自然な形（to to improve のように）になります。すでに「to」が前置されているため、空所には動詞本体の原形「improve」が必要です。"
+    }
   },
   {
     "part": 5,
-    "question_text": "The meeting has been postponed ____ next Friday due to a scheduling conflict.",
-    "choice_a": "until",
-    "choice_b": "by",
-    "choice_c": "in",
-    "choice_d": "at",
-    "correct_answer": "A",
-    "explanation": "延期後の期日を示すには until が適切。by は期限、in/at は時点を表すため不適切。",
+    "question_text": "The committee reviewed the proposal and found that the data was ______ for the next phase of the project.",
+    "choice_a": "sufficiency",
+    "choice_b": "sufficiently",
+    "choice_c": "sufficient",
+    "choice_d": "significance",
+    "correct_answer": "C",
+    "explanation": "この文の構造は「The data was [空所]」となっており、空所はbe動詞（was）の補語（Complement）の位置にあります。補語には通常、形容詞（Adjective）が入って、主語（data）の状態や性質を説明します。選択肢Cの「sufficient」は形容詞であり、「十分な」という意味です。したがって、データが「十分な」状態であったことを示す形容詞「sufficient」が正解となります。\n\n誤答解説:\n* A：「sufficiency」は名詞であり、補語としては不適切です。\n* B：「sufficiently」は副詞であり、be動詞の補語としては通常不自然です。\n* D：「significance」は名詞であり、補語としては不適切です。",
     "difficulty": "standard",
-    "grammar_point": "前置詞"
+    "grammar_point": "be動詞の補語としての形容詞（Complement after 'be' verbs）",
+    "question_translation": "委員会は提案を検討し、そのデータがプロジェクトの次の段階にとって十分であることを発見しました。",
+    "choice_translations": {
+      "A": "十分さ（名詞）",
+      "B": "十分に（副詞）",
+      "C": "十分な（形容詞）",
+      "D": "重要性（名詞）"
+    },
+    "choice_explanations": {
+      "A": "「sufficiency」は「十分さ」という意味の名詞です。空所はbe動詞の補語の位置であり、性質を示す形容詞が必要です。",
+      "B": "「sufficiently」は「十分に」という意味の副詞です。be動詞の補語として副詞を置くことは文法的に不自然です。",
+      "C": "「sufficient」は「十分な」という意味の形容詞です。be動詞の補語として主語（data）の性質を説明するのに最も適切です。",
+      "D": "「significance」は「重要性」という意味の名詞です。この文脈では、データ自体の程度や性質を指す形容詞が必要です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The project lead reviewed the preliminary report and noted that the data appeared _____ and lacked sufficient source citations.",
+    "choice_a": "misorganized",
+    "choice_b": "misorganizing",
+    "choice_c": "misorganization",
+    "choice_d": "misorganizingly",
+    "correct_answer": "A",
+    "explanation": "空所には、主語'the data'の状態（補語）を示す品詞が求められています。この文では、'data appeared [X] and lacked sufficient source citations'という形で、補語要素[X]と動詞句（lacked...）が'and'によって並列されています。構造的に、'lacked sufficient source citations'が動詞（lacked）を主語'data'に結びつけていることから、空所も'data'の性質を示す補語、すなわち形容詞が最も適切です。'misorganized'（形容詞）はデータが「整理されていない」という状態を正確に示します。\n\nBの'misorganizing'は現在分詞であり、主語が能動的に何かをしているというニュアンスを強く持ち、この文脈では不自然です。Cの'misorganization'は名詞であり、並列される要素の品詞が不一致となります。Dの'misorganizingly'は副詞であり、文の構造に合いません。",
+    "difficulty": "standard",
+    "grammar_point": "補語としての品詞の選択（形容詞 vs 現在分詞 vs 名詞 vs 副詞）、並列構造",
+    "question_translation": "プロジェクトのリーダーは予備報告書をレビューし、そのデータが〜であり、適切な情報源の引用が不足していることに気づいた。",
+    "choice_translations": {
+      "A": "整理されていない",
+      "B": "組織化している",
+      "C": "組織化（という状態/名詞）",
+      "D": "組織化されていないさま（副詞）"
+    },
+    "choice_explanations": {
+      "A": "（形容詞）「整理されていない」という状態を示し、データがその状態にあることを補語として説明するのに最も適切です。",
+      "B": "（現在分詞/動詞）現在進行または能動的な動作を示します。データが自発的に何かをしているというニュアンスとなり、主語の性質を説明する補語としては不自然です。",
+      "C": "（名詞）データが抱える「組織化の不足」という概念を示す名詞ですが、この並列構造において、動詞句『lacked...』と並列させる補語としては、品詞が不一致であり不適当です。",
+      "D": "（副詞）主に動詞や形容詞を修飾する語であり、この文脈でデータ自体の状態を示す補語として機能させることはできません。"
+    }
   }
 ]

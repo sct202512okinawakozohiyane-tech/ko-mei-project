@@ -29,21 +29,44 @@
 ・correct_answerには、自分で再計算した正しい選択肢の記号 A/B/C/D のみを入れる
 ・正しい選択肢が存在しない、または複数存在する場合は null とする
 
-【出力形式】
-{
-  "review_status": "approved",
-  "score": 0,
-  "correct_answer": null,
-  "issues": [],
-  "suggestions": [],
-  "confidence": "low"
-}
+【出力形式に関する制約】
+・必ずJSON形式のみを出力すること
+・Markdownのコードブロック（```などの記号）を使わないこと
+・JSON以外の説明文、前置き、後書きを一切出力しないこと
 
 【各項目の説明】
-・issues: チェック項目1〜8のうち問題があった項目を具体的に記述する（配列、問題なければ空配列）
-・suggestions: issuesに対応する具体的な改善提案（配列）。
+・issues: チェック項目1〜8のうち問題があった項目を「文字列」で記述する。問題なければ空配列。
+  → 必ず ["文字列1", "文字列2"] の形にすること。"キー": "値" という形にしてはならない
+・suggestions: issuesに対応する具体的な改善提案を「文字列」で記述する。
+  → 必ず ["文字列1", "文字列2"] の形にすること。"キー": "値" という形にしてはならない
   例：「choice_bを過去分詞句に変更し、文として成立しない誤答にする」のように具体的に書くこと
 ・confidence: 自分の判定に対する確信度（high / medium / low）
+
+【出力形式（問題ありの場合の例）】
+{
+  "review_status": "needs_fix",
+  "score": 60,
+  "correct_answer": "B",
+  "issues": [
+    "explanation: 誤答選択肢の理由説明が不足している",
+    "choice_explanations: 初学者向けの解説が専門的すぎる"
+  ],
+  "suggestions": [
+    "explanationに、なぜ他の選択肢が不適切なのかを具体的に追記する",
+    "choice_explanationsの専門用語を平易な日本語に言い換える"
+  ],
+  "confidence": "high"
+}
+
+【出力形式（問題なしの場合の例）】
+{
+  "review_status": "approved",
+  "score": 95,
+  "correct_answer": "A",
+  "issues": [],
+  "suggestions": [],
+  "confidence": "high"
+}
 
 【レビュー対象JSON】
 {{QUESTION_JSON}}
