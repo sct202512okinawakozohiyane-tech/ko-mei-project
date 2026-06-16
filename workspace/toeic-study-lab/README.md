@@ -60,3 +60,14 @@ docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/rereview_question.
 - 再レビュー後のファイルの仕分け（フォルダの移動）コマンド
 docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/finalize_questions.py
 
+## その他
+# 1. DBマイグレーション（初回のみ）
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/migrate_add_grammar_category.py
+
+# 2. カテゴリ指定で問題生成
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/generate_question.py 5 participle
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/generate_question.py 5 relative_clause
+
+# 3. カテゴリ別分布確認（DB投入後）
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/question_distribution.py
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/question_distribution.py --threshold 10
