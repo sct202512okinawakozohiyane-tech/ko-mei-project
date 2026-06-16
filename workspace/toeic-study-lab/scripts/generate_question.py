@@ -7,6 +7,10 @@ from pathlib import Path
 
 import requests
 
+# scripts/ ディレクトリを import パスに追加（同ディレクトリの categories.py を参照するため）
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from categories import CATEGORIES, ALL_CATEGORY_KEYS, get_points
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROMPT_PATH = BASE_DIR / "prompts" / "questions" / "generate_part5.txt"
 PENDING_DIR = BASE_DIR / "questions" / "pending"
@@ -62,9 +66,32 @@ def shuffle_choices(question_data):
     return question_data
 
 
-def load_prompt():
+def build_category_instruction(category=None):
+    """カテゴリ指定の有無に応じてプロンプト挿入用の文字列を返す。"""
+    if category is None:
+        return (
+            "【カテゴリ（自由選択）】\n"
+            "grammar_category と grammar_point は上記カテゴリ一覧から自由に選択してください。\n"
+            "同じカテゴリに偏らないよう注意してください。"
+        )
+
+    points = get_points(category)
+    cat_info = CATEGORIES[category]
+    points_str = " / ".join(points)
+    return (
+        f"【カテゴリ指定（必須）】\n"
+        f"以下のカテゴリで問題を作成してください。\n"
+        f"grammar_category: \"{category}\"（{cat_info['label']}）\n"
+        f"grammar_point: {points_str} のいずれかを選択してください。\n"
+        f"grammar_category と grammar_point は必ず上記の値を出力JSONに使用してください。"
+    )
+
+
+def load_prompt(category=None):
     with open(PROMPT_PATH, encoding="utf-8") as f:
-        return f.read()
+        template = f.read()
+    instruction = build_category_instruction(category)
+    return template.replace("{{GRAMMAR_CATEGORY_INSTRUCTION}}", instruction)
 
 
 def extract_json_text(response_text):
@@ -170,8 +197,23 @@ def save_pending(question_data):
     return filepath
 
 
-def main():
+def parse_args():
+    """コマンドライン引数を解析して (count, category) を返す。
+
+    使用例:
+        python generate_question.py 10
+        python generate_question.py 10 participle
+        python generate_question.py 5 relative_clause
+
+    # 将来拡張メモ: カテゴリ未指定時の不足カテゴリ優先生成
+    #   1. question_distribution.py と同じ集計ロジックで各カテゴリの現在数を取得
+    #   2. CATEGORIES の全カテゴリと比較して最少件数のカテゴリを特定
+    #   3. そのカテゴリを category として load_prompt() に渡す
+    #   実装する場合は scripts/db_utils.py などに集計関数を切り出すと再利用しやすい
+    """
     count = 1
+    category = None
+
     if len(sys.argv) > 1:
         try:
             count = int(sys.argv[1])
@@ -183,7 +225,24 @@ def main():
             print(f"[エラー] 問題数は1以上で指定してください: {count}")
             sys.exit(1)
 
-    prompt = load_prompt()
+    if len(sys.argv) > 2:
+        category = sys.argv[2]
+        if category not in ALL_CATEGORY_KEYS:
+            valid = ", ".join(sorted(ALL_CATEGORY_KEYS))
+            print(f"[エラー] 不明なカテゴリ: {category}")
+            print(f"[INFO] 有効なカテゴリ: {valid}")
+            sys.exit(1)
+
+    return count, category
+
+
+def main():
+    count, category = parse_args()
+
+    if category:
+        print(f"[INFO] カテゴリ指定: {category} ({CATEGORIES[category]['label']})")
+
+    prompt = load_prompt(category)
 
     success_count = 0
 
@@ -199,7 +258,9 @@ def main():
         print(json.dumps(question_data, ensure_ascii=False, indent=2))
 
         filepath = save_pending(question_data)
-        print(f"[INFO] 保存しました: {filepath.relative_to(BASE_DIR)}")
+        cat_label = question_data.get("grammar_category", "未設定")
+        point_label = question_data.get("grammar_point", "未設定")
+        print(f"[INFO] 保存しました: {filepath.relative_to(BASE_DIR)} [{cat_label} / {point_label}]")
 
         success_count += 1
 

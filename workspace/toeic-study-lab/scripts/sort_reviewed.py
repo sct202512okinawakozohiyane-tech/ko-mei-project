@@ -24,7 +24,8 @@ REJECTED_DIR = BASE_DIR / "questions" / "rejected"
 QUESTION_FIELDS = {
     "part", "question_text",
     "choice_a", "choice_b", "choice_c", "choice_d",
-    "correct_answer", "explanation", "difficulty", "grammar_point",
+    "correct_answer", "explanation", "difficulty",
+    "grammar_category", "grammar_point",
     "question_translation", "choice_translations", "choice_explanations",
 }
 

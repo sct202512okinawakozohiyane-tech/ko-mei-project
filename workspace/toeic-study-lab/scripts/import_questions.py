@@ -27,6 +27,7 @@ for q in questions:
             correct_answer,
             explanation,
             difficulty,
+            grammar_category,
             grammar_point,
             question_translation,
             choice_a_translation,
@@ -38,7 +39,7 @@ for q in questions:
             explanation_c,
             explanation_d
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         q["part"],
         q["question_text"],
@@ -49,7 +50,8 @@ for q in questions:
         q["correct_answer"],
         q["explanation"],
         q["difficulty"],
-        q["grammar_point"],
+        q.get("grammar_category"),
+        q.get("grammar_point"),
         q.get("question_translation"),
         choice_translations.get("A"),
         choice_translations.get("B"),

@@ -5,6 +5,8 @@
 
 TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成してください。
 
+{{GRAMMAR_CATEGORY_INSTRUCTION}}
+
 【条件】
 ・英文中に1つの空所（_____）を設けること
 ・選択肢は4つ（A/B/C/D）
@@ -12,6 +14,33 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
 ・正解は1つに確定すること
 ・ひっかけの選択肢を含めること
 ・正解の選択肢の位置（A〜D）はどこでもよい（後工程でランダムに並び替えるため、位置を気にする必要はない）
+
+【カテゴリ一覧（grammar_category と grammar_point の有効な値）】
+
+  [Level 1: 頻出]
+  parts_of_speech （品詞）: noun / verb / adjective / adverb
+  verb_form （動詞の形）: tense / subject_verb_agreement / modal
+  active_passive （能動／受動）: passive_voice
+  infinitive （不定詞）: to_infinitive
+  gerund （動名詞）: gerund
+  participle （分詞）: present_participle / past_participle
+  preposition （前置詞）: preposition
+  conjunction （接続詞）: conjunction
+  pronoun （代名詞）: pronoun
+
+  [Level 2: 中級]
+  comparison （比較）: comparative / superlative / as_as
+  relative_clause （関係詞節）: relative_pronoun
+  noun_clause （名詞節）: noun_clause
+  subjunctive （仮定法）: subjunctive
+  inversion （倒置）: inversion
+
+  [Level 3: 高得点帯]
+  vocabulary （語彙）: vocabulary
+  collocation （コロケーション）: collocation
+  idiom （イディオム）: idiom
+  phrasal_verb （句動詞）: phrasal_verb
+  context （文脈）: context
 
 【JSONフォーマット】
 {
@@ -24,6 +53,7 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
   "correct_answer": "A",
   "explanation": "...",
   "difficulty": "standard",
+  "grammar_category": "...",
   "grammar_point": "...",
   "question_translation": "...",
   "choice_translations": {
@@ -46,7 +76,8 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
 ・correct_answer: 正解の選択肢を示す "A" 〜 "D" のいずれか1文字
 ・explanation: 日本語での解説（問われている文法ポイントと、正解が成立する理由を説明する）
 ・difficulty: "basic" / "standard" / "hard" のいずれか
-・grammar_point: 問われている文法項目（例：仮定法、関係代名詞、受動態、比較、前置詞など）
+・grammar_category: 上記カテゴリ一覧のカテゴリキー（例: "participle"）
+・grammar_point: 上記カテゴリ一覧のサブカテゴリキー（例: "past_participle"）
 ・question_translation: question_text全体の自然な日本語訳（_____部分も訳に含めること）
 ・choice_translations: choice_a〜choice_dそれぞれの日本語訳。キーは"A"〜"D"
 ・choice_explanations: 各選択肢ごとに「なぜ正解／不正解なのか」を初学者向けに簡潔に説明する。キーは"A"〜"D"
@@ -61,6 +92,7 @@ TOEIC Part5形式（短文穴埋め問題）の英文法問題を1問作成し�
 【整合性チェック】
 ・question_text / choice_a〜choice_d / correct_answer / explanation / choice_explanations の内容に矛盾がないこと
 ・correct_answerは必ずchoice_a〜choice_dのいずれかに対応していること
+・grammar_category と grammar_point は必ず上記カテゴリ一覧の値を使うこと
 ・choice_translations / choice_explanationsのキー（A〜D）はchoice_a〜choice_dと1対1で対応していること
 
 【出力形式に関する重要な制約】

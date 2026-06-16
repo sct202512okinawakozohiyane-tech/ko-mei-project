@@ -37,7 +37,8 @@
   "choice_d": "...",
   "correct_answer": "A|B|C|D",
   "explanation": "...",
-  "difficulty": "basic|standard|advanced",
+  "difficulty": "basic|standard|hard",
+  "grammar_category": "...",
   "grammar_point": "...",
   "question_translation": "...",
   "choice_translations": {
@@ -54,3 +55,27 @@
   },
   "brief_note": "..."
 }
+
+【grammar_category / grammar_point について】
+・元の問題の grammar_category と grammar_point を原則引き継ぐこと
+・修正によって文法ポイントが変わった場合は、正しいカテゴリ・ポイントに更新すること
+・有効な値は以下の通り（grammar_category → grammar_point）：
+  parts_of_speech: noun / verb / adjective / adverb
+  verb_form: tense / subject_verb_agreement / modal
+  active_passive: passive_voice
+  infinitive: to_infinitive
+  gerund: gerund
+  participle: present_participle / past_participle
+  preposition: preposition
+  conjunction: conjunction
+  pronoun: pronoun
+  comparison: comparative / superlative / as_as
+  relative_clause: relative_pronoun
+  noun_clause: noun_clause
+  subjunctive: subjunctive
+  inversion: inversion
+  vocabulary: vocabulary
+  collocation: collocation
+  idiom: idiom
+  phrasal_verb: phrasal_verb
+  context: context
