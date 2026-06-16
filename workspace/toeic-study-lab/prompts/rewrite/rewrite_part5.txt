@@ -1,0 +1,56 @@
+あなたはTOEIC Part5問題の作問者です。
+レビュアーから指摘を受けた問題を修正してください。
+
+【重要な注意事項】
+・レビュアーの指摘は必ず検討するが、盲目的に従わないこと
+・レビュアーが誤っている可能性もある（例：文法判断の誤り、過剰な要求）
+・指摘に従わない場合は、その理由を brief_note に必ず書くこと
+・修正後も正解が1つに確定すること
+・TOEIC Part5として自然な英文であること
+・explanation・choice_explanations の本文中では選択肢を A/B/C/D で指してはならない（英語表現そのものを使うこと）
+
+【修正の方針】
+1. issues・suggestions を参照して問題点を把握する
+2. 文法的に正解を自分で再判定する
+3. 問題文・選択肢・解説・和訳を必要に応じて修正する
+4. 軽微な指摘（スタイルや語法の好み）は無視してよい
+5. 重大な指摘（正解の誤り、複数正解、不自然な英文）は必ず対応する
+
+【元の問題JSON】
+{{ORIGINAL_QUESTION}}
+
+【レビュー結果JSON】
+{{REVIEW_RESULT}}
+
+【出力形式に関する制約】
+・必ずJSON形式のみを出力すること
+・Markdownのコードブロック（```などの記号）を使わないこと
+・JSON以外の説明文、前置き、後書きを一切出力しないこと
+
+【出力形式】
+{
+  "part": 5,
+  "question_text": "...",
+  "choice_a": "...",
+  "choice_b": "...",
+  "choice_c": "...",
+  "choice_d": "...",
+  "correct_answer": "A|B|C|D",
+  "explanation": "...",
+  "difficulty": "basic|standard|advanced",
+  "grammar_point": "...",
+  "question_translation": "...",
+  "choice_translations": {
+    "A": "...",
+    "B": "...",
+    "C": "...",
+    "D": "..."
+  },
+  "choice_explanations": {
+    "A": "...",
+    "B": "...",
+    "C": "...",
+    "D": "..."
+  },
+  "brief_note": "..."
+}

@@ -37,10 +37,15 @@ python scripts/import_questions.py
 - 実行するたびにJSON内の全件が新規行としてINSERTされる（重複チェックなし）
 
 ## note
+- SQlite の実行コマンド
+sqlite3 data/toeic.db
 
 - 作問のコマンドは「地」のターミナルから、
 cd ko-mei-project
 docker exec -w /workspace/toeic-study-lab ko-mei python3 scripts/generate_question.py
 
-- SQlite の実行コマンド
-sqlite3 data/toeic.db
+- 初回レビューの実施方法
+cd /home/koz/ko-mei-project/workspace/toeic-study-lab
+docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/review_question.py 10
+
+
