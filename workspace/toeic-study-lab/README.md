@@ -23,6 +23,11 @@ TOEIC Part 5形式の英文法問題を自動生成し、SQLiteに保存しま�
 - HTML/CSS
 - ローカルLLM
 
+## TOEIC アプリケーションの実行
+cd /home/koz/ko-mei-project/workspace/toeic-study-lab
+source venv/bin/activate
+python3 app.py
+
 ## 問題データのインポート
 
 `questions/approved/questions.json` に置いた問題データを `questions` テーブルへ一括INSERTする。
@@ -40,11 +45,10 @@ python3 scripts/import_questions.py
 sqlite3 data/toeic.db
 
 - 初回の作問のコマンドは「地」のターミナルから、
-cd ko-mei-project
+ccd /home/koz/ko-mei-project/workspace/toeic-study-lab
 docker exec -w /workspace/toeic-study-lab ko-mei python3 scripts/generate_question.py 10
 
 - 初回レビューの実施方法
-cd /home/koz/ko-mei-project/workspace/toeic-study-lab
 docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/review_question.py 10
 
 - レビュー後のファイルの仕分け（フォルダの移動）コマンド
@@ -58,6 +62,9 @@ docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/rereview_question.
 
 - 再レビュー後のファイルの仕分け（フォルダの移動）コマンド
 docker exec ko-mei python3 /workspace/toeic-study-lab/scripts/finalize_questions.py
+
+- ２次チェック完了し、approved された問題をDBへマイグレーションするコマンド
+python3 scripts/import_questions.py
 
 ## その他
 # 1. DBマイグレーション（初回のみ）

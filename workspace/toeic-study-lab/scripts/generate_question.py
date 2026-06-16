@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import sqlite3
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -12,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from categories import CATEGORIES, ALL_CATEGORY_KEYS, get_points
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+DB_PATH = BASE_DIR / "data" / "toeic.db"
 PROMPT_PATH = BASE_DIR / "prompts" / "questions" / "generate_part5.txt"
 PENDING_DIR = BASE_DIR / "questions" / "pending"
 
@@ -26,6 +28,30 @@ MODEL_NAME = os.environ.get("KOMEI_MODEL", "gemma4:e4b")
 REQUEST_TIMEOUT = (10, 600)
 
 CHOICE_LETTERS = ["A", "B", "C", "D"]
+
+
+def pick_least_filled_category():
+    """DB内の件数が最少のgrammar_categoryをランダムに1つ返す。
+    DBが空または接続できない場合はNoneを返す（モデルに自由選択させる）。
+    """
+    if not DB_PATH.exists():
+        return None
+
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cur = conn.cursor()
+        cur.execute("SELECT grammar_category, COUNT(*) FROM questions GROUP BY grammar_category")
+        rows = cur.fetchall()
+        conn.close()
+    except sqlite3.Error:
+        return None
+
+    dist = {row[0]: row[1] for row in rows if row[0]}
+    counts = {cat_key: dist.get(cat_key, 0) for cat_key in CATEGORIES}
+    min_count = min(counts.values())
+    candidates = [cat_key for cat_key, cnt in counts.items() if cnt == min_count]
+    chosen = random.choice(candidates)
+    return chosen
 
 
 def shuffle_choices(question_data):
@@ -204,12 +230,6 @@ def parse_args():
         python generate_question.py 10
         python generate_question.py 10 participle
         python generate_question.py 5 relative_clause
-
-    # 将来拡張メモ: カテゴリ未指定時の不足カテゴリ優先生成
-    #   1. question_distribution.py と同じ集計ロジックで各カテゴリの現在数を取得
-    #   2. CATEGORIES の全カテゴリと比較して最少件数のカテゴリを特定
-    #   3. そのカテゴリを category として load_prompt() に渡す
-    #   実装する場合は scripts/db_utils.py などに集計関数を切り出すと再利用しやすい
     """
     count = 1
     category = None
@@ -239,7 +259,11 @@ def parse_args():
 def main():
     count, category = parse_args()
 
-    if category:
+    if category is None:
+        category = pick_least_filled_category()
+        if category:
+            print(f"[INFO] カテゴリ自動選択（DB最少）: {category} ({CATEGORIES[category]['label']})")
+    else:
         print(f"[INFO] カテゴリ指定: {category} ({CATEGORIES[category]['label']})")
 
     prompt = load_prompt(category)
