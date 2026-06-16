@@ -28,8 +28,7 @@ TOEIC Part 5形式の英文法問題を自動生成し、SQLiteに保存しま�
 `questions/approved/questions.json` に置いた問題データを `questions` テーブルへ一括INSERTする。
 
 ```bash
-source venv/bin/activate
-python scripts/import_questions.py
+python3 scripts/import_questions.py
 ```
 
 - 入力ファイル: `questions/approved/questions.json`（JSON配列、1要素が1問）
