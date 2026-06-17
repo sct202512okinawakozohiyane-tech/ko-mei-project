@@ -1,0 +1,39 @@
+{
+  "review_status": "rejected",
+  "original_review_status": "needs_fix",
+  "rereviewed_file": "rereviewed_20260617_143235.json",
+  "question": {
+    "part": 5,
+    "question_text": "The presentation, ____ the client was waiting for, was highly anticipated by the staff.",
+    "choice_a": "whom",
+    "choice_b": "which",
+    "choice_c": "that",
+    "choice_d": "who",
+    "correct_answer": "B",
+    "explanation": "この文の先行詞は「The presentation」であり、これは「物」を指しています。したがって、関係代名詞は「which」または「that」を選ぶ必要があります。空所が埋める関係代名詞は、先行詞（プレゼンテーション）を指す必要があります。その後ろに「the client was waiting for」という構造があり、関係代名詞は前置詞「for」の目的語として機能しますが、先行詞の性質（物）から、関係代名詞として最も適切で誤りの少ない選択肢は「which」です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "そのプレゼンテーションは、クライアントが待ち望んでいたもので、スタッフによって非常に期待されていました。",
+    "choice_translations": {
+      "A": "（目的格の）〜を／〜に",
+      "B": "〜なもの（関係代名詞）",
+      "C": "〜なもの（関係代名詞）",
+      "D": "（主格の）〜する人"
+    },
+    "choice_explanations": {
+      "A": "「whom」は人に対する目的格の代名詞であり、先行詞が「物」（The presentation）であるため文法的に不適切です。",
+      "B": "「which」は物や動物に対する関係代名詞として機能します。先行詞「The presentation」が物であるため、文法的に最も適切です。この空所では「for」の目的語として機能しています。",
+      "C": "「that」も物に対して関係代名詞として使えることがありますが、この文脈で「which」を選択する方がより自然で確実です。しかし、最も重要な点として、先行詞が「物」でなければなりませんが、「whom」や「who」は人しか指せないため、不適当です。",
+      "D": "「who」は人に対する主格の代名詞です。先行詞が「物」であるため、文法的に不適切です。"
+    }
+  },
+  "issues": [
+    "explanation: 文法的な根拠が「最も適切」という推測に依存しており、非制限用法における関係代名詞の厳密なルール（特にthatの制限）に触れていないため、解説が不十分。",
+    "choice_explanations: C（that）の排除理由が、「自然さ」に留まっており、なぜカンマのある非制限用法でthatが使えないのか、という文法規則の解説が不足している。"
+  ],
+  "suggestions": [
+    "explanationを改訂し、空所がカンマで区切られていることから非制限用法であり、この用法においてはwhichが最も適切な関係代名詞であるという点を中心に解説する。",
+    "choice_explanationsのCの解説を改訂し、thatは原則として非制限用法（カンマがある場合）では使用できないという、より厳密な文法ルールに基づいた理由付けを行う。"
+  ]
+}

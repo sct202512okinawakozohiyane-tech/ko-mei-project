@@ -232,5 +232,395 @@
       "C": "「guidance」は名詞です。この空所は、主語を修飾する「形容詞の役割」をする語句が必要です。名詞が入ると文法的に構造が成り立ちません。",
       "D": "「guided」は過去分詞形です。これは「～された」という受動の意味を帯び、スタッフメンバーたちがガイドラインによって指導された、という受動的な状態を完璧に表しており、文法的に最も適切です。"
     }
+  },
+  {
+    "part": 5,
+    "question_text": "Since the new security system is complex, all employees must read the manual and register ______ by the end of the day.",
+    "choice_a": "themselves",
+    "choice_b": "them",
+    "choice_c": "theirs",
+    "choice_d": "their",
+    "correct_answer": "A",
+    "explanation": "この文では、「すべての従業員が」主体となって、「自分自身」を登録する必要がある、という再帰的な行為が述べられています。そのため、主語の「employees」に対応する再帰代名詞が必要です。代名詞「themselves」は、主語と同じ人物または物を示す、自分自身を指す働きをします。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "新しいセキュリティシステムが複雑なので、すべての従業員はマニュアルを読み、今日中に自分自身を登録しなければなりません。",
+    "choice_translations": {
+      "A": "自分たち自身（再帰代名詞）",
+      "B": "彼ら（目的格）",
+      "C": "彼らのもの（所有代名詞）",
+      "D": "彼らの（所有格）"
+    },
+    "choice_explanations": {
+      "A": "「themselves」は再帰代名詞です。主語の「employees」（従業員たち）と同じ人々自身が行動の主体となり、「自分たち自身」を登録するという意味を完璧に表現できるため、正解となります。",
+      "B": "「them」は目的語となる人称代名詞（彼ら・それら）です。この文脈では、行為の主体（従業員自身）を指す再帰的な意味合いが必要なため、文法的に不適当です。",
+      "C": "「theirs」は所有代名詞で、「彼らのもの」といった所有物全体を指します。「自分たち自身」という行為の主体を指すことはできないため、この文脈では誤りです。",
+      "D": "「their」は所有格の代名詞で、「彼らの」という所有物を示す場合に使われます。この空所では、登録するという行為の主体自身を指す必要があるため、「their」では不十分です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee recommended that the employees share the project data with ______ so that the team could proceed.",
+    "choice_a": "their",
+    "choice_b": "them",
+    "choice_c": "theirs",
+    "choice_d": "they",
+    "correct_answer": "B",
+    "explanation": "この文の空所には、前置詞『with』の目的語（目的格）が入る必要があります。代名詞は、文中でどのような役割を果たすかによって形が変わります。この文では、データの共有先（=彼ら）という「受け手」を示すため、目的格の代名詞「them」が正解です。『they』は主格の代名詞であり、主語として使われる場合（例: They arrived late）に用います。『their』は所有形容詞であり、直後に名詞（例: their reports）を伴って「彼らの」という意味を修飾する形です。一方、『theirs』は所有代名詞であり、単体で「彼らのもの」という意味を指します。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "委員会は、チームが進むことができるよう、従業員たちにプロジェクトデータを______と共有するよう勧告した。",
+    "choice_translations": {
+      "A": "彼らの（所有形容詞）",
+      "B": "彼ら（目的格）",
+      "C": "彼らのもの（所有代名詞）",
+      "D": "彼ら（主格）"
+    },
+    "choice_explanations": {
+      "A": "「their」は所有形容詞であり、必ずその後ろに名詞が必要です（例: their reports）。この文では単に代名詞（名詞の代わり）が求められているため、不適切です。",
+      "B": "「them」は目的格の代名詞で、「誰に」「何に」といった、動作の受け手を示す際に使われます。前置詞「with」の目的語として機能するため、この文で正解です。",
+      "C": "「theirs」は所有代名詞であり、「〜のもの」という意味で単体で使われます。この文脈では、前置詞「with」の目的語として「人」という目的語が求められているため、文法的に誤りです。",
+      "D": "「they」は主語（主格）として使われる代名詞です。この空所は前置詞「with」の目的語の位置なので、主格の「they」は文法的に誤りです。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Mr. Thompson spoke with the applicants who were very interested in the position and (_____) highly praised the company's culture.",
+    "choice_a": "they",
+    "choice_b": "them",
+    "choice_c": "theirselves",
+    "choice_d": "itself",
+    "correct_answer": "A",
+    "explanation": "この文の空所には、先行詞である'applicants'（応募者たち）の行動を表す主語代名詞が必要です。文法的に、'who were very interested... and ___ highly praised'という構造になっており、'praised'という動詞の主語は'applicants'と同じ複数形である'they'でなければなりません。したがって、主格の代名詞'they'が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "トンプソン氏は、その職に非常に興味を持っている、そして（____）がその会社の文化を高く評価した応募者たちと話をした。",
+    "choice_translations": {
+      "A": "彼ら",
+      "B": "彼らを",
+      "C": "彼ら自身たち（文法的に誤った形）",
+      "D": "それ自身"
+    },
+    "choice_explanations": {
+      "A": "「they」は三人称複数主格の代名詞です。空所に入る部分は、'praised'という動詞の主語となるため、主格が必要です。主語となる先行詞'applicants'と同じ複数主格である「they」が文法的に正しく、この文脈で最も自然です。",
+      "B": "「them」は三人称複数目的格の代名詞です。目的格であるため、動詞 'praised' の主語として使用することはできません。主語が必要な箇所に目的格が入るため誤りとなります。",
+      "C": "「theirselves」という形は、英語の代名詞として存在しません。代名詞の再帰代名詞（自分自身を指すもの）は、主語と一致する適切な形を用いる必要があります。",
+      "D": "「itself」は単数の中性物や概念に対して「それ自身」を意味する再帰代名詞です。先行詞が複数の「applicants」という人物を指しているため、「it」で始まる「itself」を使うのは不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The new guidelines, ______ the company expects every employee to follow, will be implemented next month.",
+    "choice_a": "who",
+    "choice_b": "it",
+    "choice_c": "them",
+    "choice_d": "which",
+    "correct_answer": "D",
+    "explanation": "この文は、コンマ（,）で区切られた非制限用法（非限定的な説明）であり、「the new guidelines」（新しいガイドライン）について補足情報を与えています。先行詞（直前の名詞句）が「ガイドライン」というモノ（物）であるため、その情報を導く関係代名詞は「which」を使用するのが適切です。「which」は、先行詞全体を指し、関係代名詞節を導くことができます。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "会社が全ての従業員に守るよう期待している、その新しいガイドラインは、来月実施される予定です。",
+    "choice_translations": {
+      "A": "誰（関係代名詞）",
+      "B": "それ（代名詞）",
+      "C": "彼ら/それら（目的格代名詞）",
+      "D": "それ（関係代名詞）"
+    },
+    "choice_explanations": {
+      "A": "whoは「人」を指す関係代名詞（主格）です。先行詞である「guidelines」（ガイドライン）は物（モノ）であるため、使用できません。",
+      "B": "itは一般的な代名詞ですが、コンマで区切られて先行詞全体を修飾する場合、文法的に正しく機能させるには「which」を使う方が自然です。また、文の構造として適切な代名詞ではありません。",
+      "C": "themは目的格の代名詞で、何か動作の対象となる場所や物を示しますが、ここでは空所全体が「〜という内容」という名詞節や修飾節の役割を果たす必要があり、単なる目的格代名詞では文の構造を補えません。",
+      "D": "whichは「物」を先行詞として受け、「先行詞全体」または「近接する物」を指す関係代名詞として機能します。非制限用法（コンマを伴う）において、先行詞全体を補足説明する場合に最適です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee praised the new proposal, noting that ____ highly detailed research had been conducted on the issue.",
+    "choice_a": "who",
+    "choice_b": "its",
+    "choice_c": "which",
+    "choice_d": "their",
+    "correct_answer": "B",
+    "explanation": "この文脈では、先行詞（praiseの対象となっている提案、proposal）が提案自体、または提案に根差した集団を指しており、所有格の代名詞が必要です。代名詞が修飾している'detailed research'は、提案（単数）から発する情報源に関するものなので、単数形の所有格代名詞'its'が適切です。'The committee praised the new proposal...'という構文から、提案（proposal）が研究を行ったわけではなく、提案の内容や提案自体が研究の結果を反映していると解釈するのが自然です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "委員会は新しい提案を褒め、その問題について「__」によって綿密な調査が行われたことに言及した。",
+    "choice_translations": {
+      "A": "誰が",
+      "B": "その（提案の）",
+      "C": "どの",
+      "D": "彼らの"
+    },
+    "choice_explanations": {
+      "A": "whoは主に人物を主語として指す関係代名詞であるため、この文脈では不適切です。",
+      "B": "itsは「それの」という単数の所有格代名詞です。前の名詞 'proposal' を指し、その提案の内容や側面が研究の源であることを示しており、文法的に最も正しく自然な流れを作ります。",
+      "C": "whichは物事や概念を指す関係代名詞ですが、ここでは空所が単なる接続や修飾ではなく、名詞句の一部として所有格を必要としているため不適切です。また、'which'をそのまま代名詞として使う場合、先行詞と一致させることが難しいため、所有格を示す'its'が最も自然です。",
+      "D": "theirは複数の所有格代名詞です。先行詞が単数（proposal）であるため、文法的な主語と一致しません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The report, _______ suggested last month, was finally approved by the executive committee.",
+    "choice_a": "whom",
+    "choice_b": "that",
+    "choice_c": "which",
+    "choice_d": "whose",
+    "correct_answer": "C",
+    "explanation": "この文は、「_______ suggested last month」の部分が、先行詞である「The report」を補足説明する非制限用法（Non-restrictive Clause）の関係代名詞節になっています。先行詞が「The report」（物）であり、文脈上「（報告書が）提案された」という受動的な意味合いで補足情報を提供しているため、非制限用法を示す関係代名詞「which」が最適です。また、カンマ（,）で区切られていることからも、この非制限用法であると判断できます。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "先月提案された、この報告書は、ついに役員会によって承認された。",
+    "choice_translations": {
+      "A": "～に（人に対する目的格の関係代名詞）",
+      "B": "～な（限定用法を示す関係代名詞）",
+      "C": "～（非制限用法を示す関係代名詞）",
+      "D": "~の（所有格の関係代名詞）"
+    },
+    "choice_explanations": {
+      "A": "「whom」は人間を指す目的格の関係代名詞です。この文の先行詞は「The report」（物）であり、また、この空所は「提案された」という情報が補足される部分なので、人を指す「whom」は文法的に誤りです。",
+      "B": "「that」は主に、直前の名詞を修飾する範囲を限定する（制限用法）関係代名詞に使われます。この文のようにカンマで区切られている非制限用法では使用できません。",
+      "C": "「which」は、先行詞が物や事柄であり、かつ文がカンマで区切られて補足情報（非制限用法）として加えられている場合に用いられる適切な関係代名詞です。",
+      "D": "「whose」は所有格を示す関係代名詞であり、「～の」という意味を持ちます。この文脈で単に「報告書」を修飾する関係代名詞としては、所有格は必要ありません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager praised the new sales representative for his hard work, and everyone agreed that the team should rely heavily on (____) for critical support in the future.",
+    "choice_a": "his",
+    "choice_b": "himself",
+    "choice_c": "him",
+    "choice_d": "he",
+    "correct_answer": "C",
+    "explanation": "この文では、「rely on」（〜に頼る）という句動詞が使われており、その目的語（何を頼るのか）が空所に求められています。空所を埋める代名詞は、前置詞 on の目的語となるため、目的格（object case）が必要です。したがって、「him」が正解となります。「he」は主格、「his」は所有格形容詞、「himself」は再帰代名詞であり、いずれも文法的に不適当です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "マネージャーは、その新しい営業担当者が懸命に働いたことを褒めた。そして、チームは将来、重要なサポートを（____）に大きく頼るべきだと、誰もが同意した。",
+    "choice_translations": {
+      "A": "彼の（所有格）",
+      "B": "彼自身を（再帰代名詞）",
+      "C": "彼を（目的格）",
+      "D": "彼（主格）"
+    },
+    "choice_explanations": {
+      "A": "「his」は所有格の形容詞であり、必ず名詞の前に置いて「彼の～」のように使われます（例: his work）。単独で前置詞の目的語として使われることはできません。",
+      "B": "「himself」は自分自身を指す再帰代名詞です。この場合、主語や目的語を指しているが、「彼自身」という強調の意味合いはなく、単に「彼」という目的語として機能する必要があります。",
+      "C": "「him」は目的格（object case）の代名詞で、「on」という前置詞の目的語として正しく使われます。したがって、文法的に正しい選択肢です。",
+      "D": "「he」は主語として使われる場合（〜が）の代名詞です。この文の空所では、「on」という前置詞の目的語が必要なので、「he」は使えません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "She gave the presentation to her colleagues, and she thanked _____ for their enthusiastic feedback.",
+    "choice_a": "it",
+    "choice_b": "they",
+    "choice_c": "their",
+    "choice_d": "them",
+    "correct_answer": "D",
+    "explanation": "この文脈では、「colleagues (同僚たち)」という「彼ら」を指し、動詞 thanked の目的語として取る必要があり、この役割を果たすのが目的格代名詞 „them“ です。主格代名詞の „they“ は主語として使用されます。また、「their」は所有格であり、目的語になることはできません。そして、「it」は単数または非人称のものを指すため、複数の「colleagues」を指す代名詞として使用することは不適切です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "彼女は同僚たちにプレゼンテーションを行い、彼らの熱心なフィードバックに感謝した。",
+    "choice_translations": {
+      "A": "それ（主格・目的格）",
+      "B": "彼ら（主格）",
+      "C": "彼らの（所有格）",
+      "D": "彼らに（目的格）"
+    },
+    "choice_explanations": {
+      "A": "「it」は単数、または具体的なモノや状況を指す代名詞です。複数の「colleagues」という人（複数）を指す代名詞としては適切ではありません。",
+      "B": "「they」は主格代名詞なので、動詞 thanked の目的語の位置（「誰に」感謝したか）には文法的に使用できません。",
+      "C": "「their」は所有格（〜の）を示す語であり、この文では「〜に感謝した」という動作の対象（目的語）となるため、文法的に誤りです。",
+      "D": "「them」は目的格代名詞であり、直前の「colleagues (同僚たち)」という複数人称を指し、動詞 thanked の目的語として完璧に機能します。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager spoke to the employees, ____ were concerned about the new policy.",
+    "choice_a": "whom",
+    "choice_b": "which",
+    "choice_c": "that",
+    "choice_d": "who",
+    "correct_answer": "D",
+    "explanation": "この問題は、先行詞（前の名詞）を修飾する関係代名詞の格（主格か目的格か）を問うています。カンマの後ろの節において、代名詞が「were concerned」という動詞の主語の役割を果たしているため、主格の「who」が正解です。したがって、関係代名詞として「who」を使用します。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "マネージャーは従業員たちと話したが、[______]たちは新しいポリシーについて懸念しているようだった。",
+    "choice_translations": {
+      "A": "（彼らを）/（誰を）",
+      "B": "（それ）",
+      "C": "（それ）",
+      "D": "（彼が）/（誰が）"
+    },
+    "choice_explanations": {
+      "A": "「whom」は目的格の関係代名詞です。この文脈では、代名詞が「were concerned」という動詞の主語の役割を果たしているため、目的格を使う「whom」は文法的に誤りです。",
+      "B": "「which」は関係代名詞ですが、先行詞が人（employees）であるため使用できません。また、非制限用法で先行詞が人である場合、代名詞は通常「who」を使用します。",
+      "C": "「that」は関係代名詞として機能しますが、カンマで区切られた非制限用法（補足情報）では通常使用されません。また、この文脈で主語を示す関係代名詞としては「who」が最も自然で適切な選択肢です。",
+      "D": "「who」は主格の関係代名詞です。この文のカンマ以下の部分において、代名詞は主語として「were concerned」の動作主（懸念している人）となっているため、主格の「who」が正解です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The chairperson requested that all team members submit their initial ideas to the coordinator, _____ would then synthesize them into a comprehensive proposal.",
+    "choice_a": "this",
+    "choice_b": "them",
+    "choice_c": "which",
+    "choice_d": "that",
+    "correct_answer": "C",
+    "explanation": "この文の空所には、先行する節全体の内容、すなわち「すべてのチームメンバーがコーディネーターに初期のアイデアを提出してもらうという行為」を受けて、その結果として「それ（初期のアイデア）を総合的な提案にまとめる」という意味の関係代名詞が必要です。この文脈では、「先行する節全体」を受ける関係代名詞として、関係代名詞の which が最も適切です。先行詞が文全体（節全体）である場合、which を用いてその内容を指すことができます。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "議長は、すべてのチームメンバーに初期のアイデアをコーディネーターに提出するよう依頼し、その初期のアイデアは、それからコーディネーターによって包括的な提案として総合的にまとめられるだろう。",
+    "choice_translations": {
+      "A": "これ",
+      "B": "それら",
+      "C": "それ（前節全体）",
+      "D": "それが"
+    },
+    "choice_explanations": {
+      "A": "this: 「this」は単数形の指示代名詞ですが、空所で「先行する節全体」という抽象的で大きな概念を指すには不適格です。",
+      "B": "them: 「それら」という目的格の代名詞は、文の主語の位置（空所）には置けません。また、文法的な関係節を導く代名詞としても機能しにくいです。",
+      "C": "which: 「which」は、先行する文全体や概念的な事柄を受けて説明を加える非制限用法（コンマを含む）で使われることができます。この場合、空所を含む関係節が「アイデアの提出」という行動全体を指し、文法的に最も自然で正しい接続となります。",
+      "D": "that: 「that」は主に名詞節や制限用法（直接的な先行詞が明確な場合）で使われますが、ここでは「先行する節全体」を受けているため、「which」が適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The professor spoke to the student, _____ research had shown promising results.",
+    "choice_a": "whose",
+    "choice_b": "which",
+    "choice_c": "him",
+    "choice_d": "who",
+    "correct_answer": "A",
+    "explanation": "この問題は、先行する名詞（the student）が所有するものです（research）を修飾する、所有関係を示す関係代名詞の知識を問うています。先行詞と、それに関連する「所有」という視点が重要です。\n\nこの文脈では、「学生（the student）の研究（research）」という所有関係が必要なため、所有格の関係代名詞「whose」を用いるのが適切です。\n\n「whose」は「〜の」という意味を持ち、人に対しても物に対しても、所属するものが不明確な所有関係を表現できます。つまり、「その学生自身の、研究」という意味になります。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "その教授は、〜の研究が有望な結果を示した学生に話しかけた。",
+    "choice_translations": {
+      "A": "その人の（所有格関係代名詞）",
+      "B": "それ（関係代名詞）",
+      "C": "彼に（目的格代名詞）",
+      "D": "誰（主格関係代名詞）"
+    },
+    "choice_explanations": {
+      "A": "whose: この選択肢は「所有格の関係代名詞」です。先行詞（the student）が所有しているもの（research）という関係を示すため、「whose」が文法的に最も適切です。これは、「その学生の」という意味を補い、修飾関係を成立させています。",
+      "B": "which: 「which」は関係代名詞として使えますが、これは先行詞（the student）そのもの、あるいは直前の句全体を指す「非限定用法」や「物」への参照に使われることが多く、文中で「学生が所有する研究」という所有関係を直接示すのには向きません。",
+      "C": "him: 「him」は目的格の代名詞であり、他動詞や前置詞の目的語として使われます。この空所は、関係代名詞節の冒頭で、文法的には「所有格」を担う要素が必要なため、構造的に不適です。",
+      "D": "who: 「who」は主語（誰が）として機能しますが、この文では空所が「研究（research）」という名詞句の修飾を補う形で使われています。単なる主語代名詞の「who」では、先行詞の「所有」という側面を表現できません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The project manager met with the team members, _____ were responsible for the initial draft, to discuss the next steps.",
+    "choice_a": "who",
+    "choice_b": "that",
+    "choice_c": "which",
+    "choice_d": "whom",
+    "correct_answer": "A",
+    "explanation": "この文では、先行詞「the team members」という人に対して、コンマ（,）で区切られた「非限定用法」の関係代名詞節を用いて補足的な説明をしています。この節の空所にある代名詞は、後続の動詞「were」の主語の役割を果たしているため、主格の代名詞が必要です。先行詞が人であり、かつ非限定用法を用いる場合、最も標準的で適切な関係代名詞は「who」です。したがって、「who」が正解となります。",
+    "difficulty": "standard",
+    "grammar_category": "relative_clause",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "プロジェクトマネージャーは、最初の草案作成を担当していた、そのチームメンバーたちと、次のステップについて話し合うために会った。",
+    "choice_translations": {
+      "A": "who: 人を指す主格の関係代名詞 (非限定用法に適している)",
+      "B": "that: 人または物を指せる関係代名詞 (主に限定用法で使われる)",
+      "C": "which: 物事を指す関係代名詞 (先行詞が人でない場合に使用)",
+      "D": "whom: 人を指す目的格の関係代名詞 (節内で目的語の役割を果たす)"
+    },
+    "choice_explanations": {
+      "A": "「who」は、先行詞が「人」である場合に用いられる主格の関係代名詞です。空所の後に「were responsible」という述語動詞が続くため、代名詞は節の主語の役割を果たしています。特に、コンマ（,）で区切られる「非限定用法」においては、人に対して「who」を使用するのが最も自然で標準的な表現です。",
+      "B": "「that」は人や物を指せますが、コンマ（,）によって非限定用法を示す場合、先行詞が人である場合は「who」を用いるのが最も正式で推奨される用法です。「that」は一般的に、カンマがない「限定用法」で使われることが多いです。",
+      "C": "「which」は、主に「物事」を先行詞として指す場合に用いられる関係代名詞です。先行詞である「the team members」が人であるため、「which」は文法的に不適切です。",
+      "D": "「whom」は、先行詞が「人」であり、かつ節の中で目的語の役割を果たす場合（例：...met whom I spoke with）に使われます。空所の後ろには動詞「were」が続いているため、代名詞は主語の役割を果たさなければならず、目的格の「whom」は使用できません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager provided the employees with the details of the new policy, and he encouraged them to read the memo carefully so that (_____) could understand the full scope of the changes.",
+    "choice_a": "which",
+    "choice_b": "they",
+    "choice_c": "it",
+    "choice_d": "ourselves",
+    "correct_answer": "B",
+    "explanation": "この空所は、「何ができるように」という目的を示す接続詞「so that」に続く節の主語（主語の位置）です。「so that」以降は、誰が（何が）行動を起こすのかを示す主体が必要です。\n\n文脈を考えると、「変更の全体像を理解する」主体は「従業員たち」（the employees）です。したがって、複数の人間を指す代名詞が必要です。\n\n「employees」は複数形の人々を指すため、主格の複数代名詞「they」が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "マネージャーは従業員に新しいポリシーの詳細を提供し、彼は彼らがメモを注意深く読むよう奨励した。そうすれば、彼らは変更の全体像を理解することができるだろう。",
+    "choice_translations": {
+      "A": "それ（関係代名詞）",
+      "B": "彼らたち（主格複数代名詞）",
+      "C": "それ（非人称代名詞）",
+      "D": "私たち自身（再帰代名詞）"
+    },
+    "choice_explanations": {
+      "A": "「which」は、直前の名詞など「先行詞」を受けて、関係代名詞の役割として使われる言葉です。しかし、この空所は、単に前の名詞を指すだけでなく、「（主語が）〜できる」という動作の主体として必要なので、「which」は不適当です。",
+      "B": "「they」は、主格の複数代名詞であり、複数の人や物を指す際に使用します。この文脈では、変更の理解主体となるのは「employees（従業員たち）」という複数人なので、「they」が意味的にも文法的にも最も適切です。",
+      "C": "「it」は、単数のものである物や概念を指す代名詞です。主語が複数の人物（employees）である場合、単数形の「it」を使ってしまうと、主語と代名詞の数が合わなくなるため不適当です。",
+      "D": "「ourselves」は、話している人たち自身（話し手を含むグループ）を指す「再帰代名詞」の一種です。この文章で変更を理解する主体は、会話に参加している人ではなく、文脈上の「従業員たち」であるため、この代名詞は使い方が異なります。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The employees, _____ dedication was unparalleled, received a special bonus this month.",
+    "choice_a": "whom",
+    "choice_b": "who",
+    "choice_c": "which",
+    "choice_d": "whose",
+    "correct_answer": "D",
+    "explanation": "この文は、関係代名詞を用いて先行詞（the employees）を修飾する非制限用法です。空所が導く節「_____ dedication was unparalleled」は、「（彼ら）の献身」という所有の関係を示しています。したがって、この空所には、先行詞（the employees）が所有する物を示す所有格の関係代名詞が必要です。「whose」は、先行詞の所有格（例：彼らの、彼女の）を表現する関係代名詞であり、この文の構造に完全に一致します。他の選択肢は、この「〜の」という所有の関係を示す役割を果たすことができません。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "その献身が比類なきものだった従業員たちは、今月特別なボーナスを受け取りました。",
+    "choice_translations": {
+      "A": "〜する人（目的格の関係代名詞）",
+      "B": "〜する人（主格の関係代名詞）",
+      "C": "〜の（物事などに関する関係代名詞）",
+      "D": "その（所有格の関係代名詞）"
+    },
+    "choice_explanations": {
+      "A": "「whom」は、動作の受け手（目的語）を示す関係代名詞です。この文は「献身が比類なき」という形で所有関係を示しているため、「whom」では文法的な役割を満たせません。",
+      "B": "「who」は、主語を示す関係代名詞です。ここでは「dedication」（献身）という名詞が主語となっているため、所有者を示す必要があります。「who」では所有の関係を表現することができません。",
+      "C": "「which」は、物や事柄を指す関係代名詞として使われます。先行詞が人間（the employees）であるため、人間を指し、かつ所有関係を示す「whose」を使う方が文脈的に最も自然です。",
+      "D": "「whose」は、先行詞（employees）が所有するものを指す所有格の関係代名詞です。「彼らの」という意味になり、「dedication」という名詞の所有者を示すため、この文の構造にとって最も適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee emphasized that all members must submit their ideas to the coordinator, and ____ should be ready for the final presentation next week.",
+    "choice_a": "who",
+    "choice_b": "it",
+    "choice_c": "which",
+    "choice_d": "they",
+    "correct_answer": "D",
+    "explanation": "この文は「委員会は、全てのメンバーが自分のアイデアをコーディネーターに提出しなければならず、そしてそれら（アイデア）は来週の最終プレゼンテーションの準備が整っているはずだ」という意味です。空所には、直前の文脈で言及された『アイデア（ideas）』を受けて、文の主語（S）となる代名詞が必要です。先行詞が『ideas』という複数形の名詞であるため、主語として代用する代名詞は主格の複数形『they』が最も適切です。したがって、選択肢Dの『they』が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "pronoun",
+    "question_translation": "委員会は、全てのメンバーがコーディネーターに自分のアイデアを提出しなければならないと強調し、それらは来週の最終プレゼンテーションの準備が整っているはずです。",
+    "choice_translations": {
+      "A": "誰が",
+      "B": "それ（単数）",
+      "C": "どれが",
+      "D": "それら"
+    },
+    "choice_explanations": {
+      "A": "who: 「who」は主に「人」を先行詞として指す関係代名詞または主格の代名詞です。先行詞は「アイデア」（物・概念）であり、人ではないため不適切です。",
+      "B": "it: 「それ」を指しますが、先行詞は「複数のアイデア」（ideas）という複数形です。したがって、単数形の『it』では文法的に不適切です。",
+      "C": "which: 「which」は「どれ」という選択肢や、非限定的な事柄を指す場合がありますが、ここでは主語として使用される必要があり、かつ先行詞が複数であるため、適切な主格代名詞ではありません。",
+      "D": "they: 先行詞である『ideas』（アイデア群）は複数形であり、空所が文の主語の位置にあります。したがって、先行詞の代名詞として最も適切な主格の複数形『they』を使用するのが文法的に正しい選択です。"
+    }
   }
 ]

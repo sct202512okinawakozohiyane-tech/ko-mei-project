@@ -1,0 +1,39 @@
+{
+  "review_status": "rejected",
+  "original_review_status": "needs_fix",
+  "rereviewed_file": "rereviewed_20260617_135016.json",
+  "question": {
+    "part": 5,
+    "question_text": "The committee reviewed the proposals, ______ were highly ambitious but lacked specific implementation details.",
+    "choice_a": "who",
+    "choice_b": "its",
+    "choice_c": "which",
+    "choice_d": "what",
+    "correct_answer": "C",
+    "explanation": "この文のカンマ（,）は、直前の文で述べられた内容全体について、補足説明を加える役割を果たしています。この補足情報が指すのは、単なる提案書という『もの』ではなく、提案書が持っている『内容や特徴』全体です。したがって、先行詞全体の内容を指し、主語として機能する関係代名詞「which」が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "pronoun",
+    "grammar_point": "relative_pronoun",
+    "question_translation": "委員会は提案書を検討しました。それ（提案書の内容）は非常に野心的でしたが、具体的な実行計画が欠けていました。",
+    "choice_translations": {
+      "A": "〜な人（関係代名詞）",
+      "B": "それの（所有格）",
+      "C": "それ（関係代名詞）",
+      "D": "〜なもの（先行詞を含む関係代名詞）"
+    },
+    "choice_explanations": {
+      "A": "who: 「who」は、人間や生命体を指すときに使われます。先行詞「the proposals」（提案書）は物であるため、文法的に不適当です。",
+      "B": "its: これは所有格（「それの」）を示す語であり、この空所では主語の役割が必要です。したがって、文の構造に合いません。",
+      "C": "which: 関係代名詞の「which」は、直前の文脈全体や内容（この場合は提案書という全体の性質）を指す補足情報として使うことができます。この文の主語として文脈全体を指すため、文法的に正しいです。",
+      "D": "what: 「what」は先行詞を含めた「〜なもの」を指す働きがありますが、コンマによって補足情報として節を導くというこの文の標準的な構造では、「which」を使う方が最も自然で適切な表現となります。"
+    }
+  },
+  "issues": [
+    "choice_explanations: Dの解説（whatとwhichの使い分け）が非常に専門的であり、初学者が混乱しやすい",
+    "explanation: 文法ポイント（Sentential antecedent：前節全体を指す先行詞）の説明が抽象的であり、初学者に向けた解説としては掘り下げが足りない"
+  ],
+  "suggestions": [
+    "choice_explanationsのDの解説を修正し、「which」は直前の文章全体の内容や状況を指し、文の主要な情報を加える際に使うという、より平易な説明に置き換えるべき。",
+    "explanationの冒頭で、この空所が「先行詞全体の内容や状況」という、一般的な文法ルールを超えた特殊な使い方をしている（Sentential antecedent）ことを明記し、その重要性を指摘する。"
+  ]
+}
