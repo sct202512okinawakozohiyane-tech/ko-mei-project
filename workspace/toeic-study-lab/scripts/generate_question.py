@@ -257,20 +257,23 @@ def parse_args():
 
 
 def main():
-    count, category = parse_args()
+    count, fixed_category = parse_args()
 
-    if category is None:
-        category = pick_least_filled_category()
-        if category:
-            print(f"[INFO] カテゴリ自動選択（DB最少）: {category} ({CATEGORIES[category]['label']})")
-    else:
-        print(f"[INFO] カテゴリ指定: {category} ({CATEGORIES[category]['label']})")
-
-    prompt = load_prompt(category)
+    if fixed_category is not None:
+        print(f"[INFO] カテゴリ指定: {fixed_category} ({CATEGORIES[fixed_category]['label']})")
 
     success_count = 0
 
     for i in range(1, count + 1):
+        if fixed_category is None:
+            category = pick_least_filled_category()
+            if category:
+                print(f"[INFO] カテゴリ自動選択（DB最少からランダム）: {category} ({CATEGORIES[category]['label']})")
+        else:
+            category = fixed_category
+
+        prompt = load_prompt(category)
+
         print(f"[INFO] {i}/{count} 問目を生成します")
 
         question_data = generate_one(prompt)
