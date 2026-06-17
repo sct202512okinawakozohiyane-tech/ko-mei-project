@@ -22,30 +22,40 @@ def question():
     cur = conn.cursor()
 
     if grammar_point == "":
-        cur.execute("""
-            SELECT *
-            FROM questions
-            ORDER BY RANDOM()
-            LIMIT 1
-        """)
+        where_clause = ""
+        params = ()
     elif grammar_point == "未分類":
-        cur.execute("""
-            SELECT *
-            FROM questions
-            WHERE grammar_point IS NULL OR grammar_point = ''
-            ORDER BY RANDOM()
-            LIMIT 1
-        """)
+        where_clause = "WHERE (grammar_point IS NULL OR grammar_point = '')"
+        params = ()
     else:
-        cur.execute("""
+        where_clause = "WHERE grammar_point = ?"
+        params = (grammar_point,)
+
+    unanswered_filter = "id NOT IN (SELECT question_id FROM results)"
+    if where_clause:
+        unanswered_where = f"{where_clause} AND {unanswered_filter}"
+    else:
+        unanswered_where = f"WHERE {unanswered_filter}"
+
+    cur.execute(f"""
+        SELECT *
+        FROM questions
+        {unanswered_where}
+        ORDER BY RANDOM()
+        LIMIT 1
+    """, params)
+    row = cur.fetchone()
+
+    if row is None:
+        cur.execute(f"""
             SELECT *
             FROM questions
-            WHERE grammar_point = ?
+            {where_clause}
             ORDER BY RANDOM()
             LIMIT 1
-        """, (grammar_point,))
+        """, params)
+        row = cur.fetchone()
 
-    row = cur.fetchone()
     conn.close()
 
     return render_template(
