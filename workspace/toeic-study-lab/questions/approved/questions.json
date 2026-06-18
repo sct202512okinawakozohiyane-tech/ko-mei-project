@@ -622,5 +622,343 @@
       "C": "which: 「which」は「どれ」という選択肢や、非限定的な事柄を指す場合がありますが、ここでは主語として使用される必要があり、かつ先行詞が複数であるため、適切な主格代名詞ではありません。",
       "D": "they: 先行詞である『ideas』（アイデア群）は複数形であり、空所が文の主語の位置にあります。したがって、先行詞の代名詞として最も適切な主格の複数形『they』を使用するのが文法的に正しい選択です。"
     }
+  },
+  {
+    "part": 5,
+    "question_text": "Before making major changes, managers must review the existing protocols and ____ the key issues that need attention.",
+    "choice_a": "turn up",
+    "choice_b": "figure out",
+    "choice_c": "run off",
+    "choice_d": "take up",
+    "correct_answer": "B",
+    "explanation": "この文は「重大な変更を加える前に、管理者は既存の規約を見直し、注目すべき重要な問題点を突き止めなければならない」という意味です。空所には、問題や原因を『理解する』『特定する』という意味を持つ句動詞が必要です。選択肢の「figure out」は「（問題や原因を）理解する」「突き止める」という意味で、文脈に最も合致します。",
+    "difficulty": "standard",
+    "grammar_category": "phrasal_verb",
+    "grammar_point": "phrasal_verb",
+    "question_translation": "重大な変更を加える前に、管理者は既存のプロトコルを見直し、注目すべき重要な問題を突き止めなければならない。",
+    "choice_translations": {
+      "A": "turn up",
+      "B": "figure out",
+      "C": "run off",
+      "D": "take up"
+    },
+    "choice_explanations": {
+      "A": "turn up: この句動詞は「現れる」「見つかる」という意味が一般的です。ここでは、ただ「見つかる」というだけでなく、内容を深く「分析し、特定する」必要があり、文脈に合いません。",
+      "B": "figure out: この句動詞は「（問題や原因を）理解する」「突き止める」という意味を持ち、文脈上、既存のプロトコルを精査した結果、解決すべき「重要な問題点」を特定する、という行動と非常に自然に結びつきます。したがって、文法・語法の両面から正解です。",
+      "C": "run off: この句動詞は「逃走する」「枯渇する」という意味を持ちます。問題点の分析という行為とは意味が全く異なり、文脈に合いません。",
+      "D": "take up: この句動詞は「（趣味などを）始める」「占める」という意味です。文脈で必要なのは、分析して問題点を発見するという意味合いであり、「take up」は動作の開始や領域を指すため不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "After weeks of discussion, the research department finally managed to ______ a workable solution to the technical issues.",
+    "choice_a": "figure out",
+    "choice_b": "call back",
+    "choice_c": "come up with",
+    "choice_d": "run into",
+    "correct_answer": "C",
+    "explanation": "この文は「技術的な問題に対する実行可能な解決策を、研究部門がなんとかして見つけることができた」という内容です。「come up with」は「（アイデアや解決策など）を思いつく、生み出す」という意味のイディオムです。空所の前後の文脈から、新しい解決策を生み出したという行為を示す表現が必要です。したがって、「come up with」が文法的に、そして意味的にも最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "idiom",
+    "grammar_point": "idiom",
+    "question_translation": "数週間にわたる議論の後、研究部門はついに技術的な問題に対する実行可能な解決策を思いつくことができた。",
+    "choice_translations": {
+      "A": "（問題を）解決する、理解する",
+      "B": "（電話を）かけ直す、返事をする",
+      "C": "（アイデアなどを）思いつく、生み出す",
+      "D": "遭遇する、ぶつかる"
+    },
+    "choice_explanations": {
+      "A": "「figure out」も「解決する」「理解する」という意味で使われますが、一般的に「ある成果やアイデアを創作する」というニュアンスを強調する場合は「come up with」の方がより自然で、TOEICなど語彙問題を意識した文脈では、より特定のイディオムが答えとなる可能性が高いです。",
+      "B": "「call back」は、誰かに対して「かけ直す」という動作や、電話での返答を指すことが多く、解決策を思いつくという行為を表す語句としては不自然です。",
+      "C": "「come up with」は「（アイデアや解決策など）を思いつく」という、この文脈に完全に合致したイディオムです。単に「考える」という以上のニュアンスを含みます。",
+      "D": "「run into」は、文字通り「〜に遭遇する」という意味で、主に予期せぬ人や問題にぶつかる状況を指します。解決策を「生み出す」という文脈とは異なります。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The research team worked tirelessly on the project (_____) the lack of funding.",
+    "choice_a": "because",
+    "choice_b": "although",
+    "choice_c": "despite",
+    "choice_d": "therefore",
+    "correct_answer": "C",
+    "explanation": "この文は、いくつかの困難な状況にもかかわらず、チームが熱心に取り組んだという「譲歩（逆接）」の関係性を示しています。文中の空所の後ろに「the lack of funding」（資金の不足）という名詞句が続いているため、先行する節の内容と対比する要素を名詞（または動名詞）で導く前置詞が必要です。したがって、「despite」が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "conjunction",
+    "grammar_point": "conjunction",
+    "question_translation": "その研究チームは、資金不足にもかかわらず、そのプロジェクトに熱心に取り組んだ。",
+    "choice_translations": {
+      "A": "～だから（接続詞、節を導く）",
+      "B": "～だけれども（接続詞、節を導く）",
+      "C": "～にもかかわらず（前置詞）",
+      "D": "それゆえに（接続副詞）"
+    },
+    "choice_explanations": {
+      "A": "「because」は「～だから」という原因・理由を示す接続詞です。文脈から判断すると、資金不足が原因ではなく、それにもかかわらず活動したという「対比」を表す必要があるため、文法的な意味が合いません。",
+      "B": "「although」は接続詞であり、後には主語＋動詞の形をした「節（S+V）」が続く必要があります。しかし、この空所の後には「the lack of funding」という名詞句しか続かないため、文法的に合いません。",
+      "C": "「despite」は「～にもかかわらず」という意味を持つ前置詞です。前置詞の後には名詞や動名詞（〜ing形）といった名詞の塊が続くため、「the lack of funding」という名詞句と完璧に一致します。",
+      "D": "「therefore」は「それゆえに」という原因から結果を導く接続副詞であり、通常は文の切れ目（セミコロンやピリオド）で使われます。また、「despite」が示す「譲歩」の意味に適した語句ではありません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager advised the team members (_____) the new safety protocols before starting any machinery.",
+    "choice_a": "attending",
+    "choice_b": "to attend",
+    "choice_c": "attended",
+    "choice_d": "attend",
+    "correct_answer": "B",
+    "explanation": "この文は、直前の動詞『advised』（～するよう助言した）という、目的や要求・提案を示す動詞の用法に注意が必要です。一般的に『advise + 人 + to do』の形で「人に～するようアドバイスする」という構文を取ります。空所には、目的を表す不定詞（to + 動詞の原形）が入る必要があります。したがって、「to attend」が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "infinitive",
+    "grammar_point": "to_infinitive",
+    "question_translation": "そのマネージャーは、チームメンバーたちに、機械を動かす前に新しい安全手順に（_____）するようにと助言した。",
+    "choice_translations": {
+      "A": "出席している（動名詞/現在分詞）",
+      "B": "出席すること（不定詞）",
+      "C": "出席させられた（過去分詞）",
+      "D": "出席する（原形動詞）"
+    },
+    "choice_explanations": {
+      "A": "『attending』は動名詞（～すること）または現在分詞（～している）として機能しますが、『advise + 人 + [to do]』という、助言の構造を形成するためには、不定詞（to attend）を使うのが文法的に正しい形です。",
+      "B": "『advise』という動詞は、「人に何かをすることを促す」「〜するように忠告する」という意味で使われます。この場合、直後に続く動作（attend）は不定詞（to attend）の形で取るのが決まった文法構文（advise + O + to V）であり、これが正解です。",
+      "C": "『attended』は過去形または過去分詞形ですが、この文の構造では時制や受動態を示す必要がなく、動詞の原形を不定詞化する形（to attend）が求められます。したがって、この形は不適切です。",
+      "D": "『advise』の構文では、単に動詞の原形『attend』を空所に置くことは文法的に不自然です。『advise』の後ろには、誰に何をするかを示す形が必要です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee advised the employee on _____ the new departmental procedures thoroughly before the training session.",
+    "choice_a": "reviewed",
+    "choice_b": "review",
+    "choice_c": "reviewing",
+    "choice_d": "to review",
+    "correct_answer": "C",
+    "explanation": "この文では、「on」という前置詞の直後に動詞の形が来ています。前置詞の後に動詞を続ける場合、その動詞は必ず動名詞（-ing形）の形にする必要があります。したがって、「review」という動詞を動名詞の「reviewing」にするのが正解です。",
+    "difficulty": "standard",
+    "grammar_category": "gerund",
+    "grammar_point": "gerund",
+    "question_translation": "委員会は、従業員に対して、研修セッションの前に新しい部門の作業手順を徹底的に確認することについて助言しました。",
+    "choice_translations": {
+      "A": "確認された（過去分詞/過去形）",
+      "B": "確認する（原形）",
+      "C": "確認すること（動名詞）",
+      "D": "〜すること（不定詞）"
+    },
+    "choice_explanations": {
+      "A": "「reviewed」は動詞の過去形、または過去分詞の形です。この文脈で行動を示すため、動名詞の「reviewing」を使うのが適切です。",
+      "B": "前置詞の後ろに来る動詞は原形（動詞の基本形）であってはならず、動名詞（-ing形）にする必要があります。",
+      "C": "前置詞の後に続く動詞は動名詞（-ing形）の形をとる必要があります。ここでは「reviewing」が正しく文法構造を完成させています。",
+      "D": "「on」は前置詞です。前置詞のすぐ後には動詞の原形や「to + 動詞の原形」という不定詞は使えないため、文法的に不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "After weeks of negotiations, the representatives finally managed to ______ the terms of the contract.",
+    "choice_a": "make terms",
+    "choice_b": "come to terms",
+    "choice_c": "reach agreement",
+    "choice_d": "draw terms",
+    "correct_answer": "B",
+    "explanation": "この文脈では、「合意に達する」「条件を取り決める」という意味のイディオムが必要です。「come to terms with」は「〜という条件に合意する」「〜と和解する」という固定表現（イディオム）です。交渉の成果として、代名詞（representatives）が合同（manage to）して、契約の条件（terms）に合意した、という流れを完成させるため、このイディオムが最も自然かつ文法的に正しい表現となります。他の選択肢は、文法的に不適切であるか、または同じ意味でも英語として自然な定型表現（コロケーション）ではありません。",
+    "difficulty": "standard",
+    "grammar_category": "idiom",
+    "grammar_point": "idiom",
+    "question_translation": "何週間にもわたる交渉の後、代表者たちはついに契約の条件について合意に達することができました。",
+    "choice_translations": {
+      "A": "条件を作り出す",
+      "B": "合意に達する",
+      "C": "合意に達する",
+      "D": "条件を描く"
+    },
+    "choice_explanations": {
+      "A": "「make terms」という組み合わせは一般的ではありません。一般的に「合意をする」という場合、動詞（come, reachなど）と前置詞（to, with）を使ったイディオムの形をとります。",
+      "B": "「come to terms」は「〜について合意に至る」「〜という条件を受け入れる」という非常に重要なイディオムです。何かを話し合って合意点を見つけるというニュアンスが強いため、交渉の文脈にぴったりです。",
+      "C": "「reach agreement」は意味は通じますが、文法的な表現として不自然なことが多いです。「reach an agreement」や「come to an agreement」といった形が一般的であり、この文脈で「come to terms」を使う方が、より定型的な表現として正解となります。",
+      "D": "「draw terms」という表現は英語として通常使われません。「draw」は主に絵を描く、引き出すといった意味であり、交渉で「条件を描く」という意味合いは持たないため、不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The new software was _____ for the employees, greatly enhancing their productivity.",
+    "choice_a": "improve",
+    "choice_b": "improvingly",
+    "choice_c": "improved",
+    "choice_d": "improvement",
+    "correct_answer": "C",
+    "explanation": "この文の空所には、主語（The new software）の状態や性質を表す補語が必要です。主語とbe動詞（was）の関係で補語が使われる場合、原則として形容詞が必要です。選択肢の中で、ソフトウェアが「良くなった」という状態を表す形容詞的用法である「improved」が最も適切です。副詞の「improvingly」は文法的に不適当です。また、「improve」は原形（動詞）、そして「improvement」は名詞であり、この構造には文法的に適合しません。",
+    "difficulty": "standard",
+    "grammar_category": "parts_of_speech",
+    "grammar_point": "adjective",
+    "question_translation": "その新しいソフトウェアは従業員にとって改善されたものであり、彼らの生産性を大きく向上させた。",
+    "choice_translations": {
+      "A": "改善する（動詞）",
+      "B": "改善しながら（副詞）",
+      "C": "改善された（形容詞/過去分詞）",
+      "D": "改善（名詞）"
+    },
+    "choice_explanations": {
+      "A": "「improve」は動詞の原形であり、文法的に不適切です。ここでは、ソフトウェアというものが「〜された」という状態を説明する形容詞が必要です。",
+      "B": "「improvingly」は副詞です。副詞は動詞や形容詞、他の副詞を修飾するために使われますが、ここでは主語の補語（SVCのC）となる品詞が必要なため、不適当です。",
+      "C": "「improved」は「改善された」という意味の過去分詞であり、形容詞として機能します。主語とbe動詞（was）を受けて、そのソフトウェアの状態を説明する補語として文法的に正しく、文脈的にも自然です。",
+      "D": "「improvement」は名詞（改善）です。空所に入る場所には、主語（ソフトウェア）の状態を説明する補語が必要なため、名詞は使えません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Never _____ such a breathtaking view; it was truly spectacular.",
+    "choice_a": "I have seen",
+    "choice_b": "have I seen",
+    "choice_c": "I had seen",
+    "choice_d": "did I see",
+    "correct_answer": "B",
+    "explanation": "この文は、否定の副詞句「Never (決して〜ない)」が文頭に来たため、倒置構文が必須となります。倒置構文では、通常「Never」のような否定語を文頭に置いた場合、助動詞（have, be, doなど）が主語の前に移動します。正しくは「Never have I seen」となり、文頭の「Never」が引き起こした語順の変更（倒置）がポイントです。したがって、「have I seen」を埋め、全体で「Never have I seen」という語順にする必要があります。",
+    "difficulty": "standard",
+    "grammar_category": "inversion",
+    "grammar_point": "inversion",
+    "question_translation": "このような息をのむような景色を一度も見たことはない。本当に壮観だった。",
+    "choice_translations": {
+      "A": "私は見たことがない",
+      "B": "私は今まで見たことがない",
+      "C": "私は見たことがない",
+      "D": "私は見たことはない"
+    },
+    "choice_explanations": {
+      "A": "「I have seen」は通常の語順であり、倒置が起こっていないため、この文の文法的な構造を満たしていません。",
+      "B": "「have I seen」は、文頭の否定語「Never」によって引き起こされた典型的な倒置構文の語順です。助動詞「have」が主語「I」の前に移動しており、この語順が文法的に正しく、ネイティブ表現です。",
+      "C": "「I had seen」は通常の語順であり、文頭の「Never」による倒置を考慮していません。また、「never」と使われる場合、過去の経験を否定する完了形（have + 過去分詞）がより自然です。",
+      "D": "「did I see」は単純過去時制の助動詞「did」を用いた形ですが、文頭に置かれた「Never」は、過去の経験全体を否定する完了形（have）と組み合わせて倒置を形成するのが最も自然で正しいからです。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager insisted that the employees ______ their reports to the main office by the end of the day.",
+    "choice_a": "submit",
+    "choice_b": "to submit",
+    "choice_c": "submitting",
+    "choice_d": "submitted",
+    "correct_answer": "A",
+    "explanation": "この文は「主語 + insist that + 節」という構文が使われています。「insist that」の後には、要求や主張の内容が続く名詞節（that節）を形成します。この節の中の動詞は、提案や要求を表す動詞（insist, suggest, demandなど）の影響を受けるため、主語が何であれ動詞の原形を用いる必要があります。このような文法形式を「仮定法現在」といいます。したがって、空所には動詞の原形「submit」が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "subjunctive",
+    "grammar_point": "subjunctive",
+    "question_translation": "部長は、従業員たちがその日の終わりまでに報告書を本部に提出することを強く要求した。",
+    "choice_translations": {
+      "A": "提出する",
+      "B": "提出するために",
+      "C": "提出している",
+      "D": "提出した"
+    },
+    "choice_explanations": {
+      "A": "submit（原形）：『insist that + S + (should) + 原形』という「仮定法現在」の形を形成します。要求や主張の内容を述べるため、動詞の原形を用いるのが文法的に正しいです。これが正解です。",
+      "B": "to submit（不定詞）：『to + 動詞の原形』の不定詞の形です。この構文では、that節の中の動詞は不定詞ではなく原形を使う必要があります。",
+      "C": "submitting（現在分詞）：この形は現在進行形や分詞として使われますが、この「insisted that」の後の名詞節の動詞としては文法的に誤りです。",
+      "D": "submitted（過去形）：過去形も、この構文においては不適当です。文法構造が要求する形は原形です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "All reports ______ to the supervisor for approval before the end of the fiscal quarter.",
+    "choice_a": "submitting",
+    "choice_b": "submit",
+    "choice_c": "submitted",
+    "choice_d": "submits",
+    "correct_answer": "C",
+    "explanation": "この文は「全てのレポートは、会計年度末までに監督者によって承認されなければならない」という意味です。主語となっている「reports（レポート）」は、行為を行う側ではなく、「承認される」という行為を受ける側（データ）であるため、受動態が必要です。受動態を作るには、be動詞（ここでは文脈から想定される）＋動詞の過去分詞形が必要です。したがって、選択肢の「submitted」が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "active_passive",
+    "grammar_point": "passive_voice",
+    "question_translation": "全てのレポートは、会計年度末までに監督者によって承認されなければならない。",
+    "choice_translations": {
+      "A": "提出している（現在分詞）",
+      "B": "提出する（原形）",
+      "C": "提出された（過去分詞）",
+      "D": "提出する（三人称単数現在形）"
+    },
+    "choice_explanations": {
+      "A": "「submitting」は動名詞や現在分詞の形です。ここでは、主語が受け身の立場であるため、この形は文法的に適切ではありません。",
+      "B": "「submit」は動詞の原形です。この文脈では、主語の「reports」が動作を受ける側なので、能動態の原形形（submit）は文法的に不適当です。",
+      "C": "「submitted」は動詞の過去分詞形です。主語の「reports」が動作をされる側（〜される）であるため、受動態の形で最も適切な語形となります。これが正解です。",
+      "D": "「submits」は三人称単数現在の形です。主語の「reports」は複数形（reports）なので、文法的に合致しません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The research team _____ significant data from multiple sources over the past decade.",
+    "choice_a": "gathered",
+    "choice_b": "has gathered",
+    "choice_c": "gather",
+    "choice_d": "gathering",
+    "correct_answer": "B",
+    "explanation": "この文では、「over the past decade（過去10年間を通じて）」という期間を示す表現が使われています。これは、過去の一定期間から現在に至るまで継続している行為や、その結果が現在に影響を及ぼしていることを示すため、現在完了形を用いるのが最も適切です。主語が「The research team」（チーム全体として単数扱い）であるため、「has gathered」が正解となります。",
+    "difficulty": "standard",
+    "grammar_category": "verb_form",
+    "grammar_point": "tense",
+    "question_translation": "研究チームは、過去10年間を通じて複数の情報源から大量のデータを収集してきました。",
+    "choice_translations": {
+      "A": "gathered / 集めた（過去形）",
+      "B": "has gathered / 収集してきました（現在完了形）",
+      "C": "gather / 集める（現在形）",
+      "D": "gathering / 収集している（現在分詞）"
+    },
+    "choice_explanations": {
+      "A": "「gathered」は過去形であり、単純な過去の出来事を指す文脈では成立しますが、「over the past decade」という継続期間を示す場合は時制として不自然です。",
+      "B": "「has gathered」は現在完了形（have/has + 過去分詞）です。「over the past decade」という過去から現在までの期間指定があるため、結果が現在に及んでいるこの文脈に最も適しています。",
+      "C": "現在形「gather」は、習慣的な動作や普遍的な事実を述べるときに使われますが、期間の指定があるため、時制が適切ではありません。",
+      "D": "「gathering」は現在分詞であり、この文のように主語の主要な動詞として単独で使用することはできません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The new employee found it difficult _____ the company's complex policies.",
+    "choice_a": "understand",
+    "choice_b": "understanding",
+    "choice_c": "to understand",
+    "choice_d": "understood",
+    "correct_answer": "C",
+    "explanation": "この文は、「find it + 形容詞 + to不定詞」という構文（～することが～だと気づく／感じる）を用いています。この構文は、感情や判断の根拠となる具体的な行為を示す必要があるため、動詞の原形を「to不定詞」の形にする必要があります。したがって、「to understand」が文法的に最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "infinitive",
+    "grammar_point": "to_infinitive",
+    "question_translation": "新入社員は、その会社の複雑なポリシーを理解することは難しいと感じた。",
+    "choice_translations": {
+      "A": "理解する（原形）",
+      "B": "理解すること（動名詞）",
+      "C": "〜するという行為を理解すること",
+      "D": "理解された"
+    },
+    "choice_explanations": {
+      "A": "単なる原形を用いると文の構造が不完全になります。この「find it difficult」という形の後には、後に続く行為全体を指す「to不定詞」という形が必要です。",
+      "B": "「理解すること」という行為を示す動名詞は文法的にありえますが、「find it difficult」という特定の慣用的な構文においては、この構造を完成させるために「to不定詞」を用いるのが自然で、文法的な要求を満たしません。",
+      "C": "「to understand」は「to不定詞」の形で、この文の「find it difficult」という構文の後に続き、「〜するのが難しい」という、新入社員が抱いている具体的な行為や認識を補完するため、文法的に最適です。",
+      "D": "「understood」は受け身（〜された）の意味を持つ過去分詞形です。ここでは、新入社員が個人的に「難しいと感じた」という、主体的な認識を述べているため、能動的な行為を示す形が求められます。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee strongly recommended that she (______) additional training before taking on the new project.",
+    "choice_a": "receive",
+    "choice_b": "receiving",
+    "choice_c": "received",
+    "choice_d": "to receive",
+    "correct_answer": "A",
+    "explanation": "この文は、「〜することを強く推奨する」という提案や要求を伝える特別な構文（recommend that節）を用いています。この構文では、主語が誰であっても、動詞の部分には動詞の原形（受け取る）を使わなければならないという文法ルールがあります。したがって、選択肢の「receive」が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "subjunctive",
+    "grammar_point": "subjunctive",
+    "question_translation": "委員会は、彼女がその新しいプロジェクトを引き受ける前に、追加のトレーニングを（____）することを強く推奨しました。",
+    "choice_translations": {
+      "A": "受け取る（原形）",
+      "B": "受け取ること（動名詞）",
+      "C": "受け取った（過去形/過去分詞）",
+      "D": "受け取るために（不定詞）"
+    },
+    "choice_explanations": {
+      "A": "receive（原形）は、この文で使われている「強く推奨する」という動詞が導く特殊な要求・提案の形（recommend that節）において、文法的に正しい動詞の形だからです。",
+      "B": "receiving（動名詞）は、「〜という行為そのもの」という意味を持つ名詞として機能します。しかし、この文の構造では、主語が「〜するべきだ」という動作・状態自体を指す必要があり、動名詞は文法的に不適切です。",
+      "C": "received（過去形/過去分詞）は、過去に起こった出来事を示す、または受動態を作る際に使われます。この文の文脈で求められている、一般的な提案や要求の形式ではありません。",
+      "D": "to receive（不定詞）は、目的や未来の行動を示す際によく使われますが、「recommend that...」という特定の構文が要求する形式は原形動詞であり、不定詞では文法的に成立しません。"
+    }
   }
 ]

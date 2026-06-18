@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Grammar Points</title>
+</head>
+<body>
+
+<h1>grammar_point一覧</h1>
+
+<table border="1">
+    <tr>
+        <th>文法項目</th>
+        <th>問題数</th>
+        <th>回答数</th>
+        <th>正解数</th>
+        <th>正答率</th>
+        <th></th>
+    </tr>
+    {% for gp in grammar_point_list %}
+    <tr>
+        <td>{{ gp.grammar_point }}</td>
+        <td>{{ gp.question_count }}</td>
+        <td>{{ gp.answered_count }}</td>
+        <td>{{ gp.correct_count }}</td>
+        <td>{% if gp.accuracy is not none %}{{ "%.1f"|format(gp.accuracy) }}%{% else %}-{% endif %}</td>
+        <td><a href="{{ gp.practice_url }}">練習する</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="/">ホームに戻る</a></p>
+
+</body>
+</html>

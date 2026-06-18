@@ -9,21 +9,19 @@
 <h1>TOEIC Study Lab</h1>
 
 <p>
-{% if grammar_point %}
-出題モード：{{ grammar_point }}
-{% else %}
-出題モード：全問題
-{% endif %}
+出題モード：{{ mode_label }}{% if grammar_point %}（{{ grammar_point }}）{% endif %}
 </p>
 
-{% if question %}
+{% if message %}
+<p>{{ message }}</p>
+{% elif question %}
 <p><strong>{{ question[2] }}</strong></p>
 
 <form action="/answer" method="post">
 
-    <input type="hidden"
-           name="question_id"
-           value="{{ question[0] }}">
+    <input type="hidden" name="question_id" value="{{ question[0] }}">
+    <input type="hidden" name="mode" value="{{ mode }}">
+    <input type="hidden" name="grammar_point" value="{{ grammar_point }}">
 
     <button type="submit" name="user_answer" value="A">
         A. {{ question[3] }}
@@ -52,6 +50,7 @@
 <p>該当する問題がありません</p>
 {% endif %}
 
+<p><a href="/">ホームに戻る</a></p>
 <p><a href="/history">履歴を見る</a></p>
 
 </body>
