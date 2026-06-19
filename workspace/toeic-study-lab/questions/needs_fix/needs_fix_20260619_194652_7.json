@@ -1,0 +1,44 @@
+{
+  "review_status": "needs_fix",
+  "score": 65,
+  "correct_answer": "B",
+  "issues": [
+    "choice_aとchoice_bの内容が同一であり、問題設計上の重大な欠陥であるため、選択肢の差異を出す必要がある。",
+    "choice_translationsのフォーマットが不適切で、品詞や文法的な用法に関する解説が混在し、初学者に理解しにくい。",
+    "explanationが、「〜が正解である」という結論の説明に留まっており、誤答選択肢（特に文法的な理由で不適切なCとD）に対する明確な否定的な解説が不足している。",
+    "choice_explanationsにおいて、AとBが同一の内容であるため、選択肢の違いを明確に説明できていない。"
+  ],
+  "suggestions": [
+    "choice_aとchoice_bは同一の内容であるため、どちらか一方の選択肢を削除するか、あるいはAを文法的に異なる品詞（例：名詞形や過去形）に変更し、問題の難易度を保ちつつ選択肢間の差異を明確にすべき。",
+    "choice_translationsは「単語」と「和訳」に分離し、選択肢が持つ基本的な品詞情報を平易に記述することで、理解を助ける。",
+    "explanationは、まず空所に入れるべき品詞（形容詞）を提示し、その上で、なぜ他の選択肢（CとDの副詞）が不適切なのかを具体的に説明するよう加筆する。",
+    "choice_explanationsでは、それぞれの選択肢がなぜ文法的に不適当なのか（品詞不一致、語法の誤りなど）を、初学者向けに構造的に説明する。"
+  ],
+  "confidence": "high",
+  "question": {
+    "part": 5,
+    "question_text": "The data collected from the new market research suggests that the current product is significantly ___ than the previous model.",
+    "choice_a": "superior",
+    "choice_b": "superior",
+    "choice_c": "superiorly",
+    "choice_d": "superlatively",
+    "correct_answer": "B",
+    "explanation": "この文は「〜よりも」という比較の文脈（thanが文末にあるため）ですが、空所を埋める品詞として形容詞が必要です。'superior' は「〜より優れている」という意味を持つ形容詞であり、この文の主語(product)の状態を説明しているため、正しく機能します。したがって、'superior' が正答です。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "新しい市場調査から収集されたデータは、現在の製品が以前のモデルより著しく優れていることを示唆している。",
+    "choice_translations": {
+      "A": "より優れた（語源形、副詞的用法）",
+      "B": "より優れた（形容詞）",
+      "C": "より優れて（副副詞）",
+      "D": "最も優れている（副詞）"
+    },
+    "choice_explanations": {
+      "A": "superiorは形容詞ですが、選択肢の文脈や語法的な適合性が不自然です。",
+      "B": "superiorは形容詞であり、主語(product)の状態を説明し、かつ比較の文脈（thanがある）に合致する品詞・形です。これが正解です。",
+      "C": "superiorlyは副詞であり、この空所では「製品（product）」という名詞を修飾する形容詞が求められているため、文法的に不適切です。",
+      "D": "superlativelyは副詞であり、文法的な役割（修飾される品詞）が間違っています。また、比較級の文脈で副詞を使うのは不自然です。"
+    }
+  }
+}

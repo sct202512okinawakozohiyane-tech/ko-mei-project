@@ -960,5 +960,577 @@
       "C": "received（過去形/過去分詞）は、過去に起こった出来事を示す、または受動態を作る際に使われます。この文の文脈で求められている、一般的な提案や要求の形式ではありません。",
       "D": "to receive（不定詞）は、目的や未来の行動を示す際によく使われますが、「recommend that...」という特定の構文が要求する形式は原形動詞であり、不定詞では文法的に成立しません。"
     }
+  },
+  {
+    "part": 5,
+    "question_text": "The new accounting system updated last month was significantly _____ than the previous version, making data processing much quicker.",
+    "choice_a": "more fast",
+    "choice_b": "faster",
+    "choice_c": "fast",
+    "choice_d": "fastest",
+    "correct_answer": "B",
+    "explanation": "この文は「新しい会計システム」と「以前のバージョン」を比較しています。比較の対象がある場合、形容詞や副詞には比較級（-er や more...）を用いなければなりません。この文脈では、速さ（fast）を比較しているため、比較級である「faster」が適切です。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "先月更新された新しい会計システムは、以前のバージョンよりも著しく_____であり、データの処理をはるかに迅速にしました。",
+    "choice_translations": {
+      "A": "より速い",
+      "B": "より速い",
+      "C": "速い",
+      "D": "最も速い"
+    },
+    "choice_explanations": {
+      "A": "「more fast」は比較の形として間違いです。fastのように単音節で終わる形容詞の場合、通常は「more」をつけずに語尾に「-er」を付けて比較級を作ります。",
+      "B": "「faster」は、形容詞「fast」の比較級です。比較対象（previous version）と比較しているため、文法的に最も適切な形です。",
+      "C": "「fast」は原級（基本的な形）です。文中に「than」（〜よりも）があるため、比較が必要となり、原級をそのまま使うことはできません。",
+      "D": "「fastest」は最上級（最も〜な）です。最上級は3つ以上のグループ全体を比較する際（the fastest of all）に使われるため、この文脈では使いません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee must _____ the feasibility of the expansion plan before giving final approval.",
+    "choice_a": "assume",
+    "choice_b": "mention",
+    "choice_c": "assess",
+    "choice_d": "notice",
+    "correct_answer": "C",
+    "explanation": "この文脈では「〜の実現可能性を評価する」という、専門的で体系的な判断を下す行為が求められています。「assess」は「評価する」「査定する」という意味を持ち、計画や状況の価値や実現可能性を判断する際に非常に一般的に使われる語彙です。そのため、「assess the feasibility」というコロケーション（連語）が最も自然で適切です。",
+    "difficulty": "standard",
+    "grammar_category": "vocabulary",
+    "grammar_point": "vocabulary",
+    "question_translation": "委員会は、最終承認を与える前に、その拡張計画の実現可能性を評価しなければならない。",
+    "choice_translations": {
+      "A": "仮定する",
+      "B": "言及する",
+      "C": "評価する",
+      "D": "気づく"
+    },
+    "choice_explanations": {
+      "A": "「assume」は「～と仮定する」「思い込む」という意味です。単に仮定や推測を行う行為を表すため、計画の実現可能性という客観的な判断を必要とする状況での使用は不自然です。",
+      "B": "「mention」は「〜に言及する」「口にする」という意味です。単に話題に出すという意味合いが強く、計画の実現可能性といった本質的な「評価」を行うというニュアンスを伝えるには弱すぎ、文脈に合致しません。",
+      "C": "「assess」は「評価する」「査定する」という意味を持つ動詞です。計画や物事の価値や実現可能性といった抽象的な概念（feasibility）を客観的に判断するという文脈に最も適しており、この単語が正解となります。",
+      "D": "「notice」は「気づく」「目撃する」という意味の動詞で、主に五感による認識（視界に入る、目撃するなど）に使われます。抽象的な計画の「実現可能性」を認識するというよりは、実際に何かを視認するという文脈で使われるため、適切ではありません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee decided that the new policy must include measures to encourage cross-departmental cooperation and ___ the overall synergy of the team.",
+    "choice_a": "maintain",
+    "choice_b": "facilitate",
+    "choice_c": "elucidate",
+    "choice_d": "elevate",
+    "correct_answer": "D",
+    "explanation": "この文は、「〜することと、全体の相乗効果を向上させること」という二つの要素を並列して述べており、空所には動詞（または動詞の原型）が必要です。文脈上、単なる維持（maintain）や円滑化（facilitate）ではなく、「向上させる」「高める」という強い意味合いが求められます。'elevate'（高める、引き上げる）は、物理的または抽象的なレベルを一段階引き上げるというニュアンスを持ち、ここでは「相乗効果（synergy）」の質的な向上に最も適しています。",
+    "difficulty": "standard",
+    "grammar_category": "context",
+    "grammar_point": "context",
+    "question_translation": "委員会は、新しいポリシーには、部門間の協力を促す対策と、全体の相乗効果を___する措置を含める必要があると決定した。",
+    "choice_translations": {
+      "A": "維持する、保つ",
+      "B": "円滑にする、促進する",
+      "C": "明らかにする、解き明かす",
+      "D": "高める、向上させる"
+    },
+    "choice_explanations": {
+      "A": "「maintain」は「維持する」という意味で、文法的には正しいですが、「すでに存在する相乗効果を保つ」という受動的・現状維持の意味に留まり、「新しい対策」で目指すべき「向上」の意図が伝わりません。そのため、文脈的にも不適切です。",
+      "B": "「facilitate」は「促進する」「円滑にする」という意味で、動詞として適切ですが、「相乗効果」のようなレベルや質的な「向上」を促すというより、プロセスや動作を容易にするというニュアンスが強いため、本文脈では「elevate」の方がより的確です。",
+      "C": "「elucidate」は「明確にする」「説明する」という意味です。この文脈では、相乗効果という抽象的な「レベル」を物理的に明確にするという意味合いは弱く、不適切です。",
+      "D": "「elevate」は「高める」「向上させる」という意味で、抽象的な概念（相乗効果など）のレベルを一段階引き上げるというニュアンスに適しています。文脈上、最も自然な選択肢です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee members spent hours trying to _______ the disagreement among the different departments.",
+    "choice_a": "resolve",
+    "choice_b": "settle",
+    "choice_c": "discuss",
+    "choice_d": "solve",
+    "correct_answer": "A",
+    "explanation": "この文脈で「意見の不一致を解決する」という高度なレベルでの解消を意味する場合、最も自然で適切なのは「resolve」です。特に人間関係や複雑な対立、議論の対立などを「解決・解消する」というニュアンスは「resolve」が最適です。他の選択肢も文脈によっては使えますが、「disagreement（不一致）」を「解決・解消する」という表現としては「resolve」が最も一般的なコロケーションとして確立されています。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "委員たちは、異なる部門間の意見の不一致を_____するために何時間も費やしました。",
+    "choice_translations": {
+      "A": "resolve",
+      "B": "settle",
+      "C": "discuss",
+      "D": "solve"
+    },
+    "choice_explanations": {
+      "A": "「resolve」は「（対立や問題を）解決する」「決着をつける」という意味があり、特に深刻な対立、意見の相違、問題などを根源的に解消・解決するというニュアンスで「disagreement」と組み合わされるのが最も自然なコロケーションです。",
+      "B": "「settle」は「落ち着かせる」「解決する」という意味がありますが、「disagreement」の解消には「settle the disagreement」という形は使われますが、感情的または物理的な問題の根絶というニュアンスを強調する場合、「resolve」の方がより正式で適切な響きを持っています。",
+      "C": "「discuss」は「議論する」「話し合う」という意味です。文脈上「disagreement（不一致）」自体を議論することはできますが、空所には「不一致を〇〇する」という動作動詞が必要であり、「discuss」は動作の目的語（disagreement）を直接取り扱う動作には不向きです。",
+      "D": "「solve」は「問題を解く」という意味で、パズルや数学の問題など、明確な答えがあるものに対して使うことが多く、抽象的な意見の対立（disagreement）を「solve」することは一般的ではありません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "This new workflow is _____ than the previous system, significantly reducing man-hours.",
+    "choice_a": "more efficiently",
+    "choice_b": "efficiently",
+    "choice_c": "more efficient",
+    "choice_d": "most efficient",
+    "correct_answer": "C",
+    "explanation": "空所には、比較対象（than節）が存在するため、比較級の形容詞が必要です。形容詞'efficient'を比較級にする場合、'more'を冠するのが正しい形です。したがって、'more efficient'が文法的に正しく、意味的にも自然な流れとなります。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "この新しいワークフローは、以前のシステムよりも（より効率的）であり、大幅に人時を削減している。",
+    "choice_translations": {
+      "A": "より効率的に",
+      "B": "効率的に",
+      "C": "より効率的な",
+      "D": "最も効率的な"
+    },
+    "choice_explanations": {
+      "A": "「more efficiently」は副詞（どのように〜するか）を修飾する形であり、文の骨格で名詞句や主語を修飾する形容詞の役割を果たす空所には不適切です。",
+      "B": "「efficiently」は副詞（効率的に）です。この文では「is」の後ろに補語として使用され、主語（workflow）の性質を説明する形容詞が必要です。副詞が入ると文の構造が崩れてしまいます。",
+      "C": "「more efficient」は形容詞の比較級の形で、「より効率的な」という意味を持ちます。空所の直後に「than」という比較表現があるため、この形が最も文法的に正しく、文意にも合致します。",
+      "D": "「most efficient」は最上級で、最も〜な、という意味を持ちます。比較対象となるものが示されている場合、比較級（more efficient）を使用するのが適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The research team found that the new simulation program was significantly _____ than manual data entry for predictive modeling.",
+    "choice_a": "more efficient",
+    "choice_b": "efficiently",
+    "choice_c": "most efficiently",
+    "choice_d": "efficiency",
+    "correct_answer": "A",
+    "explanation": "この文は、新しいシミュレーションプログラムと手作業でのデータ入力という2つのものを比較しています。「AというものがBよりも〜だ」という比較の構造を作る場合、品詞が形容詞（adjective）である必要があります。形容詞『efficient』（効率的な）を比較級にする場合、語尾が-yで終わる、または3音節以上の形容詞は「more + 形容詞」の形をとります。したがって、「more efficient」が正しく、比較を行っていることを示す最も適切な形です。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "その研究チームは、予測モデル化において、新しいシミュレーションプログラムが手作業でのデータ入力よりも著しくより効率的であることを見つけ出した。",
+    "choice_translations": {
+      "A": "より効率的な（比較級）",
+      "B": "効率的に（副詞）",
+      "C": "最も効率的に（副詞＋最上級）",
+      "D": "効率性（名詞）"
+    },
+    "choice_explanations": {
+      "A": "「more efficient」は「より効率的な」という意味の比較級の形容詞の形です。文中で二つのものを比較しているため、「AよりもBだ」という形を完成させるのに最も適切です。",
+      "B": "「efficiently」は副詞です。副詞は動作や様子を修飾しますが、ここでは主語である「シミュレーションプログラム」の性質（どのように「〜な」ものか）を修飾する形容詞が必要です。そのため、品詞が不適切です。",
+      "C": "「most efficiently」は「最も効率的に」という、程度が最も高いことを示す副詞の形です。この文は単に二つを比較しているだけなので（最も〜という最高級の比較が必要ではない）、文脈上不適当です。また、空所には形容詞が求められています。",
+      "D": "「efficiency」は「効率性」という名詞です。空所には「〜な」という意味を持つ形容詞が必要です。したがって、ここでは品詞が間違っています。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "To improve our productivity, the management decided to _____ the existing workflow to eliminate unnecessary steps.",
+    "choice_a": "streamline",
+    "choice_b": "elaborate",
+    "choice_c": "maintain",
+    "choice_d": "diminish",
+    "correct_answer": "A",
+    "explanation": "この文脈では「既存のワークフローを改善する/最適化する」という意味が求められています。選択肢の『streamline』は「効率化する」「合理化する」といった意味を持ち、手順やプロセスを簡素化し、無駄を省くという文脈に最も適しています。他の選択肢は意味が合わないため、誤りとなります。",
+    "difficulty": "standard",
+    "grammar_category": "vocabulary",
+    "grammar_point": "vocabulary",
+    "question_translation": "生産性を向上させるため、経営陣は不要な手順を排除するために、既存のワークフローを最適化することに決めました。",
+    "choice_translations": {
+      "A": "効率化する",
+      "B": "詳述する",
+      "C": "維持する",
+      "D": "減少させる"
+    },
+    "choice_explanations": {
+      "A": "streamline: 「効率化する」「合理化する」という意味を持ち、特にプロセスやシステムから無駄を省き、簡素化するという意味合いで、文脈に完璧に合致します。",
+      "B": "elaborate: 「詳述する」「詳細化する」という意味で、プロセスそのものを改善する（効率化する）という文脈とは異なります。ここでは、単に説明を増やすというニュアンスが強すぎます。",
+      "C": "maintain: 「維持する」「保つ」という意味です。単に現状を維持することは、「不要な手順を排除する」という目的に反するため、誤りです。",
+      "D": "diminish: 「減少させる」「縮小させる」という意味ですが、単に量を減らすという行為に留まり、プロセス全体の最適化（より良い状態への改善）というニュアンスが足りません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Implementing the new CRM system made data retrieval much _____ compared to the previous manual process.",
+    "choice_a": "easy",
+    "choice_b": "more easily",
+    "choice_c": "easiest",
+    "choice_d": "easier",
+    "correct_answer": "D",
+    "explanation": "この文は「以前の手作業のプロセスと比べると、データ検索ははるかに〜だ」という比較の文です。空所の直後に『compared to』という比較表現があり、また、データ検索(data retrieval)という名詞を修飾する形容詞が必要です。したがって、「easy（簡単な）」の比較級である「easier」が適切です。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "新しいCRMシステムを導入したことで、以前の手作業のプロセスと比べると、データ検索ははるかに〜になりました。",
+    "choice_translations": {
+      "A": "簡単な（形容詞）",
+      "B": "より簡単に（副詞）",
+      "C": "最も簡単な（最上級）",
+      "D": "より簡単な（比較級）"
+    },
+    "choice_explanations": {
+      "A": "「easy」は形容詞の原形（基本形）です。比較対象（compared to）が存在するため、単に「easy」を使うのは不適当です。",
+      "B": "「more easily」は副詞の比較級です。空所は「data retrieval（データ検索）」という名詞を修飾する必要があるため、形容詞が求められています。",
+      "C": "「easiest」は最上級の形容詞です。最上級は「～の中で最も〜」という、三つ以上の物事を比較する際に用いられ、「compared to」という比較構造とは使い方が異なります。",
+      "D": "「easier」は「easy」の比較級の形容詞です。文中で比較（compared to）が行われているため、適切な文法形であり、正解です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The research team worked tirelessly through the weekend and finally published their findings; _________, the department organized a celebratory luncheon for all members.",
+    "choice_a": "while",
+    "choice_b": "because",
+    "choice_c": "even though",
+    "choice_d": "thus",
+    "correct_answer": "D",
+    "explanation": "この文は、前半で「リサーチチームが懸命に働いた結果、研究成果が発表された」という出来事を述べ、後半で「部門全体が祝賀ランチを企画した」という結果を述べています。前半の内容が後半の行動の原因・帰結となっているため、接続副詞の「thus」（したがって、それゆえに）を用いて、論理的な帰結を示す必要があります。したがって、「thus」が最も自然で適切な語法です。",
+    "difficulty": "standard",
+    "grammar_category": "context",
+    "grammar_point": "context",
+    "question_translation": "研究チームは週末もたゆまどなく働き、ついに研究成果を発表した。したがって、部門は全メンバーのために祝賀ランチを企画した。",
+    "choice_translations": {
+      "A": "～している間",
+      "B": "～なので",
+      "C": "～であるにもかかわらず",
+      "D": "したがって"
+    },
+    "choice_explanations": {
+      "A": "「while」は「～している間に」という意味の従属接続詞であり、主に時間的な同時進行（〜しているとき）を表します。ここでは単に「結果」を示す必要があり、時間的背景を述べる必要はないため、文脈的に不適切です。",
+      "B": "「because」は「～なので」という意味の従属接続詞であり、後に続く節全体が「原因」を示します。しかし、この空所が文頭に置かれる場合、前の文（研究成果を発表した）を受けて、次の動作（宴会の企画）の原因として「because」を用いるのは英語の語法として不自然です。",
+      "C": "「even though」は「～であるにもかかわらず」という意味の従属接続詞で、逆接の関係を表します。前の文の行動と、後の祝いの宴会の間には「逆接」の関係は存在しないため、文脈に適していません。",
+      "D": "「thus」は「したがって」「このようにして」という意味を持つ接続副詞で、前の文で述べられた出来事や原因から生じた「結果」を導く際に使われます。文脈的にも論理的にも最も適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager asked the team to report _____ the new budget proposal is feasible.",
+    "choice_a": "how",
+    "choice_b": "whether",
+    "choice_c": "that",
+    "choice_d": "in case",
+    "correct_answer": "B",
+    "explanation": "この文は、managerがチームに対して「新しい予算案が実現可能かどうか」を報告するように依頼した、という内容です。空所には、動詞『report』（報告する）の目的語として機能する名詞節を導く接続詞が必要です。\n『whether』は、「〜かどうか」という不確実な点、または二者択一の判断の内容を導入する名詞節の接続詞として機能します。この文脈では、提案が実現可能か不可能か、という判断（「かどうか」）を報告することが求められているため、最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "noun_clause",
+    "grammar_point": "noun_clause",
+    "question_translation": "マネージャーは、チームに新しい予算案が実現可能かどうかを報告するよう依頼しました。",
+    "choice_translations": {
+      "A": "どのように",
+      "B": "〜かどうか",
+      "C": "〜という（事柄）",
+      "D": "〜に備えて"
+    },
+    "choice_explanations": {
+      "A": "『how』も「〜の方法」という内容を指しますが、この文脈では、単に「実現可能か否か」という判断の是非を尋ねています。そのため、二択の判断を示す『whether』が最も適しています。",
+      "B": "『whether』は、二つの選択肢（Yes/Noなど）がある状況や、不確実な判断の内容を導入する名詞節の接続詞として非常に重要です。この文脈で「〜かどうか」という疑問の対象を伝えるため、正解です。",
+      "C": "『that』は、主に思考や発言の内容を引用する名詞節の導入に使われますが、「〜かどうか」という選択肢の是非を問う用法や、この文のような質問の導入には『whether』の方が自然で文法的に正確です。",
+      "D": "『in case』は、前置詞句で「〜の場合に備えて」という、予備的な準備や条件を示す表現です。文法的に名詞節を導く役割を果たさないため、この空所には入りません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "To remain competitive in the market, employees must regularly _______ their core competencies.",
+    "choice_a": "assume",
+    "choice_b": "maintain",
+    "choice_c": "comprehend",
+    "choice_d": "enhance",
+    "correct_answer": "D",
+    "explanation": "この文は「市場で競争力を維持するために、従業員は定期的に自分たちの核となる能力を（空所）しなければならない」という意味です。文脈上、単に能力がある状態を保つだけでなく、向上させる必要があるため、能力を「高める」「向上させる」という意味の『enhance』が最も適切です。他の選択肢は、文脈が要求する「改善」というニュアンスを表現できていません。",
+    "difficulty": "standard",
+    "grammar_category": "vocabulary",
+    "grammar_point": "vocabulary",
+    "question_translation": "市場で競争力を維持するために、従業員は定期的に自分たちの核となる能力を（空所）しなければならない。",
+    "choice_translations": {
+      "A": "引き受ける、想定する",
+      "B": "維持する",
+      "C": "（完全に）理解する",
+      "D": "高める、向上させる"
+    },
+    "choice_explanations": {
+      "A": "「assume」は「〜を引き受ける」という意味が主な用法です。責任や役割、あるいは（根拠なく）仮定するという意味であり、スキルの能力向上とは関連性が薄いです。",
+      "B": "「maintain」は「現状を維持する」という意味です。能力を衰えさせないというニュアンスはありますが、市場で「競争力を保つ」ためには単なる維持ではなく、能動的な「改善」が必要であるため、文脈に合いません。",
+      "C": "「comprehend」は「理解する」という意味で、能力を精神的に理解することを示すため、能力そのものを「向上させる」という物理的・実務的な文脈には適しません。",
+      "D": "「enhance」は「〜を強化する」「〜を高める」という意味があり、学習や訓練を通じて能力水準を意図的に向上させるという文脈に完璧に合致します。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee decided to _____ stricter guidelines to improve operational efficiency.",
+    "choice_a": "develop",
+    "choice_b": "assume",
+    "choice_c": "impose",
+    "choice_d": "affect",
+    "correct_answer": "C",
+    "explanation": "この文は「運営効率を改善するために、委員会はより厳格な指針を〜することを決定した」という意味です。この文脈において、「指針（guidelines）」という名詞と結びつき、何かを強制的に、あるいは正式に「課す」という意味を持つ動詞が適切です。「impose」は「課す」「押し付ける」という意味の動詞であり、「impose guidelines」という定型的なコロケーション（連語）として用いられます。他の選択肢は、文脈や意味的に適切ではありません。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "委員会は、運営効率を改善するために、より厳格な指針を課すことを決定した。",
+    "choice_translations": {
+      "A": "開発する",
+      "B": "想定する",
+      "C": "課す",
+      "D": "影響を与える"
+    },
+    "choice_explanations": {
+      "A": "developは「（計画やスキームを）開発する」という意味ですが、この文脈で「指針を開発する」というより、「指針を制定し、義務化する」という行為を表す「impose」の方が、決定事項としてより強い意味合いを持ち、自然なコロケーションです。",
+      "B": "assumeは「（役割や責任を）引き受ける」「（仮定として）想定する」という意味です。ここでは「指針を想定する」という表現は意味が通りません。",
+      "C": "imposeは「（ルールや税金などを）課す」「強制的に押し付ける」という意味です。規則や指針といった制度を公式に定める場合に最も自然で適切な動詞であり、「impose guidelines」というコロケーションを形成します。",
+      "D": "affectは「〜に影響を与える」という意味で、主に〜が何かに影響を及ぼすという構図で使われます。「指針に影響を与える」という構造は文法的に成立しますが、ここでは能動的に「指針を課す」という行為が必要です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The project managers plan to _______ the findings from the recent meeting into a comprehensive report by the end of the week.",
+    "choice_a": "convey",
+    "choice_b": "derive",
+    "choice_c": "assess",
+    "choice_d": "establish",
+    "correct_answer": "A",
+    "explanation": "この文は「プロジェクトマネージャーたちは、最近の会議の調査結果を、週末までに包括的な報告書にまとめる（伝える）計画である」という意味です。空所には「〜を伝える」「〜を書き出す」というニュアンスを持つ動詞が必要です。選択肢のうち、findings（調査結果）の内容を文章として相手に伝える、という意味で最も適切なのは「convey」です。他の動詞は、文脈上不適切な意味を持ちます。",
+    "difficulty": "standard",
+    "grammar_category": "vocabulary",
+    "grammar_point": "vocabulary",
+    "question_translation": "プロジェクトマネージャーたちは、最近の会議での調査結果を、週末までに包括的な報告書にまとめて（伝える）計画だ。",
+    "choice_translations": {
+      "A": "伝える、伝達する",
+      "B": "引き出す、導き出す",
+      "C": "評価する、査定する",
+      "D": "設立する、確立する"
+    },
+    "choice_explanations": {
+      "A": "「convey」は「（情報や感情などを）伝える」「（文章などで）伝達する」という意味を持ちます。調査結果という知的な内容を報告書にまとめるという文脈に最も自然に合致する動詞です。",
+      "B": "「derive」は主に「（根拠や結論を）引き出す」「（何かを）導き出す」という意味です。この場合は、結果そのものから新しい結論を引き出すというより、単に結果を文書化して伝える行為が求められているため、不適切です。",
+      "C": "「assess」は「（価値や重要性などを）評価する」「査定する」という意味です。確かに結果を評価すること（assess the findings）は可能ですが、空所では「〜を報告書にまとめる」という行為そのものを指す動詞が必要であり、「convey」が内容の伝達という点で最適です。",
+      "D": "「establish」は「（組織などを）設立する」「（事実や習慣を）確立する」という意味が中心です。報告書の内容を「設立する」という表現は意味が通りません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee reviewed the old process, hoping to _____ the workflow and identify areas for overall improvement.",
+    "choice_a": "streamlines",
+    "choice_b": "streamlining",
+    "choice_c": "streamline",
+    "choice_d": "streamlined",
+    "correct_answer": "C",
+    "explanation": "この文は「〜するために」という目的を示す不定詞の形が必要です。空所には、ワークフローを効率化するという意味を持つ動詞が求められています。選択肢の「streamline」は「（物事の）効率化する」「簡素化する」という意味を持つ動詞の原形であり、「to + 動詞の原形」の形で正しく文法を構成できます。この文脈において「プロセスを効率化する」という動詞の使用が最も適切です。",
+    "difficulty": "standard",
+    "grammar_category": "vocabulary",
+    "grammar_point": "vocabulary",
+    "question_translation": "委員会は古いプロセスを見直し、ワークフローを効率化し、全体的な改善点を見つけ出すことを期待した。",
+    "choice_translations": {
+      "A": "効率化する（三人称単数形）",
+      "B": "効率化していること（名詞/現在分詞）",
+      "C": "効率化する、合理化する",
+      "D": "効率化された（過去分詞/形容詞）"
+    },
+    "choice_explanations": {
+      "A": "「streamlines」は三人称単数現在の動詞形です。この文の構造は「hoping to...」という不定詞句であり、主語が「委員会」ではなく、目的を示すため、動詞の原形である「streamline」を用いる必要があります。",
+      "B": "「streamlining」は現在分詞または動名詞の形です。しかし、直後の「to」が示す不定詞の目的語（動詞の原型）として使用される場合、文法的に「to + 動詞の原形」の形をとる必要があり、原形を用いる方が適切です。",
+      "C": "「streamline」は動詞の原形であり、この文の構造「hoping to [動詞の原形]」という不定詞の形に文法的に合致します。また、意味的にも「ワークフローを効率化する」という意味として最も自然です。",
+      "D": "「streamlined」は過去分詞または形容詞です。これは受動態（〜された）の意味合いが強いため、「委員会が（プロセスを）効率化する」という能動的な動作を表す目的の文脈では不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Our latest research suggests that the new module operates _____ the one released last quarter.",
+    "choice_a": "more fast",
+    "choice_b": "fast",
+    "choice_c": "fastest",
+    "choice_d": "faster",
+    "correct_answer": "D",
+    "explanation": "この文は「新しいモジュールが、先四半期にリリースされたモジュールと比較して、どのような性能か」という比較を行っています。文脈から、Aの「faster」のように、形容詞 fast の比較級の形（-er）を用いるのが適切です。比較対象が2つあるため、比較級が必要です。",
+    "difficulty": "standard",
+    "grammar_category": "comparison",
+    "grammar_point": "comparative",
+    "question_translation": "我々の最新の研究によると、新しいモジュールは、先四半期にリリースされたモジュールと比べて、_____で動作することが示唆されている。",
+    "choice_translations": {
+      "A": "より速く",
+      "B": "速い",
+      "C": "最も速い",
+      "D": "より速い"
+    },
+    "choice_explanations": {
+      "A": "「more fast」という形は文法的に誤りです。形容詞 fast のように、短い単語は「more」を使って比較級を作るのではなく、単に語尾を -er に変化させることが一般的です。",
+      "B": "「fast」は原形（ベースの形容詞）です。比較対象がある場合（...than...）、単に原形を使うことはできません。比較の意味を表現するためには、比較級の形に変形させる必要があります。",
+      "C": "「fastest」は最上級（the + 形容詞の-est）です。これは「数あるものの中で最も～」という意味で、比較対象が複数以上（3つ以上）ある場合に使います。この文では「新しいモジュール」と「先四半期のモジュール」という2つのものを比較しているだけなので不適切です。",
+      "D": "「faster」は「fast」という形容詞の比較級の形です。「AとBを比較するとき」という文脈（the new module operates ____ the one released last quarter）なので、比較級の形を使うのが文法的に正しく、意味的にも通じます。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee must carefully _______ the escalating concerns raised by employees during the recent survey.",
+    "choice_a": "review",
+    "choice_b": "discuss",
+    "choice_c": "consider",
+    "choice_d": "address",
+    "correct_answer": "D",
+    "explanation": "本問題は「コロケーション（句動詞・語の自然な結びつき）」に関する語法知識を問うものです。文脈（社内の懸念事項）から、単に話す、考える、というレベルではなく、「真剣に取り組み、対処する」という意味を持つ動詞が必要です。'address' は「（問題や懸念など）を取り扱う、対処する」という、公式かつ具体的な対応を示すコロケーションとして頻繁に用いられます。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "委員会は、最近の調査で従業員から提起された高まる懸念事項に注意深く取り組まなければならない。",
+    "choice_translations": {
+      "A": "見直す、再検討する",
+      "B": "議論する、話し合う",
+      "C": "考慮する、考える",
+      "D": "取り組む、対処する"
+    },
+    "choice_explanations": {
+      "A": "「review」は「文書やデータなどの過去の状態をチェックする」「見直す」という行為を指します。既に存在する記録をチェックする場面には合いますが、「懸念事項という問題そのものに対処する」という文脈には「address」の方がより自然です。",
+      "B": "「discuss」は「（誰か）と議論する」という意味合いが強く、単に話す行為を指します。懸念事項のような問題に対して、具体的な対策を練って対処するという文脈では、「address」の方がよりフォーマルで適切です。",
+      "C": "「consider」は主に「〜を考慮に入れる」「〜について考える」という、思考や判断のプロセスに焦点を当てた動詞です。何かを真剣に対処したり解決したりする、という具体的な行動を示す場合は不適切です。",
+      "D": "「address」は「（課題や懸念など）に取り組み対処する」というコロケーションとして非常に一般的です。単に話すだけでなく、実質的な解決策を見つけるための取り組みという意味合いが強く、文脈に最も適しています。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Our company requires employees to constantly ______ with different departments to ensure seamless workflow.",
+    "choice_a": "collaborate",
+    "choice_b": "interact",
+    "choice_c": "acknowledge",
+    "choice_d": "restrict",
+    "correct_answer": "A",
+    "explanation": "この文脈では、「円滑なワークフローを確保する」という目的に対して、複数の部門全体が一緒に作業を進める、より包括的で積極的な協力体制を指す動詞が最も適切です。選択肢の中では、「collaborate」が「共同で取り組む」「協働する」という意味を持ち、部署間の広範囲な共同作業という文脈に最もぴったり合致します。単に「交流する」という以上の、目標達成に向けた共同努力のニュアンスを含んでいるため、正解となります。",
+    "difficulty": "standard",
+    "grammar_category": "context",
+    "grammar_point": "context",
+    "question_translation": "当社は、円滑なワークフローを確保するために、従業員が異なる部署と常に「______」することを義務付けています。",
+    "choice_translations": {
+      "A": "協力する",
+      "B": "交流する",
+      "C": "認める",
+      "D": "制限する"
+    },
+    "choice_explanations": {
+      "A": "「collaborate」は「協力する」「協働する」という意味で、単なる交流（interact）を超え、部門間のリソースや知識を組み合わせて一つの成果物を作り上げる「共同作業」という高度な協力関係を指します。文脈上の目的（seamless workflowの確保）に最も合致する最適な語彙です。",
+      "B": "「interact」は単に「接触する」「交流する」という行為を指しますが、この文脈が求めているのは、単なる交流ではなく、具体的な共同の努力や目標達成に向けた協力という意味合いが強いため、やや範囲が狭すぎます。",
+      "C": "「acknowledge」は「認める」「承知する」という意味の動詞で、ここでは文脈的に「認識を共有する」というよりは、「行動として協働する」ことが求められているため、語義が異なります。",
+      "D": "「restrict」は「制限する」という意味で、主語である「従業員」が外部の部門に対して「制限する」という行為は、文脈的に全く合わず、意味的にも不適切です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee needs to decide _____ the new policy will affect the employees.",
+    "choice_a": "despite",
+    "choice_b": "so",
+    "choice_c": "because",
+    "choice_d": "whether",
+    "correct_answer": "D",
+    "explanation": "この文では、「〜かどうか」という不確実な事柄が、動詞「decide」（決定する）の目的語として必要です。名詞節が目的語の位置に来ており、名詞節の導入には「whether」や「if」を使います。したがって、「〜かどうか」という意味の「whether」が正解です。",
+    "difficulty": "standard",
+    "grammar_category": "noun_clause",
+    "grammar_point": "noun_clause",
+    "question_translation": "委員会は、新しい方針が従業員にどのような影響を及ぼすかどうかを決定する必要がある。",
+    "choice_translations": {
+      "A": "〜にもかかわらず",
+      "B": "それで",
+      "C": "〜だから",
+      "D": "〜かどうか"
+    },
+    "choice_explanations": {
+      "A": "「despite」は前置詞であり、名詞や動名詞を導きます。「〜にもかかわらず」という意味ですが、空所に入る要素の文型が不適合です。",
+      "B": "「so」は接続副詞として、前の文の結果として次の文をつなぐ役割を果たします。ここでは、動詞「decide」の目的語（名詞節）を求める文脈であるため不適切です。",
+      "C": "「because」は理由や原因を示す接続詞で、節（主語＋動詞）を導き、「〜だから」という関係性を示すため、この空所に入れることはできません。",
+      "D": "「whether」は「〜かどうか」という意味の名詞節を導く接続詞です。ここでは、動詞「decide」が「何の決定をするか」という目的語として名詞節を必要としているため、文法的に正しいです。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The new software allows employees to complete tasks much _____ than before, significantly boosting departmental efficiency.",
+    "choice_a": "faster",
+    "choice_b": "more fast",
+    "choice_c": "fastest",
+    "choice_d": "fast",
+    "correct_answer": "A",
+    "explanation": "この空所は「employees to complete tasks (タスクを完了させる方法)」という動詞句を修飾しているため、文法的に副詞（adverb）が必要な場所です。さらに、比較対象を示す「than」があることから、比較級の形が求められています。\nしたがって、「速く」を意味する副詞の比較級が必要です。形容詞「fast」は副詞としても使用されることが多く、その比較級は語尾に「-er」を付ける形（faster）となります。これは「以前（before）」の状態と比較しているため、正解は「faster」です。",
+    "difficulty": "standard",
+    "grammar_category": "adverb",
+    "grammar_point": "comparative",
+    "question_translation": "新しいソフトウェアは、以前よりもはるかにタスクを完了させることができるようになり、部門全体の効率を大きく高めています。",
+    "choice_translations": {
+      "A": "より速く",
+      "B": "より速い（直訳的）",
+      "C": "最も速い",
+      "D": "速い"
+    },
+    "choice_explanations": {
+      "A": "より速く: 正解です。この空所は動詞を修飾する副詞が必要であり、「than」があるため比較級が必要です。短い単語（単音節または二音節）の場合、比較級は語尾に「-er」を付けて作るのが一般的であり、「faster」が文法的に正しい表現です。",
+      "B": "より速い（直訳的）: 不正解です。形容詞や副詞が「more」で始まる比較級は、主に3音節以上の長い単語（例: more complicated）に用いられます。また、fastのような短い単語の場合、より自然で標準的な比較級の形は「-er」を付加する形です。",
+      "C": "最も速い: 不正解です。「fastest」は最上級（最も〜な）です。文中に「than」という比較の要素が含まれているため、最上級ではなく、単なる比較級が必要です。",
+      "D": "速い: 不正解です。「fast」は原級（基本の形）です。比較対象を示す「than」が存在する場合、原級（単なる基本形）を用いることはできません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The manager reminded employees that they needed to pay ______ the detailed safety guidelines before operating the new machinery.",
+    "choice_a": "attentively",
+    "choice_b": "care",
+    "choice_c": "notice",
+    "choice_d": "attention",
+    "correct_answer": "D",
+    "explanation": "この問題は、特定の動詞（pay）と組み合わさって定型的な慣用表現（コロケーション）を構成する語句を問うものです。英語で「〜に注意を払う」という表現は、「pay attention to (~に注意を払う)」という形で使われます。したがって、空所には名詞の「attention」が入るのが適切です。他の選択肢は、文法的な品詞が合わないか、または一般的に使われるコロケーション（組み合わせ）として不適切です。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "管理者は、従業員が新しい機械を操作する前に、詳細な安全ガイドラインに注意を払う必要があると注意を促した。",
+    "choice_translations": {
+      "A": "注意深く（副詞）",
+      "B": "注意、世話（名詞／動詞）",
+      "C": "気づき、注意（名詞／動詞）",
+      "D": "注意"
+    },
+    "choice_explanations": {
+      "A": "空所には名詞が求められています。選択肢は副詞であるため、文法的に誤りです。",
+      "B": "「care」は名詞としても使用可能ですが、「pay care to」というコロケーションは稀で、通常「注意を払う」という文脈では「pay attention to」が標準的な表現です。",
+      "C": "「notice」は動詞または名詞として使えますが、「pay notice to」という形で定型的なコロケーションを形成することは一般的にありません。",
+      "D": "「pay attention to」は、英語における極めて定型的な動詞句（コロケーション）です。ここでは、この句を完成させる名詞が求められており、「attention」が最も適切な語彙です。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "Students must know ____ they can register for the advanced seminar.",
+    "choice_a": "whether",
+    "choice_b": "if",
+    "choice_c": "what",
+    "choice_d": "which",
+    "correct_answer": "A",
+    "explanation": "この空所は、目的語（knowの内容）となる名詞節を導く接続詞を選ぶ問題です。名詞節を導く接続詞には、Yes/Noで答える可能性を示す場合に使用される『whether』や『if』が考えられます。しかし、学術的な通知や公式な試験問題など、書き言葉（formal writing）の文脈では、「〜であるか、〜ではないか」という二者択一の可否を尋ねる場合、接続詞『whether』を使用することが最も正式で正確な選択となります。この文脈では、単なる可能性の提示ではなく、登録の可否という二択の判断を指しているため、『whether』が最も適切な単語です。",
+    "difficulty": "standard",
+    "grammar_category": "conjunction",
+    "grammar_point": "noun_clause",
+    "question_translation": "学生たちは、（自分が）その高度なセミナーに登録できるかどうかを知らなければならない。",
+    "choice_translations": {
+      "A": "〜かどうか",
+      "B": "もし〜ならば",
+      "C": "何（ということ）",
+      "D": "どれ"
+    },
+    "choice_explanations": {
+      "A": "『whether』は、「〜であるか、〜ではないか」という二者択一の可否を示す場合に用いられ、特にフォーマルな書き言葉や試験の文脈で名詞節を導入する際、最も推奨される接続詞です。",
+      "B": "『if』も「〜かどうか」という意味で使われますが、『if』はより口語的な響きが強く、文法的に「可否」を尋ねる場合は『whether』を使用する方がより厳密で適切とされます。TOEICなどのテストでは、この厳密性が判断の基準となることが多いです。",
+      "C": "『what』は、具体的な『何』という内容や事柄を指す名詞節を導きます。この文脈が求めているのは具体的な内容ではなく、「登録できるか否か」という二者択一の可能性であるため不適当です。",
+      "D": "『which』は、限定された複数の選択肢の中から「どれ」を選び出すのかという選択肢の限定を示す疑問詞や関係代名詞として使われます。単に可否を尋ねている本問の文脈には合いません。"
+    }
+  },
+  {
+    "part": 5,
+    "question_text": "The committee decided to _____ a comprehensive survey to assess employee satisfaction.",
+    "choice_a": "carry out",
+    "choice_b": "perform",
+    "choice_c": "conduct",
+    "choice_d": "make",
+    "correct_answer": "C",
+    "explanation": "この問題は、特定の種類の活動（調査、研究など）を行う際に、最も適切で自然な動詞（コロケーション）を選ぶことを問う問題です。「調査を実施する」という行為は、専門的な文脈では「conduct a survey」という表現を使うのが、最も一般的で自然な言い回しです。このように、名詞とセットで使われる動詞が決まっているパターンを理解することが重要です。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "委員会は、従業員の満足度を評価するために包括的な調査を（_____）ことを決定した。",
+    "choice_translations": {
+      "A": "実行する、やり遂げる",
+      "B": "行う、実行する（パフォーマンスなどの形で）",
+      "C": "実施する、行う（調査、会議など）",
+      "D": "する、作る"
+    },
+    "choice_explanations": {
+      "A": "「carry out」は、計画や指示されたタスクなど、具体的な手順に従って「実行する」「完了させる」というニュアンスでよく使われます。例えば、「計画を実行する (carry out a plan)」などです。",
+      "B": "「perform」は、演技、スポーツの動作、または機能といった、ある種の動作や成果を「実行する」「実現する」という文脈で使われることが多いです。「Perform a survey」も通じますが、公式な調査の文脈では「conduct」の方が一般的です。",
+      "C": "「conduct」は、研究、調査、実験、会議、交渉といった、計画的で体系的な活動を「実施する」際に最も一般的に用いられる動詞です。特に「survey（調査）」や「research（研究）」といった学術的・専門的な活動と組み合わせることで、非常に自然で適切な表現になります。",
+      "D": "「make」は、非常に汎用性が高い動詞ですが、「調査を実施する」という特定の専門的な活動に対して使うと、表現が不自然に聞こえることが多いです。「make a decision (決定をする)」や「make noise (騒音を出す)」のように、具体的な成果物や結果を『作る』というニュアンスで使われることがメインです。"
+    }
   }
 ]
