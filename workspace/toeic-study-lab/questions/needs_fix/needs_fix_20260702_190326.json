@@ -1,0 +1,40 @@
+{
+  "review_status": "needs_fix",
+  "score": 80,
+  "correct_answer": "A",
+  "issues": [
+    "choice_explanations: 解説が専門的すぎる箇所があり、初学者には難解に感じられる可能性がある",
+    "explanation: 「コロケーション」という概念が中心的な論点であるにも関わらず、他の選択肢の排除理由が単なる「文脈に合わない」という記述に留まっている。"
+  ],
+  "suggestions": [
+    "choice_explanationsの全体的に表現を平易な日本語に修正し、「実行フェーズ」と「作成・公開フェーズ」の違いを強調する。",
+    "explanationに、'implement'（実行・実施）が、ルールや方針を単なるアイデアや文書として扱うのではなく、実際に運用に乗せるプロセスを指すことを明記し、他の選択肢との対比をより明確にすると良い。"
+  ],
+  "confidence": "high",
+  "question": {
+    "part": 5,
+    "question_text": "The department needs to ______ the new guidelines to ensure consistency across all branches.",
+    "choice_a": "implement",
+    "choice_b": "suggest",
+    "choice_c": "assume",
+    "choice_d": "issue",
+    "correct_answer": "A",
+    "explanation": "この文は「部門は、全支店に一貫性を確保するために、新しいガイドラインを〜する必要がある」という意味です。空所には「導入する」「実行する」という適切なコロケーションが必要です。'implement'は「（計画や政策などを）実行する、導入する」という意味を持つ動詞であり、'guidelines (ガイドライン)'という抽象的な指示やルールを実際に適用・実行するという文脈で最も自然なコロケーションとなります。他の選択肢は文脈に合わないか、動詞として不適切です。",
+    "difficulty": "standard",
+    "grammar_category": "collocation",
+    "grammar_point": "collocation",
+    "question_translation": "部門は、すべての支店に一貫性を確保するために、新しいガイドラインを〜する必要がある。",
+    "choice_translations": {
+      "A": "実施する",
+      "B": "提案する",
+      "C": "仮定する",
+      "D": "発行する"
+    },
+    "choice_explanations": {
+      "A": "implement（実施する、導入する）は、計画、システム、政策などの抽象的なものを「実際に実行し、定着させる」という意味を持つコロケーションとして最も自然であり、文脈に完全に合致します。",
+      "B": "suggest（提案する）は、アイデアや行動を「提案する」行為を指します。すでに存在するガイドラインに対して行う必要のある「実行」というプロセスを指すには、語義が弱すぎます。",
+      "C": "assume（仮定する）は、「何かを前提とすること」や「役割を果たす」という意味が中心であり、「ガイドラインを実行する」というコロケーションは成立しません。",
+      "D": "issue（発行する）は、主に文書や問題などを「発行する」という物理的な行為や、問題（issues）を指す場合に用いられ、「ガイドラインを（実際に）実行する」という文脈には適しません。"
+    }
+  }
+}

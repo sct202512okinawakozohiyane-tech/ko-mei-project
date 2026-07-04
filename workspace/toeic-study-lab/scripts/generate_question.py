@@ -11,6 +11,7 @@ import requests
 # scripts/ ディレクトリを import パスに追加（同ディレクトリの categories.py を参照するため）
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from categories import CATEGORIES, ALL_CATEGORY_KEYS, get_points
+from topics import TOPIC_DOMAINS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "data" / "toeic.db"
@@ -92,6 +93,20 @@ def shuffle_choices(question_data):
     return question_data
 
 
+def pick_topic():
+    """題材ジャンルをランダムに1つ返す（ビジネス分野への偏りを防ぐため）。"""
+    return random.choice(list(TOPIC_DOMAINS.keys()))
+
+
+def build_topic_instruction(topic):
+    label = TOPIC_DOMAINS[topic]
+    return (
+        f"【題材ジャンル指定（必須）】\n"
+        f"以下のジャンルの場面設定で英文を作成してください。\n"
+        f"{label}"
+    )
+
+
 def build_category_instruction(category=None):
     """カテゴリ指定の有無に応じてプロンプト挿入用の文字列を返す。"""
     if category is None:
@@ -113,11 +128,13 @@ def build_category_instruction(category=None):
     )
 
 
-def load_prompt(category=None):
+def load_prompt(category=None, topic=None):
     with open(PROMPT_PATH, encoding="utf-8") as f:
         template = f.read()
     instruction = build_category_instruction(category)
-    return template.replace("{{GRAMMAR_CATEGORY_INSTRUCTION}}", instruction)
+    template = template.replace("{{GRAMMAR_CATEGORY_INSTRUCTION}}", instruction)
+    topic_instruction = build_topic_instruction(topic or pick_topic())
+    return template.replace("{{TOPIC_INSTRUCTION}}", topic_instruction)
 
 
 def extract_json_text(response_text):
@@ -272,7 +289,10 @@ def main():
         else:
             category = fixed_category
 
-        prompt = load_prompt(category)
+        topic = pick_topic()
+        print(f"[INFO] 題材ジャンル自動選択: {topic} ({TOPIC_DOMAINS[topic]})")
+
+        prompt = load_prompt(category, topic)
 
         print(f"[INFO] {i}/{count} 問目を生成します")
 

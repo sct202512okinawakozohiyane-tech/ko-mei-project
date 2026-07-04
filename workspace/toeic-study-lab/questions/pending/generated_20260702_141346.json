@@ -1,0 +1,26 @@
+{
+  "part": 5,
+  "question_text": "The department requires employees to submit a comprehensive report on their quarterly performance, taking into account both sales figures and marketing outreach efforts.",
+  "choice_a": "discuss",
+  "choice_b": "reviewing",
+  "choice_c": "examine",
+  "choice_d": "mention",
+  "correct_answer": "C",
+  "explanation": "空所には、文脈全体を受けて「〜を検討する」「〜を調査する」という意味を持つ動詞が必要です。この文では、「売上高とマーケティングの取り組みの両方を考慮に入れる」という、より深く、詳細な分析を求めるニュアンスがあります。選択肢の中で、「examine」は「綿密に調査する」「詳しく調べる」という意味を持ち、報告書の内容を深く検証するという文脈に最も適しています。一方、他の選択肢はニュアンスが弱すぎたり、品詞が不適切です。",
+  "difficulty": "standard",
+  "grammar_category": "collocation",
+  "grammar_point": "collocation",
+  "question_translation": "部門は、売上高とマーケティングの取り組みの両方を考慮に入れ、従業員に対し、四半期の業績に関する包括的な報告書を提出することを求めている。",
+  "choice_translations": {
+    "A": "話し合う",
+    "B": "見直している",
+    "C": "調べる、調査する",
+    "D": "言及する"
+  },
+  "choice_explanations": {
+    "A": "「discuss」は「議論する」という意味ですが、ここでは単に話すというよりも、データを深く調査し、検証するというニュアンスが求められています。そのため、「examine」のほうが文脈に合っています。",
+    "B": "この空所には動詞の原形が入るべき場所です。文の構造上、主語（The department）の後に動詞が必要であり、「reviewing」（分詞）という形は文法的に誤りとなります。",
+    "C": "「examine」は「詳細に調査する」「綿密に調べる」という意味を持ち、業績報告書という具体的なデータ分析の文脈において、最も適切な動詞です。このコロケーション（examine performance）が自然な流れを作ります。",
+    "D": "「mention」は単に「言及する」という、軽い情報提供のニュアンスです。報告書という正式な資料の内容を精査するという文脈には、深すぎる情報検証のニュアンスが不足しています。"
+  }
+}

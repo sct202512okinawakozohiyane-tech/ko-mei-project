@@ -1,0 +1,26 @@
+{
+  "part": 5,
+  "question_text": "Never _____ the committee ______ such remarkable enthusiasm for the new project.",
+  "choice_a": "has",
+  "choice_b": "being",
+  "choice_c": "have",
+  "choice_d": "had",
+  "correct_answer": "C",
+  "explanation": "この文は、否定的な副詞句「Never (～したことはない)」を文頭に置くことで、主語と助動詞が倒置している形です。通常の語順（主語 + 助動詞 + 動詞）から、副詞句(Never) + 助動詞(have) + 主語(the committee) + 過去分詞(seen) となっています。したがって、主語「the committee」は集合名詞であり、単数扱いなので、助動詞は「have」ではなく「has」を用いるべきだと直感的に感じがちですが、この文の構造上、空所には「have」が入ります。これは、この文が「Never have I seen...」という一般的な表現の構造を踏襲しているためです。助動詞が空所に入り、その後主語が「the committee」となっているため、「have」が正しく、主語の単数性による動詞の変化はここでは問題になりません。",
+  "difficulty": "standard",
+  "grammar_category": "inversion",
+  "grammar_point": "inversion",
+  "question_translation": "委員会が新しいプロジェクトに対してこれほど素晴らしい熱意を抱いたことは、今までに一度もない。",
+  "choice_translations": {
+    "A": "〜してはいない",
+    "B": "〜であること",
+    "C": "〜してはいない",
+    "D": "〜したことはなかった"
+  },
+  "choice_explanations": {
+    "A": "「Never」による倒置構造の中では、主語が「the committee」であるため、助動詞が「has」となる可能性も考えられますが、この文脈（特別な強調や古風な表現でない限り）では、「have」を使用するのがより一般的で自然です。また、この空所は時制を担う助動詞自体を問う部分であり、時制の一致が崩れる原因となります。",
+    "B": "空所には助動詞が必要です。選択肢の「being」は現在分詞であり、助動詞の役割を果たすことはできません。そのため、文法的に不適切です。",
+    "C": "「Never」のような否定的な副詞が文頭に置かれると、助動詞が主語の前に出てくる倒置が起こります。空所には助動詞の原形である「have」が入るのが最も適切です。",
+    "D": "「Never」による倒置が起こる場合、動詞の時制は基本的に「現在完了形」を指すため、「had」という過去完了形を選ぶと文全体の時制と合わなくなり、不自然な表現になります。"
+  }
+}

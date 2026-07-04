@@ -1,0 +1,42 @@
+{
+  "review_status": "needs_fix",
+  "score": 70,
+  "correct_answer": "B",
+  "issues": [
+    "explanation: 文脈を決定する時間副詞句（until the new system was implemented）が無視されており、適切な時制（過去完了形）の判定ができていないため、本質的な間違いがある。",
+    "choice_explanations: 選択肢B（had we seen）が正解である理由（過去完了時制の適用）の解説が完全に欠落している。",
+    "grammar_point: 単なる『倒置』の解説に留まっており、時制（Tense）と倒置の複合的な理解が必要な問題であるという点が明確にされていない。"
+  ],
+  "suggestions": [
+    "正しい文法ポイントを「過去完了形＋倒置」と明確に定義し、問題全体の難易度を'hard'に引き上げる。",
+    "explanationにおいて、まず「until the new system was implemented」という時間軸が「過去のある時点」であることを指摘し、それに基づき「Never」が現在ではなく過去の経験について述べていると論理的に導出する必要がある。したがって、過去完了形（had + V3）が必須であると明記する。",
+    "choice_explanationsの各選択肢において、単に文法構造を指摘するだけでなく、時制の不一致（例：Aは現在完了なので、過去の時点と矛盾する）という観点から、それぞれの選択肢がなぜ文脈的に不適切なのかを詳細に解説する。"
+  ],
+  "confidence": "high",
+  "question": {
+    "part": 5,
+    "question_text": "Never _____ such a detailed report until the new system was implemented.",
+    "choice_a": "have we seen",
+    "choice_b": "had we seen",
+    "choice_c": "we have seen",
+    "choice_d": "we had seen",
+    "correct_answer": "A",
+    "explanation": "この文は、文頭に否定の副詞である「Never」（〜したことは一度もない）が置かれているため、倒置（Inversion）が起こっています。通常の語順（主語＋助動詞＋動詞）から、強い否定や限定的な副詞が文頭に来た場合、助動詞を主語の前に出し、疑問文のような語順になります。正しくは「have we seen」という語順になり、全文「Never have we seen...」で「私たちは～を見たことがない」という意味になります。",
+    "difficulty": "standard",
+    "grammar_category": "inversion",
+    "grammar_point": "inversion",
+    "question_translation": "新しいシステムが導入されるまでは、これほど詳細なレポートを私たちは見たことがありません。",
+    "choice_translations": {
+      "A": "私たちは見たことがない",
+      "B": "私たちは見たはずだった",
+      "C": "私たちは見たことがあります",
+      "D": "私たちは見たことがなかった"
+    },
+    "choice_explanations": {
+      "A": "「have we seen」は助動詞（have）が主語（we）の前に倒置している語順であり、「Never」が文頭に来たことによる正しい文法的な処理です（倒置）。",
+      "B": "「had we seen」は過去完了の倒置形ですが、文頭の「Never」が示すのは「経験したことのない」という現在の時点までの事実（現在完了）であるため、「have we seen」が最も適切です。",
+      "C": "「we have seen」は通常の平叙文の語順です。文頭に「Never」という強い否定語がある場合、倒置が起こるため、この語順は誤りです。",
+      "D": "「we had seen」は過去完了の語順であり、この文脈で「Never」による倒置のルールが適用されていないため不適切です。"
+    }
+  }
+}
